@@ -1,0 +1,288 @@
+/* ==============================
+   WHY RANKY SECTION
+============================== */
+
+.why-ranky {
+  padding: 120px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #fdeaf3 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.why-ranky .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==============================
+   HEADER
+============================== */
+
+.why-ranky__header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 80px;
+}
+
+.why-ranky__title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1b1f3b;
+  margin-bottom: 12px;
+}
+
+.why-ranky__subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3aa0ff;
+  margin-bottom: 20px;
+}
+
+.why-ranky__desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #5b5f7b;
+}
+
+
+/* ==============================
+   COMPARISON HEADINGS
+============================== */
+
+.comparison-headings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.comparison-heading {
+  text-align: center;
+}
+
+.comparison-heading--old,
+.comparison-heading--ranky {
+  margin: 0;
+}
+
+.comparison-heading__text {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #1b1f3b;
+  margin: 0;
+}
+
+
+
+
+/* ==============================
+   COMPARISON TABLE
+============================== */
+
+.why-ranky__comparison {
+  max-width: 1220px;
+  margin: 80px auto 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+
+.comparison-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+
+.comparison-col {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Old Way */
+.comparison-col--old {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 18px 24px;
+  border-radius: 16.4px;
+
+  background: linear-gradient(90deg,
+      #D9F5FF 51.44%,
+      #95D8F2 100%);
+}
+
+/* Ranky Way */
+.comparison-col--ranky {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 22px 26px;
+  border-radius: 19.2px;
+
+  background: #FFFFFF;
+  box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.29);
+}
+
+.comparison-col--old,
+.comparison-col--ranky {
+  min-height: 92px;
+}
+
+.comparison-icon {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  flex-shrink: 0;
+  align-self: center;
+
+}
+
+
+.comparison-col--old .comparison-text {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  font-size: 20.48px;
+  line-height: 24px;
+  letter-spacing: 0.015em;
+  text-transform: capitalize;
+  color: #0E1552;
+}
+
+.comparison-col--ranky .comparison-text {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 32px;
+  letter-spacing: 0.015em;
+  text-transform: capitalize;
+  color: #0E1552;
+}
+
+@media (max-width: 900px) {
+  .comparison-row {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-col--ranky {
+    order: 1;
+  }
+
+  .comparison-col--old {
+    order: 2;
+  }
+}
+
+
+
+
+/* ==============================
+   STATEMENT
+============================== */
+
+.why-ranky__statement {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1b1f3b;
+  margin-bottom: 100px;
+}
+
+/* ==============================
+   CORE DIFFERENTIATORS
+============================== */
+
+.why-ranky__differentiators-heading {
+  line-height: 59px
+}
+
+.why-ranky__differentiators {
+  max-width: 520px;
+  margin-bottom: 40px;
+}
+
+.differentiator-item {
+  margin-bottom: 28px;
+}
+
+.differentiator-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #1b1f3b;
+}
+
+.differentiator-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5b5f7b;
+}
+
+/* ==============================
+   CTA
+============================== */
+
+.why-ranky__cta {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn--primary {
+  background: #1fb6ff;
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  background: #009eea;
+}
+
+.btn--ghost {
+  background: transparent;
+}
+
+.btn--ghost:hover {
+  background: #f2f4f8;
+}
+
+/* ==============================
+   ILLUSTRATION
+============================== */
+
+.why-ranky__illustration {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 480px;
+}
+
+.why-ranky-illustration {
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,29 @@
+:root {
+    /* Colors */
+    --color-primary: #00a8e8;
+    --color-dark: #061c3d;
+    --color-bg-dark: #020c1b;
+    --color-bg-light: #f7f9fc;
+    --color-white: #ffffff;
+
+    /* Layout */
+    --container-width: 1200px;
+    --container-padding: 24px;
+    --section-spacing: 120px;
+    --section-spacing-sm: 80px;
+
+    /* Radius */
+    --radius-lg: 24px;
+    --radius-md: 16px;
+}
+
+.container {
+    max-width: var(--container-width);
+    padding-inline: var(--container-padding);
+    margin-inline: auto;
+    overflow: visible;
+}
+
+section {
+    padding-block: var(--section-spacing);
+}

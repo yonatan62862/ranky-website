@@ -1,0 +1,29 @@
+{
+    "key": "group_footer_settings",
+    "title": "Footer Settings",
+    "fields": [
+        {
+            "key": "field_footer_text",
+            "label": "Footer Text",
+            "name": "footer_text",
+            "type": "text",
+            "instructions": "Text displayed in the footer after the year",
+            "default_value": "All Rights Reserved.",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "ranky-theme-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label"
+}

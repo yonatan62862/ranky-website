@@ -1,0 +1,144 @@
+{
+    "key": "group_industry_page_fields",
+    "title": "Industry Page Fields",
+    "fields": [
+        {
+            "key": "field_industry_hero_h1",
+            "label": "Hero H1",
+            "name": "hero_h1",
+            "type": "text",
+            "required": 0
+        },
+        {
+            "key": "field_defined_intro",
+            "label": "Defined Intro",
+            "name": "defined_intro",
+            "type": "textarea",
+            "required": 0
+        },
+        {
+            "key": "field_defined_body",
+            "label": "Defined Body",
+            "name": "defined_body",
+            "type": "wysiwyg",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "required": 0
+        },
+        {
+            "key": "field_approach_text",
+            "label": "Approach Text",
+            "name": "approach_text",
+            "type": "textarea",
+            "required": 0
+        },
+        {
+            "key": "field_approach_visual_type",
+            "label": "Approach Visual Type",
+            "name": "approach_visual_type",
+            "type": "select",
+            "choices": {
+                "image": "Image",
+                "lottie": "Lottie"
+            },
+            "default_value": "image",
+            "required": 0
+        },
+        {
+            "key": "field_approach_image",
+            "label": "Approach Image",
+            "name": "approach_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_approach_visual_type",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_approach_lottie",
+            "label": "Approach Lottie",
+            "name": "approach_lottie",
+            "type": "file",
+            "return_format": "array",
+            "library": "all",
+            "mime_types": "json",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_approach_visual_type",
+                        "operator": "==",
+                        "value": "lottie"
+                    }
+                ]
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_solutions_relationship",
+            "label": "Solutions Relationship",
+            "name": "solutions_relationship",
+            "type": "relationship",
+            "post_type": [
+                "service"
+            ],
+            "filters": [
+                "search"
+            ],
+            "return_format": "object",
+            "required": 0
+        },
+        {
+            "key": "field_industry_faq_items",
+            "label": "FAQ Items",
+            "name": "faq_items",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add FAQ",
+            "sub_fields": [
+                {
+                    "key": "field_industry_faq_question",
+                    "label": "Question",
+                    "name": "question",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_industry_faq_answer",
+                    "label": "Answer",
+                    "name": "answer",
+                    "type": "wysiwyg",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "required": 0
+                }
+            ],
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "industry"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label"
+}
+

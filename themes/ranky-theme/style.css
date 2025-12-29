@@ -6,3 +6,24 @@ Description: Custom theme for Ranky project
 Version: 1.0
 Text Domain: ranky
 */
+
+
+/* Base */
+@import "assets/css/base/reset.css";
+@import "assets/css/base/typography.css";
+@import "assets/css/base/layout.css";
+
+/* Components */
+@import "assets/css/components/hero.css";
+@import "assets/css/components/buttons.css";
+@import "assets/css/components/what-you-gain.css";
+@import "assets/css/components/our-client.css";
+@import "assets/css/components/blue-cards.css";
+@import "assets/css/components/services-grid.css";
+@import "assets/css/components/success-in-action.css";
+@import "assets/css/components/faq.css";
+@import "assets/css/components/contact-form-card.css";
+@import "assets/css/components/global-cta.css";
+@import "assets/css/components/footer.css";
+@import "assets/css/components/header.css";
+@import "assets/css/components/why-ranky.css";

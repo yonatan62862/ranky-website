@@ -1,0 +1,156 @@
+{
+    "key": "group_service_page_fields",
+    "title": "Service Page Fields",
+    "fields": [
+        {
+            "key": "field_service_hero_h1",
+            "label": "Hero H1",
+            "name": "hero_h1",
+            "type": "text",
+            "required": 0
+        },
+        {
+            "key": "field_comparison_rows",
+            "label": "Comparison Rows",
+            "name": "comparison_rows",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_comparison_old_way",
+                    "label": "Old Way",
+                    "name": "old_way",
+                    "type": "textarea",
+                    "required": 0
+                },
+                {
+                    "key": "field_comparison_ranky_way",
+                    "label": "Ranky Way",
+                    "name": "ranky_way",
+                    "type": "textarea",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_benefits_items",
+            "label": "Benefits Items",
+            "name": "benefits_items",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Item",
+            "sub_fields": [
+                {
+                    "key": "field_benefits_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_benefits_text",
+                    "label": "Text",
+                    "name": "text",
+                    "type": "textarea",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_process_steps",
+            "label": "Process Steps",
+            "name": "process_steps",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Step",
+            "sub_fields": [
+                {
+                    "key": "field_process_step_title",
+                    "label": "Step Title",
+                    "name": "step_title",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_process_step_description",
+                    "label": "Step Description",
+                    "name": "step_description",
+                    "type": "textarea",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_results_items",
+            "label": "Results Items",
+            "name": "results_items",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Item",
+            "sub_fields": [
+                {
+                    "key": "field_results_metric",
+                    "label": "Metric",
+                    "name": "metric",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_results_description",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "textarea",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_service_faq_items",
+            "label": "FAQ Items",
+            "name": "faq_items",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add FAQ",
+            "sub_fields": [
+                {
+                    "key": "field_service_faq_question",
+                    "label": "Question",
+                    "name": "question",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_service_faq_answer",
+                    "label": "Answer",
+                    "name": "answer",
+                    "type": "wysiwyg",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "required": 0
+                }
+            ],
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label"
+}
+

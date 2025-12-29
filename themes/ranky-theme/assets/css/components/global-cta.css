@@ -1,0 +1,182 @@
+/* ==============================
+   GLOBAL CTA (FOOTER CTA)
+============================== */
+
+.global-cta {
+  background: #062f5b;
+  padding: 140px 0 120px;
+  color: #ffffff;
+}
+
+.global-cta--dark {
+  background: #04264a;
+}
+
+/* ==============================
+   GRID LAYOUT
+============================== */
+
+.global-cta__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+/* ==============================
+   LINK COLUMNS
+============================== */
+
+.global-cta__column-title {
+  font-family: 'Rubik', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #ffffff;
+}
+
+.global-cta__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.global-cta__links li {
+  margin-bottom: 12px;
+}
+
+.global-cta__links a {
+  font-family: 'Rubik', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.global-cta__links a:hover {
+  color: #00c2ff;
+}
+
+/* ==============================
+   NEWSLETTER
+============================== */
+
+.global-cta__newsletter-title {
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.global-cta__newsletter-form {
+  margin-bottom: 24px;
+}
+
+.global-cta__newsletter-field {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 6px;
+}
+
+.global-cta__newsletter-field input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #ffffff;
+  outline: none;
+}
+
+.global-cta__newsletter-field input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.global-cta__newsletter-field button {
+  background: #00c2ff;
+  border: none;
+  color: #002b4f;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.global-cta__newsletter-field button:hover {
+  background: #33d1ff;
+}
+
+/* ==============================
+   SOCIAL ICONS
+============================== */
+
+.global-cta__socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.global-cta__social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.global-cta__social img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.global-cta__social:hover {
+  background: #00c2ff;
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 1024px) {
+  .global-cta__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .global-cta {
+    padding: 100px 0 80px;
+  }
+
+  .global-cta__grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .global-cta__newsletter-field {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .global-cta__newsletter-field button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .global-cta__socials {
+    justify-content: flex-start;
+  }
+}

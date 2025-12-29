@@ -1,0 +1,50 @@
+{
+    "key": "group_global_theme_settings",
+    "title": "Global Theme Settings",
+    "fields": [
+        {
+            "key": "field_global_cta_title",
+            "label": "Global CTA Title",
+            "name": "global_cta_title",
+            "type": "text",
+            "required": 0
+        },
+        {
+            "key": "field_global_cta_text",
+            "label": "Global CTA Text",
+            "name": "global_cta_text",
+            "type": "textarea",
+            "required": 0
+        },
+        {
+            "key": "field_global_cta_button_text",
+            "label": "Global CTA Button Text",
+            "name": "global_cta_button_text",
+            "type": "text",
+            "required": 0
+        },
+        {
+            "key": "field_global_cta_button_link",
+            "label": "Global CTA Button Link",
+            "name": "global_cta_button_link",
+            "type": "link",
+            "return_format": "array",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "ranky-theme-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label"
+}
+

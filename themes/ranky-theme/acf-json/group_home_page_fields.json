@@ -1,0 +1,979 @@
+{
+    "key": "group_home_page_fields",
+    "title": "Home Page Fields",
+    "fields": [
+        {
+            "key": "field_tab_hero",
+            "label": "Hero",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_hero_visual_type",
+            "label": "Hero Visual Type",
+            "name": "hero_visual_type",
+            "type": "select",
+            "choices": {
+                "image": "Image",
+                "lottie": "Lottie",
+                "none": "None"
+            },
+            "default_value": "none",
+            "required": 0
+        },
+        {
+            "key": "field_hero_image",
+            "label": "Hero Image",
+            "name": "hero_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_hero_visual_type",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_hero_lottie",
+            "label": "Hero Lottie",
+            "name": "hero_lottie",
+            "type": "file",
+            "return_format": "array",
+            "library": "all",
+            "mime_types": "json",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_hero_visual_type",
+                        "operator": "==",
+                        "value": "lottie"
+                    }
+                ]
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_hero_title_line1_cyan",
+            "label": "Hero Title Line 1 (Cyan)",
+            "name": "hero_title_line1_cyan",
+            "type": "text",
+            "default_value": "Strategic Growth",
+            "required": 0
+        },
+        {
+            "key": "field_hero_title_line2_cyan",
+            "label": "Hero Title Line 2 (Cyan)",
+            "name": "hero_title_line2_cyan",
+            "type": "text",
+            "default_value": "Marketing ",
+            "required": 0
+        },
+        {
+            "key": "field_hero_title_line3_white",
+            "label": "Hero Title Line 3 (White)",
+            "name": "hero_title_line3_white",
+            "type": "text",
+            "default_value": "That",
+            "required": 0
+        },
+        {
+            "key": "field_hero_title_line4_white",
+            "label": "Hero Title Line 4 (White)",
+            "name": "hero_title_line4_white",
+            "type": "text",
+            "default_value": "Outperforms.",
+            "required": 0
+        },
+        {
+            "key": "field_hero_description",
+            "label": "Hero Description",
+            "name": "hero_description",
+            "type": "textarea",
+            "default_value": "Smarter insights, sharper execution. AI-powered strategies delivering leads, revenue, and brand authority.",
+            "required": 0
+        },
+        {
+            "key": "field_hero_primary_button_text",
+            "label": "Hero Primary Button Text",
+            "name": "hero_primary_button_text",
+            "type": "text",
+            "default_value": "Get A Free Consultation Today",
+            "required": 0
+        },
+        {
+            "key": "field_hero_primary_button_link",
+            "label": "Hero Primary Button Link",
+            "name": "hero_primary_button_link",
+            "type": "text",
+            "default_value": "#contact",
+            "required": 0
+        },
+        {
+            "key": "field_hero_secondary_button_text",
+            "label": "Hero Secondary Button Text",
+            "name": "hero_secondary_button_text",
+            "type": "text",
+            "default_value": "Explore Our Services",
+            "required": 0
+        },
+        {
+            "key": "field_hero_secondary_button_link",
+            "label": "Hero Secondary Button Link",
+            "name": "hero_secondary_button_link",
+            "type": "text",
+            "default_value": "/services",
+            "required": 0
+        },
+        {
+            "key": "field_tab_why_ranky",
+            "label": "Why Ranky",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_why_ranky_header",
+            "label": "Why Ranky Header",
+            "name": "why_ranky_header",
+            "type": "group",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_why_ranky_header_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_why_ranky_header_subtitle",
+                    "label": "Subtitle",
+                    "name": "subtitle",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_why_ranky_header_description",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "textarea",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_ranky_comparison_old_heading",
+            "label": "Comparison Old Way Heading",
+            "name": "ranky_comparison_old_heading",
+            "type": "text",
+            "default_value": "Old Way",
+            "required": 0
+        },
+        {
+            "key": "field_ranky_comparison_new_heading",
+            "label": "Comparison Ranky Way Heading",
+            "name": "ranky_comparison_new_heading",
+            "type": "text",
+            "default_value": "RANKY WAY",
+            "required": 0
+        },
+        {
+            "key": "field_ranky_comparison",
+            "label": "Ranky Comparison",
+            "name": "ranky_comparison",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Comparison",
+            "sub_fields": [
+                {
+                    "key": "field_ranky_comparison_old_icon",
+                    "label": "Old Icon",
+                    "name": "old_icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "required": 0
+                },
+                {
+                    "key": "field_ranky_comparison_old_text",
+                    "label": "Old Text",
+                    "name": "old_text",
+                    "type": "textarea",
+                    "required": 0
+                },
+                {
+                    "key": "field_ranky_comparison_new_icon",
+                    "label": "New Icon",
+                    "name": "new_icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "required": 0
+                },
+                {
+                    "key": "field_ranky_comparison_new_text",
+                    "label": "New Text",
+                    "name": "new_text",
+                    "type": "textarea",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_ranky_statement",
+            "label": "Ranky Statement",
+            "name": "ranky_statement",
+            "type": "textarea",
+            "required": 0
+        },
+        {
+            "key": "field_core_differentiators_heading",
+            "label": "Core Differentiators Heading",
+            "name": "core_differentiators_heading",
+            "type": "text",
+            "default_value": "Core Differentiators",
+            "required": 0
+        },
+        {
+            "key": "field_core_differentiators",
+            "label": "Core Differentiators",
+            "name": "core_differentiators",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Differentiator",
+            "sub_fields": [
+                {
+                    "key": "field_core_differentiators_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_core_differentiators_description",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "textarea",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_why_ranky_cta_buttons",
+            "label": "Why Ranky CTA Buttons",
+            "name": "cta_buttons",
+            "type": "group",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_why_ranky_cta_primary_button",
+                    "label": "Primary Button",
+                    "name": "primary_button",
+                    "type": "link",
+                    "return_format": "array",
+                    "required": 0
+                },
+                {
+                    "key": "field_why_ranky_cta_secondary_button",
+                    "label": "Secondary Button",
+                    "name": "secondary_button",
+                    "type": "link",
+                    "return_format": "array",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_why_ranky_illustration",
+            "label": "Why Ranky Illustration",
+            "name": "illustration",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "required": 0
+        },
+        {
+            "key": "field_tab_what_you_gain",
+            "label": "What You Gain",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_what_you_gain_eyebrow",
+            "label": "Eyebrow Text",
+            "name": "what_you_gain_eyebrow",
+            "type": "text",
+            "required": 0
+        },
+        {
+            "key": "field_what_you_gain_subtext",
+            "label": "Sub Text",
+            "name": "what_you_gain_subtext",
+            "type": "textarea",
+            "required": 0
+        },
+        {
+            "key": "field_what_you_gain_title",
+            "label": "Main Title",
+            "name": "what_you_gain_title",
+            "type": "text",
+            "required": 0
+        },
+        {
+            "key": "field_what_you_gain_primary_button",
+            "label": "Primary Button",
+            "name": "what_you_gain_primary_button",
+            "type": "link",
+            "return_format": "array",
+            "required": 0
+        },
+        {
+            "key": "field_what_you_gain_secondary_button",
+            "label": "Secondary Button",
+            "name": "what_you_gain_secondary_button",
+            "type": "link",
+            "return_format": "array",
+            "required": 0
+        },
+        {
+            "key": "field_what_you_gain_items",
+            "label": "What You Gain Items",
+            "name": "what_you_gain_items",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Item",
+            "sub_fields": [
+                {
+                    "key": "field_what_you_gain_items_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_what_you_gain_items_description",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "textarea",
+                    "required": 0
+                },
+                {
+                    "key": "field_what_you_gain_items_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_tab_our_client",
+            "label": "Our Client",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_our_client_title",
+            "label": "Our Client Title",
+            "name": "our_client_title",
+            "type": "text",
+            "required": 0
+        },
+        {
+            "key": "field_our_client_text",
+            "label": "Our Client Text",
+            "name": "our_client_text",
+            "type": "textarea",
+            "required": 0
+        },
+        {
+            "key": "field_our_client_primary_button",
+            "label": "Our Client Primary Button",
+            "name": "our_client_primary_button",
+            "type": "link",
+            "return_format": "array",
+            "required": 0
+        },
+        {
+            "key": "field_our_client_secondary_button",
+            "label": "Our Client Secondary Button",
+            "name": "our_client_secondary_button",
+            "type": "link",
+            "return_format": "array",
+            "required": 0
+        },
+        {
+            "key": "field_our_client_logos",
+            "label": "Our Client Logos",
+            "name": "our_client_logos",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Logo",
+            "sub_fields": [
+                {
+                    "key": "field_our_client_logos_logo",
+                    "label": "Logo",
+                    "name": "logo",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "required": 0
+                },
+                {
+                    "key": "field_our_client_logos_size",
+                    "label": "Size",
+                    "name": "size",
+                    "type": "select",
+                    "choices": {
+                        "small": "Small",
+                        "medium": "Medium",
+                        "large": "Large"
+                    },
+                    "default_value": "medium",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_tab_blue_cards",
+            "label": "Blue Cards",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_blue_cards",
+            "label": "Blue Cards",
+            "name": "blue_cards",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Card",
+            "max": 5,
+            "sub_fields": [
+                {
+                    "key": "field_blue_cards_icons",
+                    "label": "Icons",
+                    "name": "icons",
+                    "type": "repeater",
+                    "layout": "block",
+                    "button_label": "Add Icon",
+                    "sub_fields": [
+                        {
+                            "key": "field_blue_cards_icons_icon",
+                            "label": "Icon",
+                            "name": "icon",
+                            "type": "image",
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "required": 0
+                        }
+                    ],
+                    "required": 0
+                },
+                {
+                    "key": "field_blue_cards_button",
+                    "label": "Button",
+                    "name": "button",
+                    "type": "link",
+                    "return_format": "array",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_tab_services",
+            "label": "Our Services",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_services_section_title",
+            "label": "Section Title",
+            "name": "services_section_title",
+            "type": "text",
+            "instructions": "Title displayed above the services section (e.g. \"OUR SERVICES\")",
+            "required": 0
+        },
+        {
+            "key": "field_services",
+            "label": "Services",
+            "name": "services",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Service",
+            "sub_fields": [
+                {
+                    "key": "field_services_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "instructions": "Icon shown in the service tab",
+                    "required": 0
+                },
+                {
+                    "key": "field_services_title",
+                    "label": "Service Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "Title shown in the left service tab",
+                    "required": 0
+                },
+                {
+                    "key": "field_services_content_title",
+                    "label": "Content Title",
+                    "name": "content_title",
+                    "type": "text",
+                    "instructions": "Title shown in the main content panel",
+                    "required": 0
+                },
+                {
+                    "key": "field_services_content_text",
+                    "label": "Content Text",
+                    "name": "content_text",
+                    "type": "textarea",
+                    "instructions": "Main description text for the service",
+                    "required": 0
+                },
+                {
+                    "key": "field_services_primary_button",
+                    "label": "Primary Button",
+                    "name": "primary_button",
+                    "type": "link",
+                    "return_format": "array",
+                    "instructions": "Main CTA button for this service",
+                    "required": 0
+                },
+                {
+                    "key": "field_services_secondary_button",
+                    "label": "Secondary Button",
+                    "name": "secondary_button",
+                    "type": "link",
+                    "return_format": "array",
+                    "instructions": "Secondary CTA button for this service",
+                    "required": 0
+                },
+                {
+                    "key": "field_services_is_active",
+                    "label": "Is Active",
+                    "name": "is_active",
+                    "type": "true_false",
+                    "ui": 1,
+                    "instructions": "Mark ONLY ONE service as active by default",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_tab_success_in_action",
+            "label": "Success in Action",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_success_section_title",
+            "label": "Section Title",
+            "name": "success_section_title",
+            "type": "text",
+            "instructions": "Title displayed above the carousel (e.g. \"SUCCESS IN ACTION\")",
+            "required": 0
+        },
+        {
+            "key": "field_success_items",
+            "label": "Success Items",
+            "name": "success_items",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Success Item",
+            "instructions": "Cards shown inside the success carousel",
+            "sub_fields": [
+                {
+                    "key": "field_success_items_quote",
+                    "label": "Quote Text",
+                    "name": "quote",
+                    "type": "textarea",
+                    "instructions": "Main testimonial text shown in the card",
+                    "required": 0
+                },
+                {
+                    "key": "field_success_items_image",
+                    "label": "Person Image",
+                    "name": "image",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "instructions": "Profile image shown at the top of the card",
+                    "required": 0
+                },
+                {
+                    "key": "field_success_items_name",
+                    "label": "Name",
+                    "name": "name",
+                    "type": "text",
+                    "instructions": "Person name (e.g. Sandra, Wendi)",
+                    "required": 0
+                },
+                {
+                    "key": "field_success_items_role",
+                    "label": "Role / Position",
+                    "name": "role",
+                    "type": "text",
+                    "instructions": "Role or position (e.g. CEO of Company)",
+                    "required": 0
+                },
+                {
+                    "key": "field_success_items_kpi_value",
+                    "label": "KPI Value",
+                    "name": "kpi_value",
+                    "type": "text",
+                    "instructions": "Numeric KPI value (e.g. +200%)",
+                    "required": 0
+                },
+                {
+                    "key": "field_success_items_kpi_label",
+                    "label": "KPI Label",
+                    "name": "kpi_label",
+                    "type": "text",
+                    "instructions": "KPI description (e.g. MQLs Growth)",
+                    "required": 0
+                },
+                {
+                    "key": "field_success_items_industry",
+                    "label": "Industry",
+                    "name": "industry",
+                    "type": "text",
+                    "instructions": "Industry label (e.g. B2B SaaS)",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_tab_faq",
+            "label": "FAQ",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_faq_title",
+            "label": "FAQ Title",
+            "name": "faq_title",
+            "type": "text",
+            "instructions": "Title displayed above the FAQ section (e.g. \"FREQUENTLY ASKED QUESTIONS\")",
+            "required": 0
+        },
+        {
+            "key": "field_faq_items",
+            "label": "FAQ Items",
+            "name": "faq_items",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add FAQ",
+            "sub_fields": [
+                {
+                    "key": "field_faq_question",
+                    "label": "Question",
+                    "name": "question",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_faq_answer",
+                    "label": "Answer",
+                    "name": "answer",
+                    "type": "wysiwyg",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_tab_global_cta",
+            "label": "Global CTA",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_global_cta_variant",
+            "label": "Background Variant",
+            "name": "global_cta_variant",
+            "type": "select",
+            "choices": {
+                "default": "Default Blue",
+                "dark": "Dark Blue"
+            },
+            "default_value": "default",
+            "instructions": "Controls the background color of the Global CTA section",
+            "required": 0
+        },
+        {
+            "key": "field_global_cta_columns",
+            "label": "Link Columns",
+            "name": "global_cta_columns",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Column",
+            "instructions": "Columns of links displayed in the Global CTA section",
+            "sub_fields": [
+                {
+                    "key": "field_global_cta_columns_title",
+                    "label": "Column Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "Title shown above the links (e.g. \"Quick Links\")",
+                    "required": 0
+                },
+                {
+                    "key": "field_global_cta_columns_links",
+                    "label": "Links",
+                    "name": "links",
+                    "type": "repeater",
+                    "layout": "table",
+                    "button_label": "Add Link",
+                    "sub_fields": [
+                        {
+                            "key": "field_global_cta_columns_links_link",
+                            "label": "Link",
+                            "name": "link",
+                            "type": "link",
+                            "return_format": "array",
+                            "instructions": "Navigation link displayed in this column",
+                            "required": 0
+                        }
+                    ],
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_global_cta_newsletter_title",
+            "label": "Newsletter Title",
+            "name": "global_cta_newsletter_title",
+            "type": "text",
+            "instructions": "Title shown above the newsletter form (e.g. \"Stay Updated With Our News\")",
+            "required": 0
+        },
+        {
+            "key": "field_global_cta_newsletter_placeholder",
+            "label": "Newsletter Placeholder",
+            "name": "global_cta_newsletter_placeholder",
+            "type": "text",
+            "instructions": "Placeholder text inside the email input field",
+            "required": 0
+        },
+        {
+            "key": "field_global_cta_newsletter_button",
+            "label": "Newsletter Button Text",
+            "name": "global_cta_newsletter_button",
+            "type": "text",
+            "instructions": "Text shown on the newsletter subscribe button",
+            "required": 0
+        },
+        {
+            "key": "field_global_cta_socials",
+            "label": "Social Links",
+            "name": "global_cta_socials",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add Social Icon",
+            "instructions": "Social media icons displayed under the newsletter",
+            "sub_fields": [
+                {
+                    "key": "field_global_cta_socials_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "instructions": "Social media icon image",
+                    "required": 0
+                },
+                {
+                    "key": "field_global_cta_socials_url",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "instructions": "Link to social profile",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_tab_contact_form_card",
+            "label": "Contact Form Card",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_contact_card_title",
+            "label": "Form Title",
+            "name": "contact_card_title",
+            "type": "textarea",
+            "instructions": "Supports HTML (e.g. READY TO GROW? <span>LET'S TALK</span>)",
+            "rows": 2,
+            "required": 0
+        },
+        {
+            "key": "field_contact_card_fields",
+            "label": "Form Fields",
+            "name": "contact_card_fields",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Field",
+            "instructions": "Controls all input and select fields in the form",
+            "sub_fields": [
+                {
+                    "key": "field_contact_card_fields_type",
+                    "label": "Field Type",
+                    "name": "type",
+                    "type": "select",
+                    "choices": {
+                        "text": "Text",
+                        "email": "Email",
+                        "url": "URL",
+                        "select": "Select"
+                    },
+                    "default_value": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_contact_card_fields_label",
+                    "label": "Field Label",
+                    "name": "label",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_contact_card_fields_placeholder",
+                    "label": "Placeholder",
+                    "name": "placeholder",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_contact_card_fields_required",
+                    "label": "Required",
+                    "name": "required",
+                    "type": "true_false",
+                    "default_value": 0,
+                    "required": 0
+                },
+                {
+                    "key": "field_contact_card_fields_options",
+                    "label": "Options",
+                    "name": "options",
+                    "type": "repeater",
+                    "layout": "table",
+                    "button_label": "Add Option",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_contact_card_fields_type",
+                                "operator": "==",
+                                "value": "select"
+                            }
+                        ]
+                    ],
+                    "sub_fields": [
+                        {
+                            "key": "field_contact_card_fields_options_label",
+                            "label": "Option Label",
+                            "name": "label",
+                            "type": "text",
+                            "required": 0
+                        },
+                        {
+                            "key": "field_contact_card_fields_options_value",
+                            "label": "Option Value",
+                            "name": "value",
+                            "type": "text",
+                            "required": 0
+                        }
+                    ],
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_contact_card_checkbox_text",
+            "label": "Checkbox Text",
+            "name": "contact_card_checkbox_text",
+            "type": "textarea",
+            "rows": 2,
+            "required": 0
+        },
+        {
+            "key": "field_contact_card_submit_text",
+            "label": "Submit Button Text",
+            "name": "contact_card_submit_text",
+            "type": "text",
+            "default_value": "Get in touch",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label"
+}

@@ -1,0 +1,121 @@
+{
+    "key": "group_header_settings",
+    "title": "Header Settings",
+    "fields": [
+        {
+            "key": "field_header_logo_tagline",
+            "label": "Logo Tagline",
+            "name": "header_logo_tagline",
+            "type": "text",
+            "instructions": "Tagline displayed below the logo (e.g. 'It's time to Grow')",
+            "default_value": "It's time to Grow",
+            "required": 0
+        },
+        {
+            "key": "field_header_navigation_items",
+            "label": "Navigation Items",
+            "name": "header_navigation_items",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Navigation Item",
+            "instructions": "Navigation menu items for the header",
+            "sub_fields": [
+                {
+                    "key": "field_header_nav_item_label",
+                    "label": "Label",
+                    "name": "label",
+                    "type": "text",
+                    "instructions": "Menu item label (e.g. 'Home', 'About us')",
+                    "required": 1
+                },
+                {
+                    "key": "field_header_nav_item_link",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "link",
+                    "return_format": "array",
+                    "instructions": "Link URL for the menu item",
+                    "required": 0
+                },
+                {
+                    "key": "field_header_nav_item_has_dropdown",
+                    "label": "Has Dropdown",
+                    "name": "has_dropdown",
+                    "type": "true_false",
+                    "default_value": 0,
+                    "instructions": "Enable if this item has a dropdown menu",
+                    "required": 0
+                },
+                {
+                    "key": "field_header_nav_item_dropdown_items",
+                    "label": "Dropdown Items",
+                    "name": "dropdown_items",
+                    "type": "repeater",
+                    "layout": "table",
+                    "button_label": "Add Dropdown Item",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_header_nav_item_has_dropdown",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "sub_fields": [
+                        {
+                            "key": "field_header_nav_dropdown_label",
+                            "label": "Label",
+                            "name": "label",
+                            "type": "text",
+                            "required": 1
+                        },
+                        {
+                            "key": "field_header_nav_dropdown_link",
+                            "label": "Link",
+                            "name": "link",
+                            "type": "link",
+                            "return_format": "array",
+                            "required": 0
+                        }
+                    ],
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_header_contact_button_text",
+            "label": "Contact Button Text",
+            "name": "header_contact_button_text",
+            "type": "text",
+            "instructions": "Text displayed on the contact button",
+            "default_value": "Contact Us",
+            "required": 0
+        },
+        {
+            "key": "field_header_contact_button_link",
+            "label": "Contact Button Link",
+            "name": "header_contact_button_link",
+            "type": "link",
+            "return_format": "array",
+            "instructions": "Link URL for the contact button",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "ranky-theme-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label"
+}
+

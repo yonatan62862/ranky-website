@@ -17,16 +17,20 @@
 
 .services__title {
   font-family: 'Rubik', sans-serif;
-  font-size: 32px;
-  font-weight: 500;
+  font-weight: 700;
+  font-size: 39px;
+  line-height: 46px;
+  color: #0E1552;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   text-align: center;
-  color: #1f2937;
   margin-bottom: 64px;
 }
 
-.services__title span {
+.services__title-light {
+  font-weight: 300;
+}
+
+.services__title-bold {
   font-weight: 700;
 }
 
@@ -86,6 +90,8 @@
   background: #ffffff;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
   border-color: transparent;
+  margin-right: -64px;
+  height: 24%;
 }
 
 /* ==============================
@@ -109,6 +115,13 @@
 .services__panel.is-active {
   display: block;
 }
+
+.btn--secondary {
+  background: #e7f1ff;
+  color: #111140;
+}
+
+
 
 /* ==============================
    CONTENT TYPOGRAPHY

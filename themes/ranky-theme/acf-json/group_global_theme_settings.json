@@ -3,32 +3,227 @@
     "title": "Global Theme Settings",
     "fields": [
         {
-            "key": "field_global_cta_title",
-            "label": "Global CTA Title",
-            "name": "global_cta_title",
-            "type": "text",
+            "key": "field_global_cta_variant",
+            "label": "Background Variant",
+            "name": "global_cta_variant",
+            "type": "select",
+            "choices": {
+                "default": "Default Blue",
+                "dark": "Dark Blue"
+            },
+            "default_value": "default",
+            "instructions": "Controls the background color of the Global CTA section",
             "required": 0
         },
         {
-            "key": "field_global_cta_text",
-            "label": "Global CTA Text",
-            "name": "global_cta_text",
+            "key": "field_global_cta_columns",
+            "label": "Link Columns",
+            "name": "global_cta_columns",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Column",
+            "instructions": "Columns of links displayed in the Global CTA section",
+            "sub_fields": [
+                {
+                    "key": "field_global_cta_columns_title",
+                    "label": "Column Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "Title shown above the links (e.g. \"Quick Links\")",
+                    "required": 0
+                },
+                {
+                    "key": "field_global_cta_columns_links",
+                    "label": "Links",
+                    "name": "links",
+                    "type": "repeater",
+                    "layout": "table",
+                    "button_label": "Add Link",
+                    "sub_fields": [
+                        {
+                            "key": "field_global_cta_columns_links_link",
+                            "label": "Link",
+                            "name": "link",
+                            "type": "link",
+                            "return_format": "array",
+                            "instructions": "Navigation link displayed in this column",
+                            "required": 0
+                        }
+                    ],
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_global_cta_newsletter_title",
+            "label": "Newsletter Title",
+            "name": "global_cta_newsletter_title",
+            "type": "text",
+            "instructions": "Title shown above the newsletter form (e.g. \"Stay Updated With Our News\")",
+            "required": 0
+        },
+        {
+            "key": "field_global_cta_newsletter_placeholder",
+            "label": "Newsletter Placeholder",
+            "name": "global_cta_newsletter_placeholder",
+            "type": "text",
+            "instructions": "Placeholder text inside the email input field",
+            "required": 0
+        },
+        {
+            "key": "field_global_cta_newsletter_button",
+            "label": "Newsletter Button Text",
+            "name": "global_cta_newsletter_button",
+            "type": "text",
+            "instructions": "Text shown on the newsletter subscribe button",
+            "required": 0
+        },
+        {
+            "key": "field_global_cta_socials",
+            "label": "Social Links",
+            "name": "global_cta_socials",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add Social Icon",
+            "instructions": "Social media icons displayed under the newsletter",
+            "sub_fields": [
+                {
+                    "key": "field_global_cta_socials_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "instructions": "Social media icon image",
+                    "required": 0
+                },
+                {
+                    "key": "field_global_cta_socials_url",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "instructions": "Link to social profile",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_global_contact_form_title_light",
+            "label": "Contact Form Title (Light)",
+            "name": "global_contact_form_title_light",
+            "type": "text",
+            "instructions": "Text before the highlighted part",
+            "required": 0
+        },
+        {
+            "key": "field_global_contact_form_title_bold",
+            "label": "Contact Form Title (Bold)",
+            "name": "global_contact_form_title_bold",
+            "type": "text",
+            "instructions": "Highlighted text",
+            "required": 0
+        },
+        {
+            "key": "field_global_contact_form_fields",
+            "label": "Contact Form Fields",
+            "name": "global_contact_form_fields",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Field",
+            "instructions": "Controls all input and select fields in the global contact form",
+            "sub_fields": [
+                {
+                    "key": "field_global_contact_form_fields_type",
+                    "label": "Field Type",
+                    "name": "type",
+                    "type": "select",
+                    "choices": {
+                        "text": "Text",
+                        "email": "Email",
+                        "url": "URL",
+                        "select": "Select"
+                    },
+                    "default_value": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_global_contact_form_fields_label",
+                    "label": "Field Label",
+                    "name": "label",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_global_contact_form_fields_placeholder",
+                    "label": "Placeholder",
+                    "name": "placeholder",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_global_contact_form_fields_required",
+                    "label": "Required",
+                    "name": "required",
+                    "type": "true_false",
+                    "default_value": 0,
+                    "required": 0
+                },
+                {
+                    "key": "field_global_contact_form_fields_options",
+                    "label": "Options",
+                    "name": "options",
+                    "type": "repeater",
+                    "layout": "table",
+                    "button_label": "Add Option",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_global_contact_form_fields_type",
+                                "operator": "==",
+                                "value": "select"
+                            }
+                        ]
+                    ],
+                    "sub_fields": [
+                        {
+                            "key": "field_global_contact_form_fields_options_label",
+                            "label": "Option Label",
+                            "name": "label",
+                            "type": "text",
+                            "required": 0
+                        },
+                        {
+                            "key": "field_global_contact_form_fields_options_value",
+                            "label": "Option Value",
+                            "name": "value",
+                            "type": "text",
+                            "required": 0
+                        }
+                    ],
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_global_contact_form_checkbox_text",
+            "label": "Checkbox Text",
+            "name": "global_contact_form_checkbox_text",
             "type": "textarea",
+            "rows": 2,
+            "instructions": "Text displayed next to the checkbox (e.g. privacy policy agreement)",
             "required": 0
         },
         {
-            "key": "field_global_cta_button_text",
-            "label": "Global CTA Button Text",
-            "name": "global_cta_button_text",
+            "key": "field_global_contact_form_submit_text",
+            "label": "Submit Button Text",
+            "name": "global_contact_form_submit_text",
             "type": "text",
-            "required": 0
-        },
-        {
-            "key": "field_global_cta_button_link",
-            "label": "Global CTA Button Link",
-            "name": "global_cta_button_link",
-            "type": "link",
-            "return_format": "array",
+            "default_value": "Get in touch",
+            "instructions": "Text displayed on the submit button",
             "required": 0
         }
     ],
@@ -47,4 +242,3 @@
     "label_placement": "top",
     "instruction_placement": "label"
 }
-

@@ -1,25 +1,105 @@
 {
     "key": "group_industry_page_fields",
-    "title": "Industry Page Fields",
+    "title": "Industry – Page Fields",
     "fields": [
         {
-            "key": "field_industry_hero_h1",
-            "label": "Hero H1",
-            "name": "hero_h1",
-            "type": "text",
+            "key": "field_tab_hero",
+            "label": "Hero",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
             "required": 0
         },
         {
-            "key": "field_defined_intro",
-            "label": "Defined Intro",
-            "name": "defined_intro",
+            "key": "field_hero_title_prefix",
+            "label": "Hero Title Prefix",
+            "name": "hero_title_prefix",
+            "type": "text",
+            "instructions": "First part of the title (e.g. 'Drive Growth at Scale with') - displayed in white, smaller font",
+            "default_value": "Drive Growth at Scale with",
+            "required": 0
+        },
+        {
+            "key": "field_hero_title_main",
+            "label": "Hero Title Main",
+            "name": "hero_title_main",
+            "type": "textarea",
+            "instructions": "Main title text (e.g. 'ENTERPRISE\\nMARKETING\\nBY RANKY') - displayed in light blue, large, uppercase. Use line breaks for multiple lines.",
+            "default_value": "ENTERPRISE\nMARKETING\nBY RANKY",
+            "rows": 3,
+            "required": 0
+        },
+        {
+            "key": "field_hero_subtitle",
+            "label": "Hero Subtitle",
+            "name": "hero_subtitle",
             "type": "textarea",
             "required": 0
         },
         {
-            "key": "field_defined_body",
-            "label": "Defined Body",
-            "name": "defined_body",
+            "key": "field_hero_primary_cta",
+            "label": "Hero Primary CTA",
+            "name": "hero_primary_cta",
+            "type": "link",
+            "return_format": "array",
+            "required": 0
+        },
+        {
+            "key": "field_hero_secondary_cta",
+            "label": "Hero Secondary CTA",
+            "name": "hero_secondary_cta",
+            "type": "link",
+            "return_format": "array",
+            "required": 0
+        },
+        {
+            "key": "field_hero_image",
+            "label": "Hero Image",
+            "name": "hero_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "required": 0
+        },
+        {
+            "key": "field_tab_industry_flow",
+            "label": "Industry Flow Section",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_message_intro_section",
+            "label": "Intro Section",
+            "name": "",
+            "type": "message",
+            "message": "Configure the Intro section that appears first in the Industry Flow.",
+            "required": 0
+        },
+        {
+            "key": "field_intro_title_prefix",
+            "label": "Intro Title Prefix",
+            "name": "intro_title_prefix",
+            "type": "text",
+            "instructions": "First part of the title (e.g. 'What Is') - displayed in smaller, gray font",
+            "default_value": "What Is",
+            "required": 0
+        },
+        {
+            "key": "field_intro_title_main",
+            "label": "Intro Title Main",
+            "name": "intro_title_main",
+            "type": "text",
+            "instructions": "Main part of the title (e.g. 'Enterprise Marketing?') - displayed in larger, dark blue font",
+            "default_value": "Enterprise Marketing?",
+            "required": 0
+        },
+        {
+            "key": "field_intro_content",
+            "label": "Intro Content",
+            "name": "intro_content",
             "type": "wysiwyg",
             "tabs": "all",
             "toolbar": "full",
@@ -27,22 +107,131 @@
             "required": 0
         },
         {
-            "key": "field_approach_text",
-            "label": "Approach Text",
-            "name": "approach_text",
-            "type": "textarea",
+            "key": "field_intro_image",
+            "label": "Intro Image",
+            "name": "intro_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
             "required": 0
         },
         {
-            "key": "field_approach_visual_type",
-            "label": "Approach Visual Type",
-            "name": "approach_visual_type",
-            "type": "select",
-            "choices": {
-                "image": "Image",
-                "lottie": "Lottie"
-            },
-            "default_value": "image",
+            "key": "field_message_challenges_solutions_section",
+            "label": "Challenges & Solutions Section",
+            "name": "",
+            "type": "message",
+            "message": "Configure the Challenges & Solutions section that displays challenges and their corresponding solutions.",
+            "required": 0
+        },
+        {
+            "key": "field_challenges_solutions_title_prefix",
+            "label": "Challenges & Solutions Title Prefix",
+            "name": "challenges_solutions_title_prefix",
+            "type": "text",
+            "instructions": "First part of the title - displayed in smaller, gray font",
+            "required": 0
+        },
+        {
+            "key": "field_challenges_solutions_title_main",
+            "label": "Challenges & Solutions Title Main",
+            "name": "challenges_solutions_title_main",
+            "type": "text",
+            "instructions": "Main part of the title - displayed in larger, dark blue font",
+            "required": 0
+        },
+        {
+            "key": "field_challenges_solutions_subtitle_prefix",
+            "label": "Challenges & Solutions Subtitle Prefix",
+            "name": "challenges_solutions_subtitle_prefix",
+            "type": "text",
+            "instructions": "First part of the subtitle - displayed in smaller, gray font",
+            "required": 0
+        },
+        {
+            "key": "field_challenges_solutions_subtitle_main",
+            "label": "Challenges & Solutions Subtitle Main",
+            "name": "challenges_solutions_subtitle_main",
+            "type": "text",
+            "instructions": "Main part of the subtitle - displayed in larger, dark blue font",
+            "required": 0
+        },
+        {
+            "key": "field_challenges_column_title",
+            "label": "Challenges Column Title",
+            "name": "challenges_column_title",
+            "type": "text",
+            "required": 0
+        },
+        {
+            "key": "field_solutions_column_title",
+            "label": "Solutions Column Title",
+            "name": "solutions_column_title",
+            "type": "text",
+            "required": 0
+        },
+        {
+            "key": "field_challenges_solutions",
+            "label": "Challenges & Solutions",
+            "name": "challenges_solutions",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Challenge & Solution",
+            "sub_fields": [
+                {
+                    "key": "field_challenge_title",
+                    "label": "Challenge Title",
+                    "name": "challenge_title",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_challenge_icon",
+                    "label": "Challenge Icon",
+                    "name": "challenge_icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "required": 0
+                },
+                {
+                    "key": "field_solution_text",
+                    "label": "Solution Text",
+                    "name": "solution_text",
+                    "type": "text",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_message_approach_section",
+            "label": "Approach Section",
+            "name": "",
+            "type": "message",
+            "message": "Configure the Approach section that explains Ranky's methodology for this industry.",
+            "required": 0
+        },
+        {
+            "key": "field_approach_eyebrow",
+            "label": "Approach Eyebrow",
+            "name": "approach_eyebrow",
+            "type": "text",
+            "required": 0
+        },
+        {
+            "key": "field_approach_title",
+            "label": "Approach Title",
+            "name": "approach_title",
+            "type": "text",
+            "required": 0
+        },
+        {
+            "key": "field_approach_content",
+            "label": "Approach Content",
+            "name": "approach_content",
+            "type": "textarea",
             "required": 0
         },
         {
@@ -53,48 +242,212 @@
             "return_format": "array",
             "preview_size": "medium",
             "library": "all",
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_approach_visual_type",
-                        "operator": "==",
-                        "value": "image"
-                    }
-                ]
+            "required": 0
+        },
+        {
+            "key": "field_message_solutions_section",
+            "label": "Solutions Section",
+            "name": "",
+            "type": "message",
+            "message": "Configure the Solutions section that displays related services for this industry.",
+            "required": 0
+        },
+        {
+            "key": "field_solutions_title",
+            "label": "Solutions Title",
+            "name": "solutions_title",
+            "type": "text",
+            "required": 0
+        },
+        {
+            "key": "field_solutions_subtitle",
+            "label": "Solutions Subtitle",
+            "name": "solutions_subtitle",
+            "type": "textarea",
+            "required": 0
+        },
+        {
+            "key": "field_solutions_items",
+            "label": "Solutions Items",
+            "name": "solutions_items",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Solution",
+            "sub_fields": [
+                {
+                    "key": "field_solution_icon",
+                    "label": "Solution Icon",
+                    "name": "solution_icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "required": 0
+                },
+                {
+                    "key": "field_solution_title",
+                    "label": "Solution Title",
+                    "name": "solution_title",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_solution_you_gain",
+                    "label": "You Gain Text",
+                    "name": "solution_you_gain",
+                    "type": "textarea",
+                    "required": 0
+                }
             ],
             "required": 0
         },
         {
-            "key": "field_approach_lottie",
-            "label": "Approach Lottie",
-            "name": "approach_lottie",
-            "type": "file",
-            "return_format": "array",
-            "library": "all",
-            "mime_types": "json",
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_approach_visual_type",
-                        "operator": "==",
-                        "value": "lottie"
-                    }
-                ]
+            "key": "field_tab_results",
+            "label": "Results",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_results_title",
+            "label": "Results Title",
+            "name": "results_title",
+            "type": "text",
+            "required": 0
+        },
+        {
+            "key": "field_results_subtitle",
+            "label": "Results Subtitle",
+            "name": "results_subtitle",
+            "type": "text",
+            "required": 0
+        },
+        {
+            "key": "field_results_items",
+            "label": "Results Items",
+            "name": "results_items",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Result",
+            "sub_fields": [
+                {
+                    "key": "field_results_items_value",
+                    "label": "Result Value",
+                    "name": "result_value",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_results_items_description",
+                    "label": "Result Description",
+                    "name": "result_description",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "new_lines": ""
+                }
+            ]
+        },
+        {
+            "key": "field_tab_logos",
+            "label": "Logos",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_logos_title",
+            "label": "Logos Title",
+            "name": "logos_title",
+            "type": "text",
+            "required": 0
+        },
+        {
+            "key": "field_logos",
+            "label": "Logos",
+            "name": "logos",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Logo",
+            "sub_fields": [
+                {
+                    "key": "field_logo_image",
+                    "label": "Logo Image",
+                    "name": "logo_image",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "required": 0
+                },
+                {
+                    "key": "field_logo_name",
+                    "label": "Logo Name",
+                    "name": "logo_name",
+                    "type": "text",
+                    "required": 0
+                }
             ],
             "required": 0
         },
         {
-            "key": "field_solutions_relationship",
-            "label": "Solutions Relationship",
-            "name": "solutions_relationship",
-            "type": "relationship",
-            "post_type": [
-                "service"
-            ],
-            "filters": [
-                "search"
-            ],
-            "return_format": "object",
+            "key": "field_tab_faq",
+            "label": "FAQ",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_industry_faq_title_light",
+            "label": "FAQ Title (Light)",
+            "name": "faq_title_light",
+            "type": "text",
+            "instructions": "Text before the highlighted part (e.g. \"FREQUENTLY\")",
+            "required": 0
+        },
+        {
+            "key": "field_industry_faq_title_bold",
+            "label": "FAQ Title (Bold)",
+            "name": "faq_title_bold",
+            "type": "text",
+            "instructions": "Highlighted text (e.g. \"ASKED QUESTIONS\")",
             "required": 0
         },
         {
@@ -141,4 +494,3 @@
     "label_placement": "top",
     "instruction_placement": "label"
 }
-

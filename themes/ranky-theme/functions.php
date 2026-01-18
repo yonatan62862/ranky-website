@@ -133,6 +133,7 @@ add_action('wp_enqueue_scripts', 'ranky_enqueue_scripts');
 
 
 function ranky_enqueue_styles() {
+    // All styles are loaded via @import in style.css
     wp_enqueue_style(
         'ranky-style',
         get_stylesheet_uri(), // style.css
@@ -144,6 +145,10 @@ add_action('wp_enqueue_scripts', 'ranky_enqueue_styles');
 
 
 function ranky_enqueue_lottie_assets() {
+    // Only load Lottie on front page
+    if (!is_front_page()) {
+        return;
+    }
 
     // Lottie library
     wp_enqueue_script(
@@ -207,3 +212,79 @@ function ranky_enqueue_header_scripts() {
     }
   }
   add_action('wp_enqueue_scripts', 'enqueue_success_in_action_script');
+
+  function enqueue_system_features_script() {
+    if (is_singular('service')) {
+      wp_enqueue_script(
+        'system-features',
+        get_template_directory_uri() . '/assets/js/system-features.js',
+        [],
+        '1.0',
+        true
+      );
+    }
+  }
+  add_action('wp_enqueue_scripts', 'enqueue_system_features_script');
+
+  add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_script(
+      'contact-form',
+      get_template_directory_uri() . '/assets/js/contact-form.js',
+      ['jquery'],
+      null,
+      true
+    );
+  
+    wp_localize_script(
+      'contact-form',
+      'contactFormData',
+      [
+        'ajaxUrl' => admin_url('admin-ajax.php'),
+      ]
+    );
+  });
+  
+  
+
+  add_action('wp_ajax_submit_contact_card', 'handle_contact_card_submit');
+  add_action('wp_ajax_nopriv_submit_contact_card', 'handle_contact_card_submit');
+  
+  function handle_contact_card_submit() {
+    if (
+      empty($_POST['formData']) ||
+      !isset($_POST['formData'])
+    ) {
+      wp_send_json_error('Missing data');
+    }
+  
+    parse_str($_POST['formData'], $data);
+  
+    if (
+      empty($data['contact_card_nonce']) ||
+      !wp_verify_nonce($data['contact_card_nonce'], 'contact_card_submit')
+    ) {
+      wp_send_json_error('Invalid nonce');
+    }
+  
+    if (empty($data['terms_approved'])) {
+      wp_send_json_error('Terms not approved');
+    }
+  
+    $message = "New contact form submission:\n\n";
+  
+    foreach ($data as $key => $value) {
+      if (strpos($key, 'field_') === 0 && $value !== '') {
+        $message .= ucfirst(str_replace('_', ' ', $key)) . ": " . sanitize_text_field($value) . "\n";
+      }
+    }
+    error_log('CONTACT FORM SUBMITTED');
+
+    wp_mail(
+      'yonatan62862@gmail.com',
+      'New Contact Form Message',
+      $message
+    );
+  
+    wp_send_json_success();
+  }
+  

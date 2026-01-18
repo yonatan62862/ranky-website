@@ -1,20 +1,17 @@
 <?php
 /**
- * Global CTA / Footer CTA Section (Home only)
+ * Global CTA Section
+ * Appears on all pages above the footer
  */
 
-if (!is_front_page()) {
-    return;
-}
+$variant = get_field('global_cta_variant', 'option') ?: 'default';
+$columns = get_field('global_cta_columns', 'option');
 
-$variant = get_field('global_cta_variant') ?: 'default';
-$columns = get_field('global_cta_columns');
+$newsletter_title = get_field('global_cta_newsletter_title', 'option');
+$newsletter_placeholder = get_field('global_cta_newsletter_placeholder', 'option') ?: 'Enter Your Email';
+$newsletter_button = get_field('global_cta_newsletter_button', 'option') ?: 'Subscribe';
 
-$newsletter_title = get_field('global_cta_newsletter_title');
-$newsletter_placeholder = get_field('global_cta_newsletter_placeholder') ?: 'Enter Your Email';
-$newsletter_button = get_field('global_cta_newsletter_button') ?: 'Subscribe';
-
-$socials = get_field('global_cta_socials');
+$socials = get_field('global_cta_socials', 'option');
 ?>
 
 <section class="global-cta global-cta--<?php echo esc_attr($variant); ?>">
@@ -104,3 +101,4 @@ $socials = get_field('global_cta_socials');
     </div>
   </div>
 </section>
+

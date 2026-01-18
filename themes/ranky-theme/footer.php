@@ -3,6 +3,9 @@
  * Footer
  */
 
+get_template_part('template-parts/global-contact-form');
+get_template_part('template-parts/global-cta');
+
 $footer_text = get_field('footer_text', 'option');
 $current_year = date('Y');
 ?>

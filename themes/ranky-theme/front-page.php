@@ -9,17 +9,15 @@ get_header();
 <main id="site-content">
 
     <?php
-    // Hero section
-    get_template_part('template-parts/hero');
-    get_template_part('template-parts/why-ranky');
-    get_template_part('template-parts/what-you-gain');
-    get_template_part('template-parts/our-client');
-    get_template_part('template-parts/blue-cards');
-    get_template_part('template-parts/services-grid');
-    get_template_part('template-parts/success-in-action');
-    get_template_part('template-parts/faq');
-    get_template_part('template-parts/contact-form-card'); 
-    get_template_part('template-parts/global-cta');
+    get_template_part('template-parts/home/hero');
+    get_template_part('template-parts/home/why-ranky');
+    get_template_part('template-parts/home/what-you-gain');
+    get_template_part('template-parts/home/results');
+    get_template_part('template-parts/home/our-client');
+    get_template_part('template-parts/home/blue-cards');
+    get_template_part('template-parts/home/services');
+    get_template_part('template-parts/home/success-in-action');
+    get_template_part('template-parts/home/faq');
     ?>
 
 </main>

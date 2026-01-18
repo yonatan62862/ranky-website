@@ -3,35 +3,164 @@
     "title": "Service Page Fields",
     "fields": [
         {
-            "key": "field_service_hero_h1",
-            "label": "Hero H1",
-            "name": "hero_h1",
-            "type": "text",
+            "key": "field_tab_service_hero",
+            "label": "Hero",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
             "required": 0
         },
         {
-            "key": "field_comparison_rows",
-            "label": "Comparison Rows",
-            "name": "comparison_rows",
+            "key": "field_service_hero_eyebrow",
+            "label": "Eyebrow Text",
+            "name": "service_hero_eyebrow",
+            "type": "text",
+            "instructions": "Small eyebrow text above the main title",
+            "required": 0
+        },
+        {
+            "key": "field_service_hero_title",
+            "label": "Title",
+            "name": "service_hero_title",
+            "type": "text",
+            "instructions": "Main H1 title for the service hero",
+            "required": 1
+        },
+        {
+            "key": "field_service_hero_text",
+            "label": "Description",
+            "name": "service_hero_text",
+            "type": "textarea",
+            "instructions": "Short description text under the title",
+            "required": 0
+        },
+        {
+            "key": "field_service_hero_primary_button",
+            "label": "Primary Button",
+            "name": "service_hero_primary_button",
+            "type": "link",
+            "return_format": "array",
+            "instructions": "Primary CTA button in the hero section",
+            "required": 0
+        },
+        {
+            "key": "field_service_hero_secondary_button",
+            "label": "Secondary Button",
+            "name": "service_hero_secondary_button",
+            "type": "link",
+            "return_format": "array",
+            "instructions": "Secondary CTA button in the hero section",
+            "required": 0
+        },
+        {
+            "key": "field_service_hero_image",
+            "label": "Hero Illustration",
+            "name": "service_hero_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "large",
+            "library": "all",
+            "instructions": "Main illustration/image displayed on the right side of the hero",
+            "required": 0
+        },
+        {
+            "key": "field_tab_service_comparison",
+            "label": "Comparison",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_why_different_eyebrow",
+            "label": "Eyebrow Text",
+            "name": "why_different_eyebrow",
+            "type": "text",
+            "instructions": "TL;DR text displayed above the main title",
+            "required": 0
+        },
+        {
+            "key": "field_why_different_title",
+            "label": "Title",
+            "name": "why_different_title",
+            "type": "text",
+            "instructions": "Main title for the comparison section (e.g. \"Why Modern Content Marketing Is Different\")",
+            "required": 0
+        },
+        {
+            "key": "field_why_different_subtitle",
+            "label": "Subtitle",
+            "name": "why_different_subtitle",
+            "type": "text",
+            "instructions": "Subtitle text under the main title (e.g. \"Content Marketing: Yesterday vs. Today\")",
+            "required": 0
+        },
+        {
+            "key": "field_old_way_items",
+            "label": "Old Way Items",
+            "name": "old_way_items",
             "type": "repeater",
             "layout": "block",
-            "button_label": "Add Row",
+            "button_label": "Add Old Way Item",
+            "instructions": "List of items representing the \"Old Way\"",
             "sub_fields": [
                 {
-                    "key": "field_comparison_old_way",
-                    "label": "Old Way",
-                    "name": "old_way",
-                    "type": "textarea",
+                    "key": "field_old_way_items_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
                     "required": 0
                 },
                 {
-                    "key": "field_comparison_ranky_way",
-                    "label": "Ranky Way",
-                    "name": "ranky_way",
-                    "type": "textarea",
+                    "key": "field_old_way_items_text",
+                    "label": "Text",
+                    "name": "text",
+                    "type": "text",
+                    "instructions": "Text content for the Old Way item",
                     "required": 0
                 }
             ],
+            "required": 0
+        },
+        {
+            "key": "field_ranky_way_items",
+            "label": "Ranky Way Items",
+            "name": "ranky_way_items",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Ranky Way Item",
+            "instructions": "List of items representing the \"Ranky Way\"",
+            "sub_fields": [
+                {
+                    "key": "field_ranky_way_items_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "required": 0
+                },
+                {
+                    "key": "field_ranky_way_items_text",
+                    "label": "Text",
+                    "name": "text",
+                    "type": "text",
+                    "instructions": "Text content for the Ranky Way item",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_tab_service_benefits",
+            "label": "Benefits",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
             "required": 0
         },
         {
@@ -60,12 +189,45 @@
             "required": 0
         },
         {
+            "key": "field_tab_service_process",
+            "label": "Process Steps",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_process_title_light",
+            "label": "Section Title (Light)",
+            "name": "process_title_light",
+            "type": "text",
+            "instructions": "Text before the highlighted part",
+            "required": 0
+        },
+        {
+            "key": "field_process_title_bold",
+            "label": "Section Title (Bold)",
+            "name": "process_title_bold",
+            "type": "text",
+            "instructions": "Highlighted text",
+            "required": 0
+        },
+        {
+            "key": "field_process_subtitle",
+            "label": "Section Subtitle",
+            "name": "process_subtitle",
+            "type": "textarea",
+            "instructions": "Subtitle/description text explaining the process",
+            "required": 0
+        },
+        {
             "key": "field_process_steps",
             "label": "Process Steps",
             "name": "process_steps",
             "type": "repeater",
             "layout": "block",
             "button_label": "Add Step",
+            "instructions": "Add up to 6 process steps (arranged in a 2x3 grid)",
             "sub_fields": [
                 {
                     "key": "field_process_step_title",
@@ -85,28 +247,309 @@
             "required": 0
         },
         {
+            "key": "field_process_button",
+            "label": "CTA Button",
+            "name": "process_button",
+            "type": "link",
+            "return_format": "array",
+            "instructions": "Button displayed at the bottom of the process section (e.g. \"Launch Smarter Campaigns Now\")",
+            "required": 0
+        },
+        {
+            "key": "field_tab_service_results",
+            "label": "Results",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_results_enabled",
+            "label": "Enable Results Section",
+            "name": "results_enabled",
+            "type": "true_false",
+            "instructions": "Toggle to show/hide the Results section on this service page",
+            "ui": 1,
+            "default_value": 0,
+            "required": 0
+        },
+        {
+            "key": "field_results_eyebrow",
+            "label": "Eyebrow Text",
+            "name": "results_eyebrow",
+            "type": "text",
+            "instructions": "Small text displayed above the main title (e.g. \"ORM in Action\")",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_results_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_results_title_light",
+            "label": "Section Title (Light)",
+            "name": "results_title_light",
+            "type": "text",
+            "instructions": "Text before the highlighted part",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_results_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_results_title_bold",
+            "label": "Section Title (Bold)",
+            "name": "results_title_bold",
+            "type": "text",
+            "instructions": "Highlighted text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_results_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_results_subtitle",
+            "label": "Section Subtitle",
+            "name": "results_subtitle",
+            "type": "textarea",
+            "instructions": "Optional subtitle text displayed below the main title",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_results_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "required": 0
+        },
+        {
             "key": "field_results_items",
             "label": "Results Items",
             "name": "results_items",
             "type": "repeater",
+            "instructions": "Add result cards to display in the Results section",
             "layout": "block",
-            "button_label": "Add Item",
+            "button_label": "Add Result",
+            "min": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_results_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "sub_fields": [
                 {
-                    "key": "field_results_metric",
-                    "label": "Metric",
-                    "name": "metric",
+                    "key": "field_results_items_value",
+                    "label": "Metric Value",
+                    "name": "result_value",
+                    "type": "text",
+                    "instructions": "The metric value to display prominently (e.g. \"4.9 -> 5.0\", \"72%\", \"+300\")",
+                    "required": 0
+                },
+                {
+                    "key": "field_results_items_description",
+                    "label": "Description",
+                    "name": "result_description",
+                    "type": "text",
+                    "instructions": "Description text for this result (e.g. \"Average Rating Recovery\", \"Sentiment Improvement\")",
+                    "required": 0
+                },
+                {
+                    "key": "field_results_items_tag",
+                    "label": "Client Type / Tag",
+                    "name": "result_tag",
+                    "type": "text",
+                    "instructions": "Client type or tag (e.g. \"Local Retail Chain\", \"B2B SaaS Firm\", \"Healthcare Brand\")",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_tab_service_what_you_gain",
+            "label": "What You Gain",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_wyg_title_light",
+            "label": "Section Title (Light)",
+            "name": "wyg_title_light",
+            "type": "text",
+            "instructions": "Text before the highlighted part",
+            "required": 0
+        },
+        {
+            "key": "field_wyg_title_bold",
+            "label": "Section Title (Bold)",
+            "name": "wyg_title_bold",
+            "type": "text",
+            "instructions": "Highlighted text",
+            "required": 0
+        },
+        {
+            "key": "field_wyg_subtitle",
+            "label": "Section Subtitle",
+            "name": "wyg_subtitle",
+            "type": "text",
+            "required": 0
+        },
+        {
+            "key": "field_wyg_cards",
+            "label": "Gain Cards",
+            "name": "wyg_cards",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Gain Card",
+            "sub_fields": [
+                {
+                    "key": "field_wyg_cards_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "required": 0
+                },
+                {
+                    "key": "field_wyg_cards_title",
+                    "label": "Title",
+                    "name": "title",
                     "type": "text",
                     "required": 0
                 },
                 {
-                    "key": "field_results_description",
+                    "key": "field_wyg_cards_description",
                     "label": "Description",
                     "name": "description",
                     "type": "textarea",
                     "required": 0
                 }
             ],
+            "required": 0
+        },
+        {
+            "key": "field_wyg_primary_button",
+            "label": "Primary Button",
+            "name": "wyg_primary_button",
+            "type": "link",
+            "return_format": "array",
+            "required": 0
+        },
+        {
+            "key": "field_wyg_secondary_button",
+            "label": "Secondary Button",
+            "name": "wyg_secondary_button",
+            "type": "link",
+            "return_format": "array",
+            "required": 0
+        },
+        {
+            "key": "field_wyg_system_title_light",
+            "label": "System Title (Light)",
+            "name": "wyg_system_title_light",
+            "type": "text",
+            "instructions": "Text before the highlighted part",
+            "required": 0
+        },
+        {
+            "key": "field_wyg_system_title_bold",
+            "label": "System Title (Bold)",
+            "name": "wyg_system_title_bold",
+            "type": "text",
+            "instructions": "Highlighted text",
+            "required": 0
+        },
+        {
+            "key": "field_wyg_system_text",
+            "label": "System Text",
+            "name": "wyg_system_text",
+            "type": "textarea",
+            "required": 0
+        },
+        {
+            "key": "field_wyg_system_features",
+            "label": "System Features",
+            "name": "wyg_system_features",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Add Feature",
+            "sub_fields": [
+                {
+                    "key": "field_wyg_system_features_text",
+                    "label": "Feature Text",
+                    "name": "text",
+                    "type": "text",
+                    "required": 0
+                }
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_wyg_system_button",
+            "label": "System Button",
+            "name": "wyg_system_button",
+            "type": "link",
+            "return_format": "array",
+            "required": 0
+        },
+        {
+            "key": "field_wyg_system_image",
+            "label": "System Image",
+            "name": "wyg_system_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "large",
+            "library": "all",
+            "required": 0
+        },
+        {
+            "key": "field_tab_service_faq",
+            "label": "FAQ",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_service_faq_title_light",
+            "label": "FAQ Title (Light)",
+            "name": "faq_title_light",
+            "type": "text",
+            "instructions": "Text before the highlighted part (e.g. \"FREQUENTLY\")",
+            "required": 0
+        },
+        {
+            "key": "field_service_faq_title_bold",
+            "label": "FAQ Title (Bold)",
+            "name": "faq_title_bold",
+            "type": "text",
+            "instructions": "Highlighted text (e.g. \"ASKED QUESTIONS\")",
             "required": 0
         },
         {
@@ -153,4 +596,3 @@
     "label_placement": "top",
     "instruction_placement": "label"
 }
-

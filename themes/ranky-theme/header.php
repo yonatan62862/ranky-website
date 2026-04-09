@@ -7,7 +7,7 @@
 </head>
 
 <?php
-// Check if we're on a service page with light hero background
+// Check if we're on a service page with light hero background (dark header = dark logo/links for light bg)
 $is_light_hero_service = false;
 $light_hero_class = '';
 if (is_singular('service')) {
@@ -47,7 +47,7 @@ if (is_singular('service')) {
         $contact_text = get_field('header_contact_button_text', 'option') ?: 'Contact Us';
         $nav_items = get_field('header_navigation_items', 'option');
         if ($nav_items && is_array($nav_items)):
-          foreach ($nav_items as $item): 
+          foreach ($nav_items as $index => $item): 
             $label = $item['label'] ?? '';
             $link = $item['link'] ?? [];
             $has_dropdown = !empty($item['has_dropdown']);
@@ -95,6 +95,18 @@ if (is_singular('service')) {
               </ul>
             <?php endif; ?>
           </li>
+          <?php
+          if ($index === 0) :
+            $blog_url = get_post_type_archive_link('blog');
+            if ($blog_url) :
+          ?>
+          <li class="site-header__menu-item">
+            <a href="<?php echo esc_url($blog_url); ?>" class="site-header__menu-link">Blog</a>
+          </li>
+          <?php
+            endif;
+          endif;
+          ?>
         <?php 
           endforeach;
         endif; 
@@ -126,7 +138,7 @@ if (is_singular('service')) {
       <ul class="mobile-menu__list">
         <?php 
         if ($nav_items && is_array($nav_items)):
-          foreach ($nav_items as $item): 
+          foreach ($nav_items as $index => $item): 
             $label = $item['label'] ?? '';
             $link = $item['link'] ?? [];
             $has_dropdown = !empty($item['has_dropdown']);
@@ -169,6 +181,18 @@ if (is_singular('service')) {
               </ul>
             <?php endif; ?>
           </li>
+          <?php
+          if ($index === 0) :
+            $blog_url = get_post_type_archive_link('blog');
+            if ($blog_url) :
+          ?>
+          <li class="mobile-menu__item">
+            <a href="<?php echo esc_url($blog_url); ?>" class="mobile-menu__link">Blog</a>
+          </li>
+          <?php
+            endif;
+          endif;
+          ?>
         <?php 
           endforeach;
         endif; 

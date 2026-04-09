@@ -225,6 +225,53 @@
             "default_value": "Get in touch",
             "instructions": "Text displayed on the submit button",
             "required": 0
+        },
+        {
+            "key": "field_tab_blog_archive_cta",
+            "label": "Blog Archive – Enterprise CTA",
+            "name": "",
+            "type": "tab",
+            "instructions": "Settings for the \"Our Approach\" section on the main Blog listing page (/blog/). For individual posts, use the Enterprise CTA tab when editing each blog post.",
+            "required": 0
+        },
+        {
+            "key": "field_blog_archive_enterprise_cta_title",
+            "label": "CTA Title",
+            "name": "blog_archive_enterprise_cta_title",
+            "type": "text",
+            "default_value": "Ranky's Enterprise Approach",
+            "instructions": "Title of the Enterprise CTA block on the blog archive page",
+            "required": 0
+        },
+        {
+            "key": "field_blog_archive_enterprise_cta_text",
+            "label": "CTA Description",
+            "name": "blog_archive_enterprise_cta_text",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "Scale your growth with strategies built for enterprise. From SEO to content and paid media, we align every channel with your business goals.",
+            "instructions": "Short description in the Enterprise CTA block",
+            "required": 0
+        },
+        {
+            "key": "field_blog_archive_enterprise_cta_button",
+            "label": "CTA Button",
+            "name": "blog_archive_enterprise_cta_button",
+            "type": "link",
+            "return_format": "array",
+            "instructions": "Button link (e.g. \"Learn More\" to contact or a landing page)",
+            "required": 0
+        },
+        {
+            "key": "field_blog_archive_enterprise_cta_image",
+            "label": "CTA Image",
+            "name": "blog_archive_enterprise_cta_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "instructions": "Image shown in the Enterprise CTA section on the blog archive page (e.g. rocket illustration)",
+            "required": 0
         }
     ],
     "location": [

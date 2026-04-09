@@ -1,0 +1,215 @@
+{
+    "key": "group_blog_page_fields",
+    "title": "Blog Post Fields",
+    "fields": [
+        {
+            "key": "field_tab_blog_hero",
+            "label": "Hero Section",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_blog_hero_custom_author",
+            "label": "Custom Author Name",
+            "name": "blog_hero_custom_author",
+            "type": "text",
+            "instructions": "Override the default author name displayed in the hero. Leave empty to use the post author.",
+            "required": 0
+        },
+        {
+            "key": "field_blog_hero_custom_date",
+            "label": "Custom Publication Date",
+            "name": "blog_hero_custom_date",
+            "type": "date_picker",
+            "display_format": "F j, Y",
+            "return_format": "F j, Y",
+            "instructions": "Override the default publication date. Leave empty to use the post date.",
+            "required": 0
+        },
+        {
+            "key": "field_blog_hero_featured_image_override",
+            "label": "Hero Featured Image Override",
+            "name": "blog_hero_featured_image_override",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "large",
+            "library": "all",
+            "instructions": "Optional: Override the featured image specifically for the hero section. Leave empty to use the post featured image.",
+            "required": 0
+        },
+        {
+            "key": "field_tab_blog_content",
+            "label": "Content",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_blog_custom_excerpt",
+            "label": "Custom Excerpt",
+            "name": "blog_custom_excerpt",
+            "type": "textarea",
+            "instructions": "Custom excerpt for archive/card display. If empty, WordPress excerpt or auto-generated excerpt will be used.",
+            "rows": 3,
+            "required": 0
+        },
+        {
+            "key": "field_blog_excerpt_length",
+            "label": "Excerpt Length (words)",
+            "name": "blog_excerpt_length",
+            "type": "number",
+            "instructions": "Number of words for auto-generated excerpt in blog cards. Default: 20",
+            "default_value": 20,
+            "min": 10,
+            "max": 50,
+            "required": 0
+        },
+        {
+            "key": "field_tab_blog_enterprise_cta",
+            "label": "Enterprise CTA",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_blog_enterprise_cta_enabled",
+            "label": "Show Enterprise CTA",
+            "name": "blog_enterprise_cta_enabled",
+            "type": "true_false",
+            "instructions": "Toggle to show/hide the Enterprise CTA section on this blog post",
+            "ui": 1,
+            "default_value": 1,
+            "required": 0
+        },
+        {
+            "key": "field_blog_enterprise_cta_title",
+            "label": "CTA Title",
+            "name": "blog_enterprise_cta_title",
+            "type": "text",
+            "instructions": "Title for the Enterprise CTA section",
+            "default_value": "Ranky's Enterprise Approach",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_blog_enterprise_cta_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_blog_enterprise_cta_text",
+            "label": "CTA Description",
+            "name": "blog_enterprise_cta_text",
+            "type": "textarea",
+            "instructions": "Description text for the Enterprise CTA section",
+            "default_value": "Scale your growth with strategies built for enterprise. From SEO to content and paid media, we align every channel with your business goals.",
+            "rows": 3,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_blog_enterprise_cta_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_blog_enterprise_cta_button",
+            "label": "CTA Button",
+            "name": "blog_enterprise_cta_button",
+            "type": "link",
+            "return_format": "array",
+            "instructions": "Button link for the Enterprise CTA section",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_blog_enterprise_cta_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_blog_enterprise_cta_image",
+            "label": "CTA Image",
+            "name": "blog_enterprise_cta_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "large",
+            "library": "all",
+            "instructions": "Rocket illustration or image for the Enterprise CTA section",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_blog_enterprise_cta_enabled",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "required": 0
+        },
+        {
+            "key": "field_tab_blog_seo",
+            "label": "SEO",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "required": 0
+        },
+        {
+            "key": "field_blog_meta_description",
+            "label": "Meta Description",
+            "name": "blog_meta_description",
+            "type": "textarea",
+            "instructions": "Custom meta description for SEO. If empty, excerpt will be used.",
+            "rows": 3,
+            "maxlength": 160,
+            "required": 0
+        },
+        {
+            "key": "field_blog_og_image",
+            "label": "Open Graph Image",
+            "name": "blog_og_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "large",
+            "library": "all",
+            "instructions": "Custom OG image for social sharing. If empty, featured image will be used.",
+            "required": 0
+        },
+        {
+            "key": "field_blog_focus_keyword",
+            "label": "Focus Keyword",
+            "name": "blog_focus_keyword",
+            "type": "text",
+            "instructions": "Primary keyword for this blog post (for SEO purposes)",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "blog"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label"
+}

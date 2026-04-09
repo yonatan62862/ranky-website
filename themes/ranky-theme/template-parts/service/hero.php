@@ -66,7 +66,47 @@ if (!$title) {
                 <?php endif; ?>
             </div>
 
-            <?php if ($hero_image) : ?>
+            <?php
+            $is_social_media = false;
+            $is_paid_ads = false;
+            $is_seo_geo = false;
+            $is_external_cmo = false;
+            $is_orm = false;
+            $is_content_marketing = false;
+            if (is_singular('service')) {
+                $slug = get_post_field('post_name', get_the_ID());
+                $post_title = get_the_title();
+                $slug_lower = strtolower($slug);
+                $is_social_media = (
+                    $slug_lower === 'social-media' || $slug_lower === 'socialmedia' ||
+                    stripos($post_title, 'Social Media') !== false
+                );
+                $is_paid_ads = (
+                    $slug_lower === 'paid-ads' || $slug_lower === 'paidads' ||
+                    stripos($post_title, 'Paid Ads') !== false
+                );
+                $is_seo_geo = ($slug_lower === 'seo-geo');
+                $is_external_cmo = ($slug_lower === 'external-cmo');
+                $is_orm = ($slug_lower === 'orm');
+                $is_content_marketing = ($slug_lower === 'content-marketing');
+            }
+            if ($is_social_media) : ?>
+                <div class="hero__visual">
+                    <img 
+                        src="<?= esc_url(get_template_directory_uri() . '/assets/gifs/Social.gif'); ?>" 
+                        alt="Social Media"
+                        class="hero__gif"
+                    >
+                </div>
+            <?php elseif ($is_paid_ads) : ?>
+                <div class="hero__visual">
+                    <div id="hero-lottie" class="hero__lottie" aria-hidden="true"></div>
+                </div>
+            <?php elseif ($is_seo_geo || $is_external_cmo || $is_orm || $is_content_marketing) : ?>
+                <div class="hero__visual">
+                    <div id="hero-lottie" class="hero__lottie" aria-hidden="true"></div>
+                </div>
+            <?php elseif ($hero_image) : ?>
                 <div class="hero__visual">
                     <img 
                         src="<?= esc_url($hero_image['url']); ?>" 

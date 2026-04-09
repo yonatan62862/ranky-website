@@ -117,13 +117,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 24px;
+    overflow: hidden;
 }
 
-.industry-hero__visual img {
+.industry-hero__visual img,
+.industry-hero__visual video,
+.industry-hero__visual #hero-lottie {
     max-width: 520px;
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.45));
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.industry-hero__visual #hero-lottie {
+    min-height: 360px;
+    height: 420px;
+}
+
+.industry-hero__visual video {
+    display: block;
 }
 
 /* ==============================
@@ -179,8 +193,15 @@
         font-size: 15px;
     }
 
-    .industry-hero__visual img {
+    .industry-hero__visual img,
+    .industry-hero__visual video,
+    .industry-hero__visual #hero-lottie {
         max-width: 360px;
+    }
+
+    .industry-hero__visual #hero-lottie {
+        min-height: 280px;
+        height: 320px;
     }
 }
 

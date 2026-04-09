@@ -75,6 +75,42 @@ function ranky_register_industry_cpt()
 add_action('init', 'ranky_register_industry_cpt');
 
 
+function ranky_register_blog_cpt()
+{
+    register_post_type('blog', [
+        'labels' => [
+            'name'          => 'Blog',
+            'singular_name' => 'Blog Post',
+        ],
+        'public'        => true,
+        'has_archive'   => true,
+        'rewrite'       => ['slug' => 'blog'],
+        'menu_icon'     => 'dashicons-edit',
+        'supports'      => ['title', 'editor', 'thumbnail', 'excerpt'],
+        'taxonomies'    => ['category'],
+        'show_in_rest'  => true,
+    ]);
+}
+add_action('init', 'ranky_register_blog_cpt');
+
+
+function ranky_blog_archive_filter_by_category($query)
+{
+    if (!is_admin() && $query->is_main_query() && is_post_type_archive('blog') && !empty($_GET['category_name'])) {
+        $query->set('category_name', sanitize_text_field($_GET['category_name']));
+    }
+}
+add_action('pre_get_posts', 'ranky_blog_archive_filter_by_category');
+
+
+function ranky_estimated_read_time()
+{
+    $content = get_the_content();
+    $words   = str_word_count(strip_tags($content));
+    return $words > 0 ? max(1, (int) ceil($words / 200)) : null;
+}
+
+
 /**
  * --------------------------------------------------------------------
  * ACF (Options Page + JSON Sync)
@@ -145,8 +181,33 @@ add_action('wp_enqueue_scripts', 'ranky_enqueue_styles');
 
 
 function ranky_enqueue_lottie_assets() {
-    // Only load Lottie on front page
-    if (!is_front_page()) {
+    $lottie_path = null;
+
+    if (is_front_page()) {
+        $lottie_path = get_template_directory_uri() . '/assets/animations/hero-animation.json';
+    } elseif (is_singular('service')) {
+        $service_slug = get_post_field('post_name', get_queried_object_id());
+        if ($service_slug === 'seo-geo') {
+            $lottie_path = get_template_directory_uri() . '/assets/animations/GEO.json';
+        } elseif ($service_slug === 'external-cmo') {
+            $lottie_path = get_template_directory_uri() . '/assets/animations/' . rawurlencode('External CMO.json');
+        } elseif ($service_slug === 'orm') {
+            $lottie_path = get_template_directory_uri() . '/assets/animations/ORM.json';
+        } elseif ($service_slug === 'content-marketing') {
+            $lottie_path = get_template_directory_uri() . '/assets/animations/Content.json';
+        } elseif ($service_slug === 'paid-ads' || $service_slug === 'paidads') {
+            $lottie_path = get_template_directory_uri() . '/assets/animations/' . rawurlencode('paid ads new.json');
+        }
+    } elseif (is_singular('industry')) {
+        $industry_slug = get_post_field('post_name', get_queried_object_id());
+        if ($industry_slug === 'tech-industry-page') {
+            $lottie_path = get_template_directory_uri() . '/assets/animations/Tech.json';
+        } elseif ($industry_slug === 'b2b-industry-page') {
+            $lottie_path = get_template_directory_uri() . '/assets/animations/' . rawurlencode('B2B new.json');
+        }
+    }
+
+    if (!$lottie_path) {
         return;
     }
 
@@ -170,7 +231,7 @@ function ranky_enqueue_lottie_assets() {
 
     // Pass animation path to JS
     wp_localize_script('ranky-hero-lottie', 'heroLottieData', [
-        'path' => get_template_directory_uri() . '/assets/animations/hero-animation.json'
+        'path' => $lottie_path
     ]);
 }
 add_action('wp_enqueue_scripts', 'ranky_enqueue_lottie_assets');

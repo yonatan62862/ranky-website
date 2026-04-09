@@ -80,28 +80,15 @@ if (!$header_title_light && !$header_title_bold && !$comparisons && !$statement 
     <!-- Comparison -->
     <?php if ($comparisons && is_array($comparisons)): ?>
       <div class="why-ranky__comparison">
-        <!-- Column Headings -->
-        <div class="comparison-headings">
-          <div class="comparison-heading comparison-heading--old">
-            <?php if ($comparison_old_heading): ?>
-              <h3 class="comparison-heading__text">
-                <?php echo esc_html($comparison_old_heading); ?>
-              </h3>
-            <?php endif; ?>
-          </div>
-          <div class="comparison-heading comparison-heading--ranky">
-            <?php if ($comparison_new_heading): ?>
-              <h3 class="comparison-heading__text">
-                <?php echo esc_html($comparison_new_heading); ?>
-              </h3>
-            <?php endif; ?>
-          </div>
-        </div>
+        <!-- Old Way Column -->
+        <div class="comparison-column comparison-column--old">
+          <?php if ($comparison_old_heading): ?>
+            <h3 class="comparison-heading comparison-heading--old">
+              <?php echo esc_html($comparison_old_heading); ?>
+            </h3>
+          <?php endif; ?>
 
-        <!-- Comparison Items -->
-        <?php foreach ($comparisons as $comparison): ?>
-          <div class="comparison-row">
-            <!-- Old Way -->
+          <?php foreach ($comparisons as $comparison): ?>
             <div class="comparison-col comparison-col--old">
               <?php if (!empty($comparison['old_icon'])): ?>
                 <img
@@ -116,8 +103,18 @@ if (!$header_title_light && !$header_title_bold && !$comparisons && !$statement 
                 </p>
               <?php endif; ?>
             </div>
+          <?php endforeach; ?>
+        </div>
 
-            <!-- Ranky Way -->
+        <!-- Ranky Way Column -->
+        <div class="comparison-column comparison-column--ranky">
+          <?php if ($comparison_new_heading): ?>
+            <h3 class="comparison-heading comparison-heading--ranky">
+              <?php echo esc_html($comparison_new_heading); ?>
+            </h3>
+          <?php endif; ?>
+
+          <?php foreach ($comparisons as $comparison): ?>
             <div class="comparison-col comparison-col--ranky">
               <?php if (!empty($comparison['new_icon'])): ?>
                 <img
@@ -132,8 +129,8 @@ if (!$header_title_light && !$header_title_bold && !$comparisons && !$statement 
                 </p>
               <?php endif; ?>
             </div>
-          </div>
-        <?php endforeach; ?>
+          <?php endforeach; ?>
+        </div>
       </div>
     <?php endif; ?>
 
@@ -195,15 +192,6 @@ if (!$header_title_light && !$header_title_bold && !$comparisons && !$statement 
         <?php endif; ?>
       </div>
     <?php endif; ?>
-
-    <!-- Illustration -->
-    <div class="why-ranky__illustration">
-      <img
-        src="<?php echo esc_url(get_template_directory_uri() . '/assets/video/home-gif.gif'); ?>"
-        alt="Why Ranky Illustration"
-        class="why-ranky-illustration"
-      >
-    </div>
 
   </div>
 </section>

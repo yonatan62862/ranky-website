@@ -109,6 +109,8 @@ body.single-service .hero__visual {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 24px;
+    overflow: hidden;
 }
 
 .single-service .hero__visual img,
@@ -117,6 +119,16 @@ body.single-service .hero__visual img {
     height: auto;
     object-fit: contain;
     margin-top: -91px;
+    border-radius: 24px;
+}
+
+.single-service .hero__visual #hero-lottie,
+body.single-service .hero__visual #hero-lottie {
+    width: 100%;
+    max-width: 112%;
+    height: 500px;
+    margin-top: -91px;
+    border-radius: 24px;
 }
 
 /* Hero Responsive */
@@ -141,6 +153,11 @@ body.single-service .hero__visual img {
     .single-service .hero__visual,
     body.single-service .hero__visual {
         order: -1;
+        height: 400px;
+    }
+
+    .single-service .hero__visual #hero-lottie,
+    body.single-service .hero__visual #hero-lottie {
         height: 400px;
     }
 }

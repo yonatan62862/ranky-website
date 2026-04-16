@@ -81,6 +81,8 @@ function initialize_settings() {
 
   // Add default values
   Settings::default_values( 'mtphr_post_duplicator_settings', [
+    'additional_screens' => '',
+    'excluded_meta_keys' => '',
     'mode' => 'advanced',
     'single_after_duplication_action' => 'notice',
     'list_single_after_duplication_action' => 'notice',
@@ -109,6 +111,7 @@ function initialize_settings() {
 
   // Add sanitize settings
   Settings::sanitize_settings( 'mtphr_post_duplicator_settings', [
+    'excluded_meta_keys' => 'sanitize_textarea_field',
     'time_offset' => 'boolval',
     'time_offset_days' => 'intval',
     'time_offset_hours' => 'intval',
@@ -193,10 +196,13 @@ function initialize_sidebar() {
  */
 function initialize_fields() {
 
+  // Allow integrations to prepend notices/fields to the general section
+  $general_notices = apply_filters( 'mtphr_post_duplicator_general_notices', array() );
+
   // Add general fields
   Settings::fields( [
     'section' => 'mtphr_post_duplicator_general',
-    'fields'  => [
+    'fields'  => array_merge( $general_notices, [
       [
         'type'    => 'selection',
         'id'      => 'mode',
@@ -260,7 +266,7 @@ function initialize_fields() {
           'compare' => '='
         ],
       ],
-    ],
+    ] ),
   ] );
 
   // Add default fields
@@ -425,6 +431,30 @@ function initialize_fields() {
   Settings::fields( [
     'section' => 'mtphr_post_duplicator_advanced',
     'fields' => [
+      [
+        'type'  => 'heading',
+        'label' => __( 'Excluded Meta Keys', 'post-duplicator' ),
+        'help'  => __( 'Enter meta keys (one per line) that should never be duplicated and will not appear in the duplication modal.', 'post-duplicator' ),
+      ],
+      [
+        'type'        => 'textarea',
+        'id'          => 'excluded_meta_keys',
+        'label'       => __( 'Meta Keys', 'post-duplicator' ),
+        'help'        => __( 'One meta key per line. These are added to the built-in exclusion list.', 'post-duplicator' ),
+        'placeholder' => "_some_key\nanother_key",
+      ],
+      [
+        'type'  => 'heading',
+        'label' => __( 'Additional Admin Screens', 'post-duplicator' ),
+        'help'  => __( 'Enter admin page slugs (one per line) where Post Duplicator scripts should load. Use this for plugins that display post lists on non-standard admin screens so the full duplication modal is available.', 'post-duplicator' ),
+      ],
+      [
+        'type'        => 'textarea',
+        'id'          => 'additional_screens',
+        'label'       => __( 'Page Slugs', 'post-duplicator' ),
+        'help'        => __( 'One slug prefix per line. Scripts load when the current page slug starts with any entry here.', 'post-duplicator' ),
+        'placeholder' => "nestedpages\nwpca-list",
+      ],
       [
         'type'    => 'heading',
         'label'   => __( 'Advanced Duplication Settings', 'post-duplicator' ),

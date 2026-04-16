@@ -10,7 +10,37 @@ function enqueue_scripts() {
 
   $current_screen = get_current_screen();
 
-  if ( 'edit' != $current_screen->base && 'post' != $current_screen->base ) {
+  $is_list_screen = $current_screen
+    && ( 'edit' === $current_screen->base || 'post' === $current_screen->base );
+
+  // Backward-compatible boolean filter (used by existing integrations such as Divi)
+  $is_integration_screen = apply_filters( 'mtphr_post_duplicator_should_enqueue_list_scripts', false );
+
+  // Slug-based approach: check against developer-registered and user-configured page slugs
+  if ( ! $is_integration_screen ) {
+    $page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '';
+
+    if ( $page ) {
+      // Developer filter — return an array of page-slug prefixes to match
+      $additional_slugs = apply_filters( 'mtphr_post_duplicator_additional_screens', array() );
+
+      // User-configured slugs stored in plugin settings (one per line)
+      $saved_slugs = get_option_value( 'additional_screens' );
+      if ( ! empty( $saved_slugs ) && is_string( $saved_slugs ) ) {
+        $user_slugs       = array_filter( array_map( 'trim', explode( "\n", $saved_slugs ) ) );
+        $additional_slugs = array_merge( $additional_slugs, $user_slugs );
+      }
+
+      foreach ( $additional_slugs as $slug ) {
+        if ( ! empty( $slug ) && strpos( $page, $slug ) === 0 ) {
+          $is_integration_screen = true;
+          break;
+        }
+      }
+    }
+  }
+
+  if ( ! $is_list_screen && ! $is_integration_screen ) {
     return;
   }
 
@@ -75,10 +105,10 @@ function enqueue_scripts() {
       'pending' => esc_html__( 'Pending', 'post-duplicator' ),
       'private' => esc_html__( 'Private', 'post-duplicator' ),
     ],
-    'mode' => isset( $settings['mode'] ) ? $settings['mode'] : 'advanced',
-    'singleAfterDuplicationAction' => isset( $settings['single_after_duplication_action'] ) ? $settings['single_after_duplication_action'] : 'notice',
-    'listSingleAfterDuplicationAction' => isset( $settings['list_single_after_duplication_action'] ) ? $settings['list_single_after_duplication_action'] : 'notice',
-    'listMultipleAfterDuplicationAction' => isset( $settings['list_multiple_after_duplication_action'] ) ? $settings['list_multiple_after_duplication_action'] : 'notice',
+    'mode' => apply_filters( 'mtphr_post_duplicator_mode', isset( $settings['mode'] ) ? $settings['mode'] : 'advanced' ),
+    'singleAfterDuplicationAction' => apply_filters( 'mtphr_post_duplicator_single_after_duplication_action', isset( $settings['single_after_duplication_action'] ) ? $settings['single_after_duplication_action'] : 'notice' ),
+    'listSingleAfterDuplicationAction' => apply_filters( 'mtphr_post_duplicator_list_single_after_duplication_action', isset( $settings['list_single_after_duplication_action'] ) ? $settings['list_single_after_duplication_action'] : 'notice' ),
+    'listMultipleAfterDuplicationAction' => apply_filters( 'mtphr_post_duplicator_list_multiple_after_duplication_action', isset( $settings['list_multiple_after_duplication_action'] ) ? $settings['list_multiple_after_duplication_action'] : 'notice' ),
   ] );
 
   // Enqueue Gutenberg button on block editor pages (but not in widgets editor)

@@ -52,7 +52,7 @@
 .services__tabs {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 31px;
 }
 
 .services__tab {
@@ -103,7 +103,6 @@
   background: #ffffff;
   border-radius: 18px;
   padding: 48px 48px 44px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
 }
 
 /* Panels */

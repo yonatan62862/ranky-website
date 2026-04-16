@@ -1,15 +1,16 @@
 <?php
 /*
 Plugin Name: Post Duplicator
-Description: Creates functionality to duplicate any and all post types, including taxonomies & custom fields
-Version: 3.0.6
-Author: Metaphor Creations
-Author URI: http://www.metaphorcreations.com
+Plugin URI:        https://www.metaphorcreations.com/post-duplicator/
+Description:       Creates functionality to duplicate any and all post types, including taxonomies & custom fields
+Version:           3.0.14
+Author:            Meta4Creations
+Author URI:        https://www.metaphorcreations.com/
 License:           GPL-2.0+
 License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
 Requires at least: 6.6
 Requires PHP:      7.4
-Tested up to:      6.9
+Tested up to:      6.9.4
 Text Domain:       post-duplicator
 Domain Path:       /languages
 */
@@ -35,7 +36,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 // Plugin version.
 if ( ! defined( 'MTPHR_POST_DUPLICATOR_VERSION' ) ) {
-	define( 'MTPHR_POST_DUPLICATOR_VERSION', '3.0.6' );
+	define( 'MTPHR_POST_DUPLICATOR_VERSION', '3.0.14' );
 }
 
 // Plugin Folder Path.
@@ -81,9 +82,6 @@ require_once( MTPHR_POST_DUPLICATOR_DIR.'includes/install.php' );
 require_once( MTPHR_POST_DUPLICATOR_DIR.'includes/settings.php' );
 require_once( MTPHR_POST_DUPLICATOR_DIR.'includes/helpers.php' );
 
-// Load integrations
-require_once( MTPHR_POST_DUPLICATOR_DIR.'includes/integrations/the-events-calendar.php' );
-
 if ( is_admin() ) { 
 	require_once( MTPHR_POST_DUPLICATOR_DIR.'includes/scripts.php' );
 	require_once( MTPHR_POST_DUPLICATOR_DIR.'includes/edit.php' );
@@ -91,6 +89,13 @@ if ( is_admin() ) {
 	require_once( MTPHR_POST_DUPLICATOR_DIR.'includes/scripts.php' );
   require_once( MTPHR_POST_DUPLICATOR_DIR.'includes/upgrades.php' );
 }
+
+// Load integrations
+add_action( 'plugins_loaded', function () {
+	require_once( MTPHR_POST_DUPLICATOR_DIR.'includes/integrations/the-events-calendar.php' );
+	require_once( MTPHR_POST_DUPLICATOR_DIR.'includes/integrations/simple-custom-post-order.php' );
+	require_once( MTPHR_POST_DUPLICATOR_DIR.'includes/integrations/divi.php' );
+}, 20 );
 
 
 

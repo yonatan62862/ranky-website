@@ -1,4 +1,9 @@
 <?php
+// Skip this section for seo-geo — why-different is merged into the hero instead
+if (is_singular('service') && strtolower(get_post_field('post_name', get_the_ID())) === 'seo-geo') {
+    return;
+}
+
 $eyebrow = get_field('why_different_eyebrow');
 $title = get_field('why_different_title');
 $subtitle = get_field('why_different_subtitle');

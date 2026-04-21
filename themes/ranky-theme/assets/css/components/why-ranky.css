@@ -227,12 +227,53 @@
 }
 
 /* ==============================
+   BOTTOM LAYOUT (differentiators + illustration)
+============================== */
+
+.why-ranky__bottom {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.why-ranky__bottom-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.why-ranky__illustration {
+  flex: 0 0 auto;
+  max-width: 580px;
+  width: 100%;
+}
+
+.why-ranky__illustration-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .why-ranky__bottom {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+
+  .why-ranky__illustration {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+/* ==============================
    CORE DIFFERENTIATORS
 ============================== */
 
 .why-ranky__differentiators-heading {
   line-height: 59px;
-  text-align: center;
+  text-align: left;
 }
 
 .why-ranky__differentiators-heading-light {
@@ -244,8 +285,7 @@
 }
 
 .why-ranky__differentiators {
-  max-width: 520px;
-  margin: 0 auto 40px;
+  margin: 0 0 40px;
   text-align: left;
 }
 

@@ -103,7 +103,12 @@ $sys_image = get_field('wyg_system_image');
             <div class="system__features">
               <?php foreach ($sys_features as $index => $feature): ?>
                 <div class="system__feature-card <?php echo $index === 0 ? 'system__feature-card--active' : ''; ?>" data-index="<?php echo esc_attr($index); ?>">
-                  <p class="system__feature-text"><?php echo esc_html($feature['text']); ?></p>
+                  <p class="system__feature-text">
+                    <?php if (!empty($feature['text_bold'])): ?>
+                      <strong><?php echo esc_html($feature['text_bold']); ?></strong><?php if (!empty($feature['text'])): ?> <?php endif; ?>
+                    <?php endif; ?>
+                    <?php if (!empty($feature['text'])): ?><?php echo esc_html($feature['text']); ?><?php endif; ?>
+                  </p>
                 </div>
               <?php endforeach; ?>
             </div>

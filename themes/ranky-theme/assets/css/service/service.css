@@ -25,7 +25,11 @@ body.single-service .hero {
 /* Light hero background for Social Media, ORM, Content Marketing */
 body.service-light-hero .single-service .hero,
 body.service-light-hero.single-service .hero {
-    background: linear-gradient(90deg, #dbc3ea 0%, #bddcf1 100%);
+    background:
+        linear-gradient(to bottom right, rgb(254, 239, 234), transparent 70%),
+        linear-gradient(to bottom left, rgb(146 215 245), transparent 70%),
+        linear-gradient(to top right, rgb(190 178 255), transparent 70%),
+        linear-gradient(to top left, rgb(255, 255, 255), transparent 70%);
 }
 
 /* Light hero - dark text for eyebrow, title and description */
@@ -41,7 +45,7 @@ body.service-light-hero.single-service .hero__title {
 
 body.service-light-hero .single-service .hero__description,
 body.service-light-hero.single-service .hero__description {
-    color: #09084d;
+    color: #333A3F;
 }
 
 .single-service .hero .container,
@@ -67,7 +71,7 @@ body.single-service .hero__text {
 body.single-service .hero__eyebrow {
     font-style: normal;
     font-weight: 300;
-    font-size: 38px;
+    font-size: 32px;
     line-height: 45px;
     /* identical to box height */
 
@@ -105,7 +109,7 @@ body.single-service .hero__actions {
 body.single-service .hero__visual {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 620px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -125,9 +129,9 @@ body.single-service .hero__visual img {
 .single-service .hero__visual #hero-lottie,
 body.single-service .hero__visual #hero-lottie {
     width: 100%;
-    max-width: 112%;
-    height: 500px;
-    margin-top: -91px;
+    height: 100%;
+    transform: scale(1.4);
+    transform-origin: center center;
     border-radius: 24px;
 }
 
@@ -153,12 +157,14 @@ body.single-service .hero__visual #hero-lottie {
     .single-service .hero__visual,
     body.single-service .hero__visual {
         order: -1;
-        height: 400px;
+        height: 480px;
     }
 
     .single-service .hero__visual #hero-lottie,
     body.single-service .hero__visual #hero-lottie {
-        height: 400px;
+        width: 100%;
+        height: 100%;
+        transform: scale(1.3);
     }
 }
 
@@ -386,178 +392,7 @@ body.single-service .contact-card button:hover {
    FAQ SECTION
 ============================== */
 
-.single-service .faq,
-body.single-service .faq {
-    padding: 120px 0;
-    background: linear-gradient(180deg, #d4b4da 0%, #b3c8e1 50%, #c3bddc 100%);
-}
-
-.single-service .faq .container,
-body.single-service .faq .container {
-    max-width: 920px;
-}
-
-/* ==============================
-   FAQ TITLE
-============================== */
-
-.single-service .faq__title,
-body.single-service .faq__title {
-    text-align: center;
-    margin-bottom: 64px;
-    font-family: 'Rubik', sans-serif;
-    font-size: 48px;
-    line-height: 1.2;
-    text-transform: uppercase;
-    letter-spacing: -0.5px;
-}
-
-.single-service .faq__title-light,
-body.single-service .faq__title-light {
-    font-weight: 300;
-    color: #1f2a60;
-}
-
-.single-service .faq__title-bold,
-body.single-service .faq__title-bold {
-    font-weight: 700;
-    color: #1f2a60;
-}
-
-/* ==============================
-   FAQ ITEM
-============================== */
-
-.single-service .faq__item,
-body.single-service .faq__item {
-    background: #ffffff;
-    border-radius: 14px;
-    margin-bottom: 18px;
-    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-}
-
-/* ==============================
-   QUESTION BUTTON
-============================== */
-
-.single-service .faq__question,
-body.single-service .faq__question {
-    width: 100%;
-    background: transparent;
-    border: none;
-    padding: 22px 26px;
-    font-family: 'Rubik', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    color: #1f2a60;
-    text-align: left;
-    cursor: pointer;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    transition: background 0.2s ease;
-}
-
-.single-service .faq__question:hover,
-body.single-service .faq__question:hover {
-    background: #f9fafb;
-}
-
-/* ==============================
-   ICON
-============================== */
-
-.single-service .faq__icon,
-body.single-service .faq__icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border: 1px solid #e5e7eb;
-    font-size: 18px;
-    font-weight: 400;
-    color: #1f2a60;
-    transition: transform 0.25s ease;
-}
-
-/* ==============================
-   ANSWER
-============================== */
-
-.single-service .faq__answer,
-body.single-service .faq__answer {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 26px;
-    font-family: 'Rubik', sans-serif;
-    font-size: 14px;
-    line-height: 1.7;
-    color: #4b5563;
-
-    transition: max-height 0.35s ease, padding 0.35s ease;
-}
-
-/* ==============================
-   ACTIVE STATE
-============================== */
-
-.single-service .faq__item.is-open .faq__answer,
-body.single-service .faq__item.is-open .faq__answer {
-    max-height: 300px;
-    padding: 0 26px 24px;
-}
-
-.single-service .faq__item.is-open .faq__question,
-body.single-service .faq__item.is-open .faq__question {
-    color: #00a8ff;
-}
-
-.single-service .faq__item.is-open .faq__icon,
-body.single-service .faq__item.is-open .faq__icon {
-    transform: rotate(45deg);
-    border-color: #00a8ff;
-    color: #00a8ff;
-}
-
-/* ==============================
-   RESPONSIVE
-============================== */
-
-@media (max-width: 640px) {
-
-    .single-service .faq,
-    body.single-service .faq {
-        padding: 80px 0;
-    }
-
-    .single-service .faq__title,
-    body.single-service .faq__title {
-        font-size: 32px;
-        margin-bottom: 48px;
-    }
-
-    .single-service .faq__question,
-    body.single-service .faq__question {
-        font-size: 14px;
-        padding: 18px 20px;
-    }
-
-    .single-service .faq__answer,
-    body.single-service .faq__answer {
-        font-size: 13px;
-        padding: 0 20px;
-    }
-
-    .single-service .faq__item.is-open .faq__answer,
-    body.single-service .faq__item.is-open .faq__answer {
-        padding: 0 20px 20px;
-    }
-}
+/* FAQ on service pages inherits all styles from home.css (.faq, .faq__*, etc.) */
 
 /* ==============================
    PROCESS SECTION
@@ -621,6 +456,7 @@ body.single-service .process-step {
     padding: 28px 32px;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-align: center;
 }
 
 .single-service .process-step:hover,
@@ -662,7 +498,6 @@ body.single-service .process__button {
     border-radius: 999px;
     font-family: 'Rubik', sans-serif;
     font-size: 15px;
-    font-weight: 600;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -705,8 +540,8 @@ body.single-service .process__button:hover {
 
 .single-service .results,
 body.single-service .results {
-    padding: 120px 0;
-    background: #002F6C;
+    padding: 50px 0;
+    background: linear-gradient(180deg, #052b5c 0%, #002F6C 100%);
 }
 
 .single-service .results .container,
@@ -732,7 +567,7 @@ body.single-service .results__eyebrow {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #6b7280;
+    color: rgba(255, 255, 255, 0.6);
     margin-bottom: 12px;
 }
 
@@ -782,6 +617,7 @@ body.single-service .results__grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
     margin-top: 48px;
+    margin-bottom: -105px;
 }
 
 /* ==============================
@@ -811,11 +647,11 @@ body.single-service .results-card:hover {
 .single-service .results-card__value,
 body.single-service .results-card__value {
     font-family: 'Rubik', sans-serif;
-    font-size: 45px;
+    font-size: 40px;
     font-weight: 700;
     line-height: 1;
     color: #00a8ff;
-    margin-bottom: 8px;
+    margin-bottom: 0px;
     text-align: center;
 }
 
@@ -845,7 +681,7 @@ body.single-service .results-card__description {
     font-size: 16px;
     font-weight: 700;
     line-height: 1.6;
-    color: #6b7280;
+    color: #000000;
     margin: 0;
 }
 
@@ -935,14 +771,14 @@ body.single-service .why-different .container {
 .single-service .why-different__header,
 body.single-service .why-different__header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 150px;
 }
 
 .single-service .why-different__eyebrow,
 body.single-service .why-different__eyebrow {
     font-family: 'Rubik', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 600;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 32px;
@@ -955,7 +791,7 @@ body.single-service .why-different__eyebrow {
 body.single-service .why-different__title {
     font-family: 'Rubik', sans-serif;
     font-size: 56px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.2;
     color: #ffffff;
     margin-bottom: 16px;
@@ -971,8 +807,8 @@ body.single-service .why-different__title span {
 .single-service .why-different__subtitle,
 body.single-service .why-different__subtitle {
     font-family: 'Rubik', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 600;
     color: #ffffff;
     margin: 0;
 }
@@ -983,9 +819,10 @@ body.single-service .why-different__subtitle {
 
 .single-service .why-different__comparison,
 body.single-service .why-different__comparison {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
+    display: flex;
+    align-items: flex-start;
+    max-width: 1220px;
+    margin: 0 auto;
 }
 
 /* ==============================
@@ -994,25 +831,43 @@ body.single-service .why-different__comparison {
 
 .single-service .why-different .comparison-column,
 body.single-service .why-different .comparison-column {
-    display: grid;
-    grid-template-rows: auto;
-    gap: 20px;
-    align-content: start;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.single-service .why-different .comparison-column--old,
+body.single-service .why-different .comparison-column--old {
+    flex: 0 0 auto;
+    width: 46%;
+    position: relative;
+    z-index: 1;
+}
+
+.single-service .why-different .comparison-column--ranky,
+body.single-service .why-different .comparison-column--ranky {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+    margin-left: -64px;
+    margin-top: -40px;
 }
 
 .single-service .why-different .comparison-column__title,
 body.single-service .why-different .comparison-column__title {
-    font-size: 30px;
-    font-weight: 300;
-    color: #ffffff;
-    margin-bottom: 32px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 39px;
+    font-weight: 500;
+    line-height: 46px;
+    margin-bottom: 0;
     text-align: center;
+    text-transform: none;
 }
 
 .single-service .why-different .comparison-column--ranky .comparison-column__title,
 body.single-service .why-different .comparison-column--ranky .comparison-column__title {
-    color: #ffffff;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 /* ==============================
@@ -1024,28 +879,27 @@ body.single-service .why-different .comparison-row {
     display: flex;
     align-items: center;
     gap: 16px;
-    background: linear-gradient(90deg, #D9F5FF 51.44%, #95D8F2 100%);
+    background: linear-gradient(100deg, #cef3ff 0%, #8fd8f3 100%);
     border-radius: 14px;
-    padding: 20px 24px;
+    padding: 22px 28px;
     min-height: 88px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .single-service .why-different .comparison-row__icon,
 body.single-service .why-different .comparison-row__icon {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     flex-shrink: 0;
     object-fit: contain;
-    opacity: 0.7;
+    opacity: 0.75;
 }
-
 
 .single-service .why-different .comparison-row__text,
 body.single-service .why-different .comparison-row__text {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.5;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.25;
     color: #0E1552;
     flex: 1;
 }
@@ -1060,47 +914,33 @@ body.single-service .why-different .comparison-card {
     align-items: center;
     gap: 16px;
     background: #ffffff;
-    border-radius: 20px;
-    padding: 24px 28px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.06);
+    border-radius: 18px;
+    padding: 22px 28px 34px 32px;
+    box-shadow: 0 2px 18px rgba(13, 21, 82, 0.18);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     min-height: 88px;
-    margin-left: -30px;
-    margin-bottom: -2px;
 }
 
 .single-service .why-different .comparison-card:hover,
 body.single-service .why-different .comparison-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12), 0 12px 32px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 20px rgba(13, 21, 82, 0.25);
 }
 
 .single-service .why-different .comparison-card__icon,
 body.single-service .why-different .comparison-card__icon {
-    width: 42px;
-    height: 42px;
+    width: 46px;
+    height: 46px;
     flex-shrink: 0;
-    border-radius: 50%;
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.single-service .why-different .comparison-card__icon img,
-body.single-service .why-different .comparison-card__icon img {
-    width: 24px;
-    height: 24px;
     object-fit: contain;
 }
 
 .single-service .why-different .comparison-card__text,
 body.single-service .why-different .comparison-card__text {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.5;
-    color: #1f2a60;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #0E1552;
     flex: 1;
 }
 
@@ -1117,7 +957,17 @@ body.single-service .why-different .comparison-card__text {
 
     .single-service .why-different__comparison,
     body.single-service .why-different__comparison {
-        gap: 32px;
+        gap: 28px;
+    }
+
+    .single-service .why-different .comparison-column--old,
+    body.single-service .why-different .comparison-column--old {
+        width: 100%;
+    }
+
+    .single-service .why-different .comparison-column--ranky,
+    body.single-service .why-different .comparison-column--ranky {
+        margin-left: 0;
     }
 }
 
@@ -1151,29 +1001,50 @@ body.single-service .why-different .comparison-card__text {
 
     .single-service .why-different__comparison,
     body.single-service .why-different__comparison {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 40px;
+    }
+
+    .single-service .why-different .comparison-column--old,
+    body.single-service .why-different .comparison-column--old {
+        width: 100%;
+    }
+
+    .single-service .why-different .comparison-column--ranky,
+    body.single-service .why-different .comparison-column--ranky {
+        margin-left: 0;
+        margin-top: 0;
     }
 
     .single-service .why-different .comparison-row,
     .single-service .why-different .comparison-card,
     body.single-service .why-different .comparison-row,
     body.single-service .why-different .comparison-card {
-        padding: 18px 20px;
+        padding: 20px;
     }
 
     .single-service .why-different .comparison-row__text,
     .single-service .why-different .comparison-card__text,
     body.single-service .why-different .comparison-row__text,
     body.single-service .why-different .comparison-card__text {
-        font-size: 14px;
+        font-size: 15px;
+    }
+
+    .single-service .why-different .comparison-column__title,
+    body.single-service .why-different .comparison-column__title {
+        font-size: 28px;
+        line-height: 36px;
     }
 }
 
 .single-service .what-you-gain,
 body.single-service .what-you-gain {
     padding: 120px 0;
-    background: linear-gradient(180deg, #c7bfea 0%, #e9dfdf 100%);
+    background:
+        linear-gradient(to bottom right, rgb(210, 238, 252), transparent 60%),
+        linear-gradient(to bottom left, rgb(232, 228, 255), transparent 60%),
+        linear-gradient(to top right, rgb(255, 255, 255), transparent 60%),
+        linear-gradient(to top left, rgb(252, 220, 242), transparent 60%);
 }
 
 .single-service .what-you-gain__header,
@@ -1189,7 +1060,7 @@ body.single-service .what-you-gain__header h2 {
     font-size: 50px;
     line-height: 100%;
     text-transform: uppercase;
-    color: #002F6C;
+    color: #0E1552;
     margin-bottom: 0;
 }
 
@@ -1207,7 +1078,7 @@ body.single-service .what-you-gain__header-title-bold {
 body.single-service .what-you-gain__header p {
     margin-top: 10px;
     font-family: 'Rubik', sans-serif;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 20px;
     line-height: 100%;
     color: #002F6C;
@@ -1223,28 +1094,41 @@ body.single-service .what-you-gain__grid {
 
 .single-service .gain-card,
 body.single-service .gain-card {
-    background: #fff;
-    padding: 32px 24px;
-    border-radius: 14px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, .08);
+    background: #ffffff;
+    padding: 40px 28px 36px;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .single-service .gain-card img,
 body.single-service .gain-card img {
-    height: 44px;
-    margin-bottom: 16px;
+    height: 50px;
+    width: auto;
+    display: block;
+    margin: 0 auto 20px;
+    object-fit: contain;
 }
 
 .single-service .gain-card h3,
 body.single-service .gain-card h3 {
-    font-size: 18px;
-    margin-bottom: 8px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #002F6C;
+    line-height: 1.3;
+    margin-bottom: 10px;
 }
 
 .single-service .gain-card p,
 body.single-service .gain-card p {
     font-size: 14px;
+    line-height: 1.65;
     color: #6b7280;
+    margin: 0;
 }
 
 .single-service .what-you-gain__actions,
@@ -1266,7 +1150,7 @@ body.single-service .what-you-gain__system {
 
 .single-service .system__content,
 body.single-service .system__content {
-    text-align: left;
+    text-align: center;
 }
 
 .single-service .system__title,
@@ -1282,7 +1166,7 @@ body.single-service .system__title {
 .single-service .system__title-light,
 body.single-service .system__title-light {
     font-weight: 300;
-    color: #6b7280;
+    color: #1f2a60;
 }
 
 .single-service .system__title-bold,
@@ -1296,8 +1180,9 @@ body.single-service .system__text {
     font-family: 'Rubik', sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    color: #4b5563;
+    color: #1f2937;
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .single-service .system__features-wrapper,
@@ -1339,7 +1224,7 @@ body.single-service .system__dot:hover {
 .single-service .system__dot--active,
 body.single-service .system__dot--active {
     opacity: 1;
-    background: #1f2a60;
+    background: #00a8ff;
     transform: scale(1.3);
 }
 
@@ -1347,49 +1232,48 @@ body.single-service .system__dot--active {
 body.single-service .system__features {
     flex: 1;
     position: relative;
-    min-height: 120px;
+    overflow: hidden;
+    /* height is set dynamically by JS */
 }
 
 .single-service .system__feature-card,
 body.single-service .system__feature-card {
     position: absolute;
-    top: 0;
     left: 0;
     width: 100%;
     background: #ffffff;
-    border-radius: 16px;
-    padding: 24px 28px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 28px 32px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     opacity: 0;
-    transform: translateX(20px) scale(0.95);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    visibility: hidden;
     pointer-events: none;
-    z-index: 1;
+    transition: top 0.4s ease, opacity 0.4s ease;
+    box-sizing: border-box;
 }
 
 .single-service .system__feature-card--active,
 body.single-service .system__feature-card--active {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    z-index: 2;
     pointer-events: auto;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
 }
 
-.single-service .system__feature-card:not(.system__feature-card--active),
-body.single-service .system__feature-card:not(.system__feature-card--active) {
-    z-index: 0;
-    opacity: 0.3;
-    transform: translateX(-10px) scale(0.9);
+.single-service .system__feature-card--prev,
+body.single-service .system__feature-card--prev,
+.single-service .system__feature-card--next,
+body.single-service .system__feature-card--next {
+    pointer-events: none;
 }
 
 .single-service .system__feature-text,
 body.single-service .system__feature-text {
     font-family: 'Rubik', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #1f2937;
+    font-size: 17px;
+    line-height: 1.65;
+    color: #374151;
     margin: 0;
-    font-weight: 500;
+    font-weight: 400;
+    text-align: left;
 }
 
 .single-service .system__feature-text strong,
@@ -1407,7 +1291,6 @@ body.single-service .system__button {
     border-radius: 999px;
     font-family: 'Rubik', sans-serif;
     font-size: 15px;
-    font-weight: 600;
     text-decoration: none;
     transition: background 0.3s ease, transform 0.2s ease;
     border: none;
@@ -1462,4 +1345,34 @@ body.single-service .btn--secondary {
     body.single-service .system__title {
         font-size: 32px;
     }
+}
+
+/* ======================================================
+   SEO-GEO: why-different merged inside .hero
+   Inherits the hero's dark background — override the
+   stand-alone why-different background and padding.
+====================================================== */
+
+/* Hero becomes a column when it contains the merged block */
+.single-service .hero:has(.why-different--in-hero),
+body.single-service .hero:has(.why-different--in-hero) {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding-bottom: 0;
+}
+
+/* Let the container stretch full-width within the column */
+.single-service .hero:has(.why-different--in-hero)>.container,
+body.single-service .hero:has(.why-different--in-hero)>.container {
+    width: 100%;
+}
+
+/* Remove duplicate dark background, reset padding so it flows naturally */
+.single-service .why-different--in-hero,
+body.single-service .why-different--in-hero {
+    background: none;
+    padding: 80px 0 120px;
+    color: #ffffff;
+    width: 100%;
 }

@@ -116,5 +116,68 @@ if (!$title) {
             <?php endif; ?>
         </div>
     </div>
+
+    <?php if ($is_seo_geo) :
+        $wd_eyebrow  = get_field('why_different_eyebrow');
+        $wd_title    = get_field('why_different_title');
+        $wd_subtitle = get_field('why_different_subtitle');
+        $wd_old      = get_field('old_way_items');
+        $wd_ranky    = get_field('ranky_way_items');
+    ?>
+    <div class="why-different why-different--in-hero">
+        <div class="container">
+
+            <?php if ($wd_eyebrow || $wd_title || $wd_subtitle) : ?>
+            <header class="why-different__header">
+                <?php if ($wd_eyebrow) : ?>
+                    <p class="why-different__eyebrow"><?= esc_html($wd_eyebrow); ?></p>
+                <?php endif; ?>
+                <?php if ($wd_title) : ?>
+                    <h2 class="why-different__title"><?= esc_html($wd_title); ?></h2>
+                <?php endif; ?>
+                <?php if ($wd_subtitle) : ?>
+                    <p class="why-different__subtitle"><?= esc_html($wd_subtitle); ?></p>
+                <?php endif; ?>
+            </header>
+            <?php endif; ?>
+
+            <div class="why-different__comparison">
+
+                <div class="comparison-column comparison-column--old">
+                    <h3 class="comparison-column__title">Old Way</h3>
+                    <?php if ($wd_old && is_array($wd_old)) : foreach ($wd_old as $item) : ?>
+                        <div class="comparison-row comparison-row--old">
+                            <?php if (!empty($item['icon'])) : ?>
+                                <img src="<?= esc_url($item['icon']['url']); ?>"
+                                     alt="<?= esc_attr($item['icon']['alt'] ?? ''); ?>"
+                                     class="comparison-row__icon">
+                            <?php endif; ?>
+                            <?php if (!empty($item['text'])) : ?>
+                                <span class="comparison-row__text"><?= esc_html($item['text']); ?></span>
+                            <?php endif; ?>
+                        </div>
+                    <?php endforeach; endif; ?>
+                </div>
+
+                <div class="comparison-column comparison-column--ranky">
+                    <h3 class="comparison-column__title">Ranky Way</h3>
+                    <?php if ($wd_ranky && is_array($wd_ranky)) : foreach ($wd_ranky as $item) : ?>
+                        <div class="comparison-card">
+                            <?php if (!empty($item['icon'])) : ?>
+                                <img src="<?= esc_url($item['icon']['url']); ?>"
+                                     alt="<?= esc_attr($item['icon']['alt'] ?? ''); ?>"
+                                     class="comparison-card__icon">
+                            <?php endif; ?>
+                            <?php if (!empty($item['text'])) : ?>
+                                <span class="comparison-card__text"><?= esc_html($item['text']); ?></span>
+                            <?php endif; ?>
+                        </div>
+                    <?php endforeach; endif; ?>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
 </section>
 

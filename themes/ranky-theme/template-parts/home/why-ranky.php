@@ -141,43 +141,80 @@ if (!$header_title_light && !$header_title_bold && !$comparisons && !$statement 
       </p>
     <?php endif; ?>
 
-    <!-- Core Differentiators -->
-    <?php if ($differentiators && is_array($differentiators)): ?>
-      <?php if ($differentiators_heading_light || $differentiators_heading_bold): ?>
-      <h2 class="why-ranky__differentiators-heading">
-          <?php 
-            if ($differentiators_heading_light) {
-              echo '<span class="why-ranky__differentiators-heading-light">' . esc_html($differentiators_heading_light) . '</span>';
-              if ($differentiators_heading_bold) {
-                echo ' ';
-              }
-            }
-            if ($differentiators_heading_bold) {
-              echo '<span class="why-ranky__differentiators-heading-bold">' . esc_html($differentiators_heading_bold) . '</span>';
-            }
-          ?>
-      </h2>
-      <?php endif; ?>
-      <div class="why-ranky__differentiators">
-        <?php foreach ($differentiators as $differentiator): ?>
-          <div class="differentiator-item">
-            <?php if (!empty($differentiator['title'])): ?>
-              <h3 class="differentiator-title">
-                <?php echo esc_html($differentiator['title']); ?>
-              </h3>
+    <!-- Core Differentiators + Illustration -->
+    <?php if (($differentiators && is_array($differentiators)) || $illustration): ?>
+      <div class="why-ranky__bottom">
+
+        <!-- Text Side -->
+        <?php if ($differentiators && is_array($differentiators)): ?>
+          <div class="why-ranky__bottom-text">
+            <?php if ($differentiators_heading_light || $differentiators_heading_bold): ?>
+            <h2 class="why-ranky__differentiators-heading">
+                <?php 
+                  if ($differentiators_heading_light) {
+                    echo '<span class="why-ranky__differentiators-heading-light">' . esc_html($differentiators_heading_light) . '</span>';
+                    if ($differentiators_heading_bold) {
+                      echo ' ';
+                    }
+                  }
+                  if ($differentiators_heading_bold) {
+                    echo '<span class="why-ranky__differentiators-heading-bold">' . esc_html($differentiators_heading_bold) . '</span>';
+                  }
+                ?>
+            </h2>
             <?php endif; ?>
-            <?php if (!empty($differentiator['description'])): ?>
-              <p class="differentiator-description">
-                <?php echo esc_html($differentiator['description']); ?>
-              </p>
+            <div class="why-ranky__differentiators">
+              <?php foreach ($differentiators as $differentiator): ?>
+                <div class="differentiator-item">
+                  <?php if (!empty($differentiator['title'])): ?>
+                    <h3 class="differentiator-title">
+                      <?php echo esc_html($differentiator['title']); ?>
+                    </h3>
+                  <?php endif; ?>
+                  <?php if (!empty($differentiator['description'])): ?>
+                    <p class="differentiator-description">
+                      <?php echo esc_html($differentiator['description']); ?>
+                    </p>
+                  <?php endif; ?>
+                </div>
+              <?php endforeach; ?>
+            </div>
+
+            <!-- CTA Buttons -->
+            <?php if ($primary_button || $secondary_button): ?>
+              <div class="why-ranky__cta">
+                <?php if ($primary_button): ?>
+                  <a
+                    href="<?php echo esc_url($primary_button['url'] ?? '#'); ?>"
+                    class="btn btn--primary"
+                    <?php if (!empty($primary_button['target'])): ?>
+                      target="<?php echo esc_attr($primary_button['target']); ?>"
+                    <?php endif; ?>
+                  >
+                    <?php echo esc_html($primary_button['title'] ?? 'Click Here'); ?>
+                  </a>
+                <?php endif; ?>
+              </div>
             <?php endif; ?>
           </div>
-        <?php endforeach; ?>
+        <?php endif; ?>
+
+        <!-- Illustration Side -->
+        <?php if ($illustration): ?>
+          <div class="why-ranky__illustration">
+            <img
+              src="<?php echo esc_url($illustration['url']); ?>"
+              alt="<?php echo esc_attr($illustration['alt'] ?? 'Why Ranky'); ?>"
+              class="why-ranky__illustration-img"
+            >
+          </div>
+        <?php endif; ?>
+
       </div>
     <?php endif; ?>
 
-    <!-- CTA Buttons -->
-    <?php if ($primary_button || $secondary_button): ?>
+    <!-- CTA Buttons (fallback when no differentiators) -->
+    <?php if ((!$differentiators || !is_array($differentiators)) && ($primary_button || $secondary_button)): ?>
       <div class="why-ranky__cta">
         <?php if ($primary_button): ?>
           <a

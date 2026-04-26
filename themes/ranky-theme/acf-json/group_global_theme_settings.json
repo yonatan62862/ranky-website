@@ -227,6 +227,32 @@
             "required": 0
         },
         {
+            "key": "field_tab_blog_archive_hero",
+            "label": "Blog Archive – Hero",
+            "name": "",
+            "type": "tab",
+            "instructions": "Settings for the hero section at the top of the main Blog listing page (/blog/).",
+            "required": 0
+        },
+        {
+            "key": "field_blog_archive_hero_eyebrow",
+            "label": "Hero Eyebrow",
+            "name": "blog_archive_hero_eyebrow",
+            "type": "text",
+            "default_value": "What app?",
+            "instructions": "Small text displayed above the main title in the blog archive hero",
+            "required": 0
+        },
+        {
+            "key": "field_blog_archive_hero_title",
+            "label": "Hero Title",
+            "name": "blog_archive_hero_title",
+            "type": "text",
+            "default_value": "THE BLOG",
+            "instructions": "Main heading displayed in the blog archive hero",
+            "required": 0
+        },
+        {
             "key": "field_tab_blog_archive_cta",
             "label": "Blog Archive – Enterprise CTA",
             "name": "",

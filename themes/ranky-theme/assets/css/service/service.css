@@ -18,7 +18,6 @@ body.single-service .hero {
     align-items: center;
     background: linear-gradient(208.05deg, #011830 37.46%, #02306D 87.56%);
     color: #1a1f5a;
-    padding: 140px 0px 200px;
     overflow: hidden;
 }
 
@@ -86,6 +85,12 @@ body.single-service .hero__title {
     line-height: 1.2;
     margin-bottom: 24px;
     color: #ffffff;
+}
+
+/* Paid Ads hero title color override */
+body.service-paid-ads .single-service .hero__title,
+body.service-paid-ads.single-service .hero__title {
+    color: #00A8E8;
 }
 
 .single-service .hero__description,
@@ -437,7 +442,7 @@ body.single-service .process__subtitle {
     max-width: 720px;
     margin: 0 auto 72px;
     font-family: 'Rubik', sans-serif;
-    font-size: 16px;
+    font-size: 21px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.8);
 }
@@ -755,7 +760,7 @@ body.single-service .results-card__tag {
 .single-service .why-different,
 body.single-service .why-different {
     padding: 120px 0;
-    background: linear-gradient(215.44deg, #022047 16.96%, #02306D 87.75%);
+    background: linear-gradient(215.44deg, #011830 16.96%, #02306D 87.75%);
     color: #ffffff;
 }
 
@@ -1375,4 +1380,53 @@ body.single-service .why-different--in-hero {
     padding: 80px 0 120px;
     color: #ffffff;
     width: 100%;
+}
+
+/* ======================================================
+   PAID-ADS: hero + why-different unified background
+   A single wrapper div applies the hero gradient across
+   both sections, eliminating the visual seam.
+====================================================== */
+
+.hero-overview-unified {
+    background: linear-gradient(208.05deg, #011830 37.46%, #02306D 87.56%);
+}
+
+/* Hero inside the wrapper loses its own background */
+.hero-overview-unified .hero,
+body.service-paid-ads .hero-overview-unified .hero,
+body.service-paid-ads .hero-overview-unified .single-service .hero {
+    background: none !important;
+}
+
+/* Why-different inside the wrapper loses its own background */
+.hero-overview-unified .why-different,
+body.service-paid-ads .hero-overview-unified .why-different,
+body.service-paid-ads .hero-overview-unified .single-service .why-different {
+    background: none !important;
+}
+
+/* ======================================================
+   PAID-ADS: tighten spacing so eyebrow + comparison
+   visually attach to the hero content above them.
+====================================================== */
+
+/* Remove hero bottom padding — why-different flows straight in */
+/* Reduce top padding to pull content closer to the site header */
+body.service-paid-ads .hero-overview-unified .hero,
+body.service-paid-ads .hero-overview-unified .single-service .hero {
+    padding-top: 0px;
+    padding-bottom: 0;
+}
+
+/* Remove why-different top padding — no gap after the hero */
+body.service-paid-ads .hero-overview-unified .why-different,
+body.service-paid-ads .hero-overview-unified .single-service .why-different {
+    padding-top: 0;
+}
+
+/* Collapse the header block margin so eyebrow sits right below hero */
+body.service-paid-ads .hero-overview-unified .why-different__header,
+body.service-paid-ads .hero-overview-unified .single-service .why-different__header {
+    margin-bottom: 60px;
 }

@@ -1,34 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.success__carousel').forEach(carousel => {
-        const track = carousel.querySelector('.success__track');
-        if (!track) return;
+    document.querySelectorAll('.success__track').forEach(track => {
+        const cards = Array.from(track.children);
+        if (!cards.length) return;
 
-        let scrollSpeed = 0.5;
-        let isPaused = false;
-        let animationFrameId;
-
-        function autoScroll() {
-            if (!isPaused) {
-                carousel.scrollLeft += scrollSpeed;
-
-                // Reset to beginning when reaching the end for seamless loop
-                if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 1) {
-                    carousel.scrollLeft = 0;
-                }
-            }
-            animationFrameId = requestAnimationFrame(autoScroll);
-        }
-
-        // Pause on hover
-        carousel.addEventListener('mouseenter', () => {
-            isPaused = true;
+        // Duplicate cards to create seamless infinite loop
+        cards.forEach(card => {
+            const clone = card.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            track.appendChild(clone);
         });
-
-        carousel.addEventListener('mouseleave', () => {
-            isPaused = false;
-        });
-
-        // Start auto-scroll using requestAnimationFrame for smooth animation
-        autoScroll();
     });
 });

@@ -21,15 +21,16 @@
 .btn--primary {
   background-color: var(--color-primary);
   color: #ffffff;
+  border: 2px solid transparent;
 }
 
 .btn--primary:hover {
-  background-color: #0095d0;
-  transform: translateY(-1px);
+  background-color: #ffffff;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
 .btn--primary:active {
-  transform: translateY(0);
 }
 
 .btn--ghost {

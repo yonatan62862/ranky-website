@@ -99,18 +99,6 @@ if (is_singular('service')) {
               </ul>
             <?php endif; ?>
           </li>
-          <?php
-          if ($index === 0) :
-            $blog_url = get_post_type_archive_link('blog');
-            if ($blog_url) :
-          ?>
-          <li class="site-header__menu-item">
-            <a href="<?php echo esc_url($blog_url); ?>" class="site-header__menu-link">Blog</a>
-          </li>
-          <?php
-            endif;
-          endif;
-          ?>
         <?php 
           endforeach;
         endif; 
@@ -185,18 +173,6 @@ if (is_singular('service')) {
               </ul>
             <?php endif; ?>
           </li>
-          <?php
-          if ($index === 0) :
-            $blog_url = get_post_type_archive_link('blog');
-            if ($blog_url) :
-          ?>
-          <li class="mobile-menu__item">
-            <a href="<?php echo esc_url($blog_url); ?>" class="mobile-menu__link">Blog</a>
-          </li>
-          <?php
-            endif;
-          endif;
-          ?>
         <?php 
           endforeach;
         endif; 

@@ -98,10 +98,6 @@
   color: white;
 }
 
-/* Home link - highlighted */
-.site-header__menu-item:first-child .site-header__menu-link {
-  color: #00A8E8;
-}
 
 /* Dark header variant - menu links */
 .site-header--dark .site-header__menu-link {

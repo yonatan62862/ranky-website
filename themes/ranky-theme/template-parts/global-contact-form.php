@@ -70,6 +70,22 @@ $submit_text = get_field('global_contact_form_submit_text', 'option') ?: 'Get in
                   </select>
                 </div>
 
+              <?php elseif ($type === 'textarea'): ?>
+                <div class="contact-card__full">
+                  <?php if ($label): ?>
+                    <label class="contact-card__field-label" for="<?php echo esc_attr($name); ?>">
+                      <?php echo esc_html($label); ?>
+                      <?php if ($required): ?><span class="required">*</span><?php endif; ?>
+                    </label>
+                  <?php endif; ?>
+                  <textarea
+                    id="<?php echo esc_attr($name); ?>"
+                    name="<?php echo esc_attr($name); ?>"
+                    placeholder="<?php echo esc_attr($placeholder); ?>"
+                    <?php echo $required ? 'required' : ''; ?>
+                  ></textarea>
+                </div>
+
               <?php else: ?>
                 <div class="contact-card__field">
                   <?php if ($label): ?>

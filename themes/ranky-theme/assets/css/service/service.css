@@ -260,14 +260,26 @@ body.single-service .contact-card__grid {
 .single-service .contact-card__full,
 body.single-service .contact-card__full {
     grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.single-service .contact-card__field,
+body.single-service .contact-card__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 /* ---------- INPUTS ---------- */
 
 .single-service .contact-card input,
 .single-service .contact-card select,
+.single-service .contact-card textarea,
 body.single-service .contact-card input,
-body.single-service .contact-card select {
+body.single-service .contact-card select,
+body.single-service .contact-card textarea {
     width: 100%;
     height: 64px;
     padding: 0 24px;
@@ -277,17 +289,30 @@ body.single-service .contact-card select {
     font-family: 'Rubik', sans-serif;
     font-size: 16px;
     color: #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.single-service .contact-card textarea,
+body.single-service .contact-card textarea {
+    height: 120px;
+    padding: 16px 24px;
+    resize: none;
+    line-height: 1.6;
 }
 
 .single-service .contact-card input::placeholder,
-body.single-service .contact-card input::placeholder {
+.single-service .contact-card textarea::placeholder,
+body.single-service .contact-card input::placeholder,
+body.single-service .contact-card textarea::placeholder {
     color: #9a9a9a;
 }
 
 .single-service .contact-card input:focus,
 .single-service .contact-card select:focus,
+.single-service .contact-card textarea:focus,
 body.single-service .contact-card input:focus,
-body.single-service .contact-card select:focus {
+body.single-service .contact-card select:focus,
+body.single-service .contact-card textarea:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(0, 168, 232, 0.2);
 }

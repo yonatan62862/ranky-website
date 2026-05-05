@@ -514,24 +514,74 @@
             "max": 5,
             "sub_fields": [
                 {
-                    "key": "field_blue_cards_icons",
-                    "label": "Icons",
-                    "name": "icons",
-                    "type": "repeater",
-                    "layout": "block",
-                    "button_label": "Add Icon",
-                    "sub_fields": [
-                        {
-                            "key": "field_blue_cards_icons_icon",
-                            "label": "Icon",
-                            "name": "icon",
-                            "type": "image",
-                            "return_format": "array",
-                            "preview_size": "thumbnail",
-                            "library": "all",
-                            "required": 0
-                        }
-                    ],
+                    "key": "field_blue_cards_icon",
+                    "label": "Icon Image",
+                    "name": "icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "required": 0,
+                    "instructions": "Optional icon displayed at the top of the card."
+                },
+                {
+                    "key": "field_blue_cards_top_label",
+                    "label": "Top Label (small text)",
+                    "name": "top_label",
+                    "type": "text",
+                    "required": 0,
+                    "instructions": "Small text shown above the main title (e.g. \"We use it for\" or \"WE SYNC ALL CHANNELS INTO\")."
+                },
+                {
+                    "key": "field_blue_cards_secondary_label",
+                    "label": "Secondary Label",
+                    "name": "secondary_label",
+                    "type": "text",
+                    "required": 0,
+                    "instructions": "Optional second line below the top label (e.g. \"One growth engine\")."
+                },
+                {
+                    "key": "field_blue_cards_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "textarea",
+                    "rows": 2,
+                    "required": 0,
+                    "instructions": "Main title text. Use line breaks for multi-line titles."
+                },
+                {
+                    "key": "field_blue_cards_title_color",
+                    "label": "Title Color",
+                    "name": "title_color",
+                    "type": "select",
+                    "choices": {
+                        "orange": "Orange",
+                        "white": "White"
+                    },
+                    "default_value": "orange",
+                    "allow_null": 0,
+                    "required": 0
+                },
+                {
+                    "key": "field_blue_cards_subtitle",
+                    "label": "Subtitle",
+                    "name": "subtitle",
+                    "type": "textarea",
+                    "rows": 2,
+                    "required": 0,
+                    "instructions": "Secondary text shown below the title."
+                },
+                {
+                    "key": "field_blue_cards_subtitle_color",
+                    "label": "Subtitle Color",
+                    "name": "subtitle_color",
+                    "type": "select",
+                    "choices": {
+                        "orange": "Orange",
+                        "white": "White"
+                    },
+                    "default_value": "white",
+                    "allow_null": 0,
                     "required": 0
                 },
                 {
@@ -540,7 +590,8 @@
                     "name": "button",
                     "type": "link",
                     "return_format": "array",
-                    "required": 0
+                    "required": 0,
+                    "instructions": "Optional CTA button shown at the bottom of the card."
                 }
             ],
             "required": 0

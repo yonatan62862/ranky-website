@@ -144,7 +144,8 @@
                         "text": "Text",
                         "email": "Email",
                         "url": "URL",
-                        "select": "Select"
+                        "select": "Select",
+                        "textarea": "Textarea"
                     },
                     "default_value": "text",
                     "required": 0

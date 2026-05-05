@@ -3,7 +3,7 @@
 ============================== */
 
 .services {
-  padding: 120px 0;
+  padding: 66px 0;
   background: linear-gradient(180deg, #fff7f3 0%, #ffffff 100%);
 }
 
@@ -103,6 +103,7 @@
   background: #ffffff;
   border-radius: 18px;
   padding: 48px 48px 44px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 /* Panels */

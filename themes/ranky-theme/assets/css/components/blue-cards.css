@@ -17,6 +17,10 @@
     gap: 24px;
 }
 
+/* ==============================
+   CARD BASE
+============================== */
+
 .blue-card {
     background: linear-gradient(180deg, #001333 -3%, rgba(0, 38, 102, 0.5) 115.83%, rgba(14, 21, 82, 0.1) 159.41%);
     border-radius: 18px;
@@ -26,10 +30,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 16px;
     min-height: 320px;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     position: relative;
+    text-align: center;
 }
 
 .blue-card:hover {
@@ -37,32 +43,121 @@
     box-shadow: 0 28px 60px rgba(0, 0, 0, 0.35);
 }
 
-.blue-card__icons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 22px;
-    flex: 1;
-    width: 100%;
-}
+/* ==============================
+   ICON
+============================== */
 
 .blue-card__icon {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .blue-card__icon-image {
-    height: 52px;
+    height: 80px;
     width: auto;
     display: block;
+}
+
+/* ==============================
+   TEXT CONTENT
+============================== */
+
+.blue-card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.blue-card__top-label {
+    font-size: 13px;
+    font-weight: 200;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+.blue-card__secondary-label {
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.blue-card__title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 4px 0 0;
+    line-height: 1.25;
+}
+
+.blue-card__title--orange {
+    color: #FF8C00;
+}
+
+.blue-card__title--white {
+    color: #ffffff;
+}
+
+.blue-card__subtitle {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 4px 0 0;
+    line-height: 1.3;
+}
+
+.blue-card__subtitle--orange {
+    color: #FF8C00;
+}
+
+.blue-card__subtitle--white {
+    color: #ffffff;
+}
+
+/* ==============================
+   BUTTON
+============================== */
+
+.blue-cards__grid .blue-card:nth-child(4) .blue-card__subtitle--white {
+    font-size: 23px;
+    font-weight: 300;
+}
+
+.blue-cards__grid .blue-card:nth-child(4) .blue-card__title--orange {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.blue-cards__grid .blue-card:nth-child(3) .blue-card__subtitle--white {
+    font-size: 17px;
+    font-weight: 200;
+}
+
+.blue-cards__grid .blue-card:nth-child(2) .blue-card__subtitle--orange {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.blue-cards__grid .blue-card:nth-child(2) .blue-card__title--white {
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .blue-card__button {
     margin-top: auto;
     align-self: center;
+    flex-shrink: 0;
 }
+
+/* ==============================
+   RESPONSIVE
+============================== */
 
 @media (max-width: 1280px) {
     .blue-cards__grid {

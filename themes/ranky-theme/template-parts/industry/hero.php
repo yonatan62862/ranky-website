@@ -95,7 +95,7 @@ if (!$hero_title_prefix && !$hero_title_main && !$hero_subtitle && !$hero_primar
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/gifs/Medical.gif'); ?>" alt="Medical" class="industry-hero__gif">
                 </div>
             <?php elseif ($is_startup): ?>
-                <div class="industry-hero__visual">
+                <div class="industry-hero__visual industry-hero__visual--startup">
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/gifs/' . rawurlencode('Startup 1.gif')); ?>" alt="Startup" class="industry-hero__gif">
                 </div>
             <?php elseif ($is_tech_industry || $is_b2b_industry): ?>

@@ -96,6 +96,24 @@
       "required": 0
     },
     {
+      "key": "field_old_way_heading",
+      "label": "Old Way Column Title",
+      "name": "old_way_heading",
+      "type": "text",
+      "instructions": "Title displayed above the Old Way column",
+      "default_value": "Old Way",
+      "required": 0
+    },
+    {
+      "key": "field_ranky_way_heading",
+      "label": "Ranky Way Column Title",
+      "name": "ranky_way_heading",
+      "type": "text",
+      "instructions": "Title displayed above the Ranky Way column",
+      "default_value": "Ranky Way",
+      "required": 0
+    },
+    {
       "key": "field_old_way_items",
       "label": "Old Way Items",
       "name": "old_way_items",

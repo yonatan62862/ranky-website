@@ -135,8 +135,6 @@ body.single-service .hero__visual img {
 body.single-service .hero__visual #hero-lottie {
     width: 100%;
     height: 100%;
-    transform: scale(1.4);
-    transform-origin: center center;
     border-radius: 24px;
 }
 
@@ -169,7 +167,6 @@ body.single-service .hero__visual #hero-lottie {
     body.single-service .hero__visual #hero-lottie {
         width: 100%;
         height: 100%;
-        transform: scale(1.3);
     }
 }
 
@@ -430,7 +427,7 @@ body.single-service .contact-card button:hover {
 
 .single-service .process,
 body.single-service .process {
-    padding: 140px 0 120px;
+    padding: 140px 0 60px;
     background: linear-gradient(180deg, #031a3a 0%, #052b5c 100%);
     color: #ffffff;
 }
@@ -507,7 +504,7 @@ body.single-service .process-step__title {
 .single-service .process-step__description,
 body.single-service .process-step__description {
     font-family: 'Rubik', sans-serif;
-    font-size: 14px;
+    font-size: 19px;
     line-height: 1.6;
     color: #475569;
     margin: 0;
@@ -784,7 +781,7 @@ body.single-service .results-card__tag {
 
 .single-service .why-different,
 body.single-service .why-different {
-    padding: 120px 0;
+    padding: 120px 0 0;
     background: linear-gradient(215.44deg, #011830 16.96%, #02306D 87.75%);
     color: #ffffff;
 }
@@ -801,7 +798,6 @@ body.single-service .why-different .container {
 .single-service .why-different__header,
 body.single-service .why-different__header {
     text-align: center;
-    margin-bottom: 150px;
 }
 
 .single-service .why-different__eyebrow,
@@ -853,6 +849,9 @@ body.single-service .why-different__comparison {
     align-items: flex-start;
     max-width: 1220px;
     margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    transform: translateY(28%);
 }
 
 /* ==============================
@@ -946,15 +945,13 @@ body.single-service .why-different .comparison-card {
     background: #ffffff;
     border-radius: 18px;
     padding: 22px 28px 34px 32px;
-    box-shadow: 0 2px 18px rgba(13, 21, 82, 0.18);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
     min-height: 88px;
 }
 
 .single-service .why-different .comparison-card:hover,
 body.single-service .why-different .comparison-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(13, 21, 82, 0.25);
 }
 
 .single-service .why-different .comparison-card__icon,
@@ -1071,10 +1068,10 @@ body.single-service .why-different .comparison-card__text {
 body.single-service .what-you-gain {
     padding: 120px 0;
     background:
-        linear-gradient(to bottom right, rgb(210, 238, 252), transparent 60%),
-        linear-gradient(to bottom left, rgb(232, 228, 255), transparent 60%),
-        linear-gradient(to top right, rgb(255, 255, 255), transparent 60%),
-        linear-gradient(to top left, rgb(252, 220, 242), transparent 60%);
+        linear-gradient(to bottom right, rgb(170, 220, 248), transparent 70%),
+        linear-gradient(to bottom left, rgb(210, 203, 255), transparent 70%),
+        linear-gradient(to top right, rgb(240, 250, 255), transparent 70%),
+        linear-gradient(to top left, rgb(252, 195, 235), transparent 70%);
 }
 
 .single-service .what-you-gain__header,
@@ -1132,6 +1129,25 @@ body.single-service .gain-card {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
+}
+
+.single-service .gain-card:hover,
+body.single-service .gain-card:hover {
+    transform: translateY(-6px);
+    background: #0d1e5e;
+    box-shadow: 0 12px 36px rgba(13, 30, 94, 0.22);
+}
+
+.single-service .gain-card:hover h3,
+body.single-service .gain-card:hover h3 {
+    color: #ffffff;
+}
+
+.single-service .gain-card:hover p,
+body.single-service .gain-card:hover p {
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .single-service .gain-card img,
@@ -1155,7 +1171,7 @@ body.single-service .gain-card h3 {
 
 .single-service .gain-card p,
 body.single-service .gain-card p {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.65;
     color: #6b7280;
     margin: 0;
@@ -1390,6 +1406,7 @@ body.single-service .hero:has(.why-different--in-hero) {
     align-items: stretch;
     justify-content: flex-start;
     padding-bottom: 0;
+    overflow: visible;
 }
 
 /* Let the container stretch full-width within the column */
@@ -1402,9 +1419,33 @@ body.single-service .hero:has(.why-different--in-hero)>.container {
 .single-service .why-different--in-hero,
 body.single-service .why-different--in-hero {
     background: none;
-    padding: 80px 0 120px;
+    padding: 80px 0 0;
     color: #ffffff;
     width: 100%;
+}
+
+/* Push what-you-gain content down to clear the floating comparison — seo-geo */
+.single-service .hero:has(.why-different--in-hero)~.what-you-gain,
+body.single-service .hero:has(.why-different--in-hero)~.what-you-gain {
+    position: relative;
+    z-index: 1;
+    padding-top: 300px;
+}
+
+/* Push what-you-gain content down — all other service pages (standalone why-different) */
+.single-service .why-different~.what-you-gain,
+body.single-service .why-different~.what-you-gain {
+    position: relative;
+    z-index: 1;
+    padding-top: 300px;
+}
+
+/* Push what-you-gain content down — paid-ads (hero + why-different in unified wrapper) */
+.single-service .hero-overview-unified~.what-you-gain,
+body.single-service .hero-overview-unified~.what-you-gain {
+    position: relative;
+    z-index: 1;
+    padding-top: 300px;
 }
 
 /* ======================================================
@@ -1420,14 +1461,18 @@ body.single-service .why-different--in-hero {
 /* Hero inside the wrapper loses its own background */
 .hero-overview-unified .hero,
 body.service-paid-ads .hero-overview-unified .hero,
-body.service-paid-ads .hero-overview-unified .single-service .hero {
+body.service-paid-ads .hero-overview-unified .single-service .hero,
+body.service-external-cmo .hero-overview-unified .hero,
+body.service-external-cmo .hero-overview-unified .single-service .hero {
     background: none !important;
 }
 
 /* Why-different inside the wrapper loses its own background */
 .hero-overview-unified .why-different,
 body.service-paid-ads .hero-overview-unified .why-different,
-body.service-paid-ads .hero-overview-unified .single-service .why-different {
+body.service-paid-ads .hero-overview-unified .single-service .why-different,
+body.service-external-cmo .hero-overview-unified .why-different,
+body.service-external-cmo .hero-overview-unified .single-service .why-different {
     background: none !important;
 }
 
@@ -1454,4 +1499,15 @@ body.service-paid-ads .hero-overview-unified .single-service .why-different {
 body.service-paid-ads .hero-overview-unified .why-different__header,
 body.service-paid-ads .hero-overview-unified .single-service .why-different__header {
     margin-bottom: 60px;
+}
+
+/* ======================================================
+   EXTERNAL-CMO: hero + why-different unified background
+   Hero keeps its own padding; why-different flows in
+   below with zero top padding so the gradient is seamless.
+====================================================== */
+
+body.service-external-cmo .hero-overview-unified .why-different,
+body.service-external-cmo .hero-overview-unified .single-service .why-different {
+    padding-top: 0;
 }

@@ -21,7 +21,7 @@ if (!$related->have_posts()) {
 
 <section class="blog-related">
     <div class="container">
-        <h2 class="blog-related__title">Related Posts</h2>
+        <h2 class="blog-related__title">Related</h2>
         <ul class="blog-related__grid">
             <?php while ($related->have_posts()) : $related->the_post(); ?>
                 <li class="blog-related__item">

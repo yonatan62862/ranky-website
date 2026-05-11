@@ -118,11 +118,13 @@ if (!$title) {
     </div>
 
     <?php if ($is_seo_geo) :
-        $wd_eyebrow  = get_field('why_different_eyebrow');
-        $wd_title    = get_field('why_different_title');
-        $wd_subtitle = get_field('why_different_subtitle');
-        $wd_old      = get_field('old_way_items');
-        $wd_ranky    = get_field('ranky_way_items');
+        $wd_eyebrow       = get_field('why_different_eyebrow');
+        $wd_title         = get_field('why_different_title');
+        $wd_subtitle      = get_field('why_different_subtitle');
+        $wd_old           = get_field('old_way_items');
+        $wd_ranky         = get_field('ranky_way_items');
+        $wd_old_heading   = get_field('old_way_heading') ?: 'Old Way';
+        $wd_ranky_heading = get_field('ranky_way_heading') ?: 'Ranky Way';
     ?>
     <div class="why-different why-different--in-hero">
         <div class="container">
@@ -144,7 +146,7 @@ if (!$title) {
             <div class="why-different__comparison">
 
                 <div class="comparison-column comparison-column--old">
-                    <h3 class="comparison-column__title">Old Way</h3>
+                    <h3 class="comparison-column__title"><?= esc_html($wd_old_heading); ?></h3>
                     <?php if ($wd_old && is_array($wd_old)) : foreach ($wd_old as $item) : ?>
                         <div class="comparison-row comparison-row--old">
                             <?php if (!empty($item['icon'])) : ?>
@@ -160,7 +162,7 @@ if (!$title) {
                 </div>
 
                 <div class="comparison-column comparison-column--ranky">
-                    <h3 class="comparison-column__title">Ranky Way</h3>
+                    <h3 class="comparison-column__title"><?= esc_html($wd_ranky_heading); ?></h3>
                     <?php if ($wd_ranky && is_array($wd_ranky)) : foreach ($wd_ranky as $item) : ?>
                         <div class="comparison-card">
                             <?php if (!empty($item['icon'])) : ?>

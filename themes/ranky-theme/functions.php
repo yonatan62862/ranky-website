@@ -287,6 +287,19 @@ function ranky_enqueue_header_scripts() {
   }
   add_action('wp_enqueue_scripts', 'enqueue_system_features_script');
 
+  function enqueue_results_counter_script() {
+    if (is_front_page() || is_singular('service') || is_singular('industry')) {
+      wp_enqueue_script(
+        'results-counter',
+        get_template_directory_uri() . '/assets/js/results-counter.js',
+        [],
+        '1.0',
+        true
+      );
+    }
+  }
+  add_action('wp_enqueue_scripts', 'enqueue_results_counter_script');
+
   add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script(
       'contact-form',

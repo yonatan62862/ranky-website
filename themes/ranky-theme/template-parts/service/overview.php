@@ -9,6 +9,8 @@ $title = get_field('why_different_title');
 $subtitle = get_field('why_different_subtitle');
 $old_items = get_field('old_way_items');
 $ranky_items = get_field('ranky_way_items');
+$old_way_heading = get_field('old_way_heading') ?: 'Old Way';
+$ranky_way_heading = get_field('ranky_way_heading') ?: 'Ranky Way';
 ?>
 
 <section class="why-different">
@@ -46,7 +48,7 @@ $ranky_items = get_field('ranky_way_items');
 
       <!-- LEFT COLUMN -->
       <div class="comparison-column comparison-column--old">
-        <h3 class="comparison-column__title">Old Way</h3>
+        <h3 class="comparison-column__title"><?php echo esc_html($old_way_heading); ?></h3>
 
         <?php if ($old_items && is_array($old_items)): ?>
           <?php foreach ($old_items as $item): ?>
@@ -68,7 +70,7 @@ $ranky_items = get_field('ranky_way_items');
 
       <!-- RIGHT COLUMN -->
       <div class="comparison-column comparison-column--ranky">
-        <h3 class="comparison-column__title">Ranky Way</h3>
+        <h3 class="comparison-column__title"><?php echo esc_html($ranky_way_heading); ?></h3>
 
         <?php if ($ranky_items && is_array($ranky_items)): ?>
           <?php foreach ($ranky_items as $item): ?>

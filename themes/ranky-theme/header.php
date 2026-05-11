@@ -28,6 +28,10 @@ if (is_singular('service')) {
     if (in_array(strtolower($post_slug), ['paid-ads', 'paidads']) || $post_title === 'Paid Ads') {
         $light_hero_class .= ' service-paid-ads';
     }
+
+    if (strtolower($post_slug) === 'external-cmo') {
+        $light_hero_class .= ' service-external-cmo';
+    }
 }
 ?>
 

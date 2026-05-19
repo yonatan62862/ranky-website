@@ -745,7 +745,7 @@
     gap: 24px;
     color: #ffffff;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* ==============================
@@ -789,10 +789,7 @@
 ============================== */
 
 .industry-approach__content {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 80px;
-    align-items: start;
+    display: block;
     margin-top: 0;
 }
 
@@ -816,20 +813,22 @@
 ============================== */
 
 .industry-approach__visual {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-58%);
+    width: 46%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    position: relative;
-    height: 0%;
 }
 
 .industry-approach__visual img {
-    max-width: 800px;
-    width: 118%;
+    max-width: 560px;
+    width: 100%;
     height: auto;
     object-fit: contain;
     filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.5));
-    transform: translateY(-40px);
 }
 
 
@@ -853,10 +852,18 @@
         border-radius: 28px;
     }
 
-    .industry-approach__content {
-        grid-template-columns: 1fr;
-        gap: 56px;
-        text-align: center;
+    .industry-approach__visual {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .industry-approach__visual img {
+        max-width: 380px;
     }
 
     .industry-approach__title,
@@ -881,7 +888,7 @@
     }
 
     .industry-approach__visual img {
-        max-width: 300px;
+        max-width: 280px;
     }
 }
 

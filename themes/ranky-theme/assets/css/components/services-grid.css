@@ -40,9 +40,13 @@
 
 .services__grid {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 40px;
+  grid-template-columns: 380px 1fr;
+  gap: 0;
   align-items: stretch;
+  background: #ffffff;
+  box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.11);
+  border-radius: 18px;
+  overflow: hidden;
 }
 
 /* ==============================
@@ -52,46 +56,51 @@
 .services__tabs {
   display: flex;
   flex-direction: column;
-  gap: 31px;
+  gap: 0;
+  padding: 24px 20px;
+  border-right: 1px solid #f0f0f0;
+  justify-content: center;
 }
 
 .services__tab {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 18px 20px;
+  gap: 16px;
+  padding: 20px 20px;
   border-radius: 14px;
-  background: #ffffff;
-  border: 1px solid #eef2f7;
+  background: transparent;
+  border: none;
   cursor: pointer;
   font-family: 'Rubik', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   color: #1f2937;
   text-align: left;
-  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
 }
 
 .services__tab img {
-  width: 24px;
-  height: 24px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .services__tab:hover {
   background: #f9fafb;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  transform: translateY(-2px);
+  box-shadow: none;
+  transform: none;
 }
 
 /* Active tab */
 
 .services__tab.is-active {
   background: #ffffff;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
   border-color: transparent;
-  margin-right: -64px;
-  height: 24%;
+  margin-right: 0;
+  height: auto;
 }
 
 /* ==============================
@@ -100,10 +109,10 @@
 
 .services__content {
   position: relative;
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 48px 48px 44px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  background: transparent;
+  border-radius: 0;
+  padding: 52px 56px 52px;
+  box-shadow: none;
 }
 
 /* Panels */
@@ -160,12 +169,17 @@
 @media (max-width: 1024px) {
   .services__grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 0;
+    overflow: hidden;
   }
 
   .services__tabs {
     flex-direction: row;
     flex-wrap: wrap;
+    border-right: none;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 16px;
+    gap: 8px;
   }
 
   .services__tab {

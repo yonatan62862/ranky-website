@@ -32,6 +32,10 @@ if (is_singular('service')) {
     if (strtolower($post_slug) === 'external-cmo') {
         $light_hero_class .= ' service-external-cmo';
     }
+
+    if (strtolower($post_slug) === 'content-marketing' || $post_title === 'Content Marketing') {
+        $light_hero_class .= ' service-content-marketing';
+    }
 }
 ?>
 

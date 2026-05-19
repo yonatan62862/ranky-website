@@ -381,7 +381,7 @@
 /* Single blog content */
 .single-blog__article {
     padding-block: var(--section-spacing);
-    padding-top: calc(var(--section-spacing) + 200px);
+    padding-top: calc(var(--section-spacing) + 50px);
     background: transparent;
     position: relative;
     z-index: 5;

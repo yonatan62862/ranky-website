@@ -79,8 +79,8 @@ if (!$hero_title_prefix && !$hero_title_main && !$hero_subtitle && !$hero_primar
                     $slug_lower === 'startup' || $slug_lower === 'start-up' ||
                     stripos($title, 'Startup') !== false || stripos($title, 'Start-up') !== false
                 );
-                $is_tech_industry = ($slug_lower === 'tech-industry-page');
-                $is_b2b_industry = ($slug_lower === 'b2b-industry-page');
+                $is_tech_industry = ($slug_lower === 'tech-industry-page' || stripos($title, 'Tech') !== false);
+                $is_b2b_industry = ($slug_lower === 'b2b-industry-page' || stripos($title, 'B2B') !== false);
             }
             if ($is_b2c): ?>
                 <div class="industry-hero__visual">

@@ -87,8 +87,8 @@ if (!$title) {
                 );
                 $is_seo_geo = ($slug_lower === 'seo-geo');
                 $is_external_cmo = ($slug_lower === 'external-cmo');
-                $is_orm = ($slug_lower === 'orm');
-                $is_content_marketing = ($slug_lower === 'content-marketing');
+                $is_orm = ($slug_lower === 'orm' || strtoupper($post_title) === 'ORM' || stripos($slug_lower, 'orm') !== false);
+                $is_content_marketing = ($slug_lower === 'content-marketing' || stripos($post_title, 'Content Marketing') !== false);
             }
             if ($is_social_media) : ?>
                 <div class="hero__visual">

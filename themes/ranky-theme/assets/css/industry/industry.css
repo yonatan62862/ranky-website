@@ -305,7 +305,7 @@
 .industry-intro__image {
     position: absolute;
     top: -542px;
-    left: 50%;
+    left: 45%;
     transform: translateX(-110%);
     z-index: 3;
 
@@ -985,7 +985,7 @@
 }
 
 .industry-solution-card__icon img {
-    max-width: 64px;
+    max-width: 78px;
     height: auto;
     position: relative;
     z-index: 1;

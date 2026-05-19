@@ -186,23 +186,25 @@ function ranky_enqueue_lottie_assets() {
     if (is_front_page()) {
         $lottie_path = get_template_directory_uri() . '/assets/animations/hero-animation.json';
     } elseif (is_singular('service')) {
-        $service_slug = get_post_field('post_name', get_queried_object_id());
+        $service_slug = strtolower(get_post_field('post_name', get_queried_object_id()));
+        $service_title = strtolower(get_the_title(get_queried_object_id()));
         if ($service_slug === 'seo-geo') {
             $lottie_path = get_template_directory_uri() . '/assets/animations/GEO.json';
-        } elseif ($service_slug === 'external-cmo') {
+        } elseif ($service_slug === 'external-cmo' || strpos($service_title, 'external cmo') !== false) {
             $lottie_path = get_template_directory_uri() . '/assets/animations/' . rawurlencode('External CMO.json');
-        } elseif ($service_slug === 'orm') {
+        } elseif ($service_slug === 'orm' || strpos($service_slug, 'orm') !== false || $service_title === 'orm') {
             $lottie_path = get_template_directory_uri() . '/assets/animations/ORM.json';
-        } elseif ($service_slug === 'content-marketing') {
+        } elseif ($service_slug === 'content-marketing' || strpos($service_title, 'content marketing') !== false) {
             $lottie_path = get_template_directory_uri() . '/assets/animations/Content.json';
         } elseif ($service_slug === 'paid-ads' || $service_slug === 'paidads') {
             $lottie_path = get_template_directory_uri() . '/assets/animations/' . rawurlencode('paid ads new.json');
         }
     } elseif (is_singular('industry')) {
-        $industry_slug = get_post_field('post_name', get_queried_object_id());
-        if ($industry_slug === 'tech-industry-page') {
+        $industry_slug = strtolower(get_post_field('post_name', get_queried_object_id()));
+        $industry_title = strtolower(get_the_title(get_queried_object_id()));
+        if ($industry_slug === 'tech-industry-page' || strpos($industry_title, 'tech') !== false) {
             $lottie_path = get_template_directory_uri() . '/assets/animations/Tech.json';
-        } elseif ($industry_slug === 'b2b-industry-page') {
+        } elseif ($industry_slug === 'b2b-industry-page' || strpos($industry_title, 'b2b') !== false) {
             $lottie_path = get_template_directory_uri() . '/assets/animations/' . rawurlencode('B2B new.json');
         }
     }

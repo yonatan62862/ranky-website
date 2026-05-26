@@ -82,8 +82,10 @@ if (!$title) {
                     stripos($post_title, 'Social Media') !== false
                 );
                 $is_paid_ads = (
-                    $slug_lower === 'paid-ads' || $slug_lower === 'paidads' ||
-                    stripos($post_title, 'Paid Ads') !== false
+                    $slug_lower === 'paid-ads'
+                    || $slug_lower === 'paidads'
+                    || $slug_lower === 'services-paid-ads'
+                    || stripos($post_title, 'Paid Ads') !== false
                 );
                 $is_seo_geo = ($slug_lower === 'seo-geo');
                 $is_external_cmo = ($slug_lower === 'external-cmo');

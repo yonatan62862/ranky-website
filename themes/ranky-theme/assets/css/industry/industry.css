@@ -136,6 +136,11 @@
     height: 420px;
 }
 
+.industry-hero__visual--scaled-lottie,
+.industry-hero__visual--scaled-lottie #hero-lottie {
+    overflow: visible;
+}
+
 .industry-hero__visual video {
     display: block;
 }
@@ -304,7 +309,7 @@
 
 .industry-intro__image {
     position: absolute;
-    top: -542px;
+    top: -569px;
     left: 45%;
     transform: translateX(-110%);
     z-index: 3;
@@ -390,6 +395,7 @@
     justify-content: center;
     gap: 8px;
     flex-wrap: wrap;
+    padding-top: 24px;
 }
 
 .industry-challenges-solutions__title-prefix {
@@ -476,8 +482,9 @@
 }
 
 .industry-challenges-solutions__column-title--solutions {
-    color: #8735A9;
+    color: #0E1552;
     grid-column: 2;
+    margin-right: 70px;
 }
 
 /* ==============================
@@ -496,7 +503,7 @@
 
 .industry-challenges-solutions__row {
     display: grid;
-    grid-template-columns: 53.46% 50.18% 28.46%;
+    grid-template-columns: 50% 50% 28.46%;
     gap: 0;
     align-items: stretch;
     position: relative;
@@ -547,7 +554,7 @@
 
 .industry-challenges-solutions__challenge-title {
     font-family: 'Rubik', sans-serif;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 600;
     line-height: 31px;
     text-align: center;
@@ -556,53 +563,6 @@
     color: #0E1552;
     margin: 0;
     flex: 1;
-}
-
-/* ==============================
-   ARROW
-============================== */
-
-.industry-challenges-solutions__arrow {
-    position: absolute;
-    left: 53%;
-    top: 0;
-    bottom: 0;
-    transform: translateX(-50%);
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 0;
-    width: 64px;
-}
-
-
-
-.industry-challenges-solutions__arrow-icon {
-    width: 64px;
-    height: 64px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    z-index: 2;
-}
-
-.industry-challenges-solutions__arrow-icon svg {
-    transform: rotate(45deg);
-    width: 24px;
-    height: 24px;
-}
-
-.industry-challenges-solutions__arrow-icon svg path {
-    stroke: #00A8E8;
-    stroke-width: 2;
 }
 
 /* ==============================
@@ -665,10 +625,6 @@
 
     .industry-challenges-solutions__solution-text {
         transform: none;
-    }
-
-    .industry-challenges-solutions__arrow {
-        display: none;
     }
 
     .industry-challenges-solutions__headers {

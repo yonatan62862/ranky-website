@@ -1,7 +1,7 @@
 <?php
 /**
  * Archive Template for Blog CPT
- * Displays blog listing with hero, grid of cards, enterprise CTA, and contact form.
+ * Displays blog listing with hero and grid of cards.
  */
 
 get_header();
@@ -47,8 +47,6 @@ get_header();
                     }
                     ?>
                 </ul>
-
-                <?php get_template_part('template-parts/global/enterprise-cta'); ?>
             </div>
         </section>
     <?php else : ?>

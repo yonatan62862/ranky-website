@@ -196,7 +196,12 @@ function ranky_enqueue_lottie_assets() {
             $lottie_path = get_template_directory_uri() . '/assets/animations/ORM.json';
         } elseif ($service_slug === 'content-marketing' || strpos($service_title, 'content marketing') !== false) {
             $lottie_path = get_template_directory_uri() . '/assets/animations/Content.json';
-        } elseif ($service_slug === 'paid-ads' || $service_slug === 'paidads') {
+        } elseif (
+            $service_slug === 'paid-ads'
+            || $service_slug === 'paidads'
+            || $service_slug === 'services-paid-ads'
+            || strpos($service_title, 'paid ads') !== false
+        ) {
             $lottie_path = get_template_directory_uri() . '/assets/animations/' . rawurlencode('paid ads new.json');
         }
     } elseif (is_singular('industry')) {
@@ -227,7 +232,7 @@ function ranky_enqueue_lottie_assets() {
         'ranky-hero-lottie',
         get_template_directory_uri() . '/assets/js/hero-lottie.js',
         ['lottie'],
-        '1.0',
+        '1.1',
         true
     );
 

@@ -447,7 +447,7 @@ body.single-service .contact-card button:hover {
 
 .single-service .process,
 body.single-service .process {
-    padding: 140px 0 60px;
+    padding: 80px 0 60px;
     background: linear-gradient(180deg, #031a3a 0%, #052b5c 100%);
     color: #ffffff;
 }
@@ -1086,7 +1086,7 @@ body.single-service .why-different .comparison-card__text {
 
 .single-service .what-you-gain,
 body.single-service .what-you-gain {
-    padding: 120px 0;
+    padding: 0px 0;
     background:
         linear-gradient(to bottom left, rgb(170, 220, 248), transparent 70%),
         linear-gradient(to bottom right, rgb(210, 203, 255), transparent 70%),

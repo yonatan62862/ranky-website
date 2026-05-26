@@ -135,16 +135,6 @@ if (!$has_intro && !$has_challenges && !$has_approach && !$has_solutions) {
                                 <?php endif; ?>
                             </div>
 
-                            <!-- Arrow -->
-                            <div class="industry-challenges-solutions__arrow">
-                                <div class="industry-challenges-solutions__arrow-line"></div>
-                                <div class="industry-challenges-solutions__arrow-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9 18L15 12L9 6" stroke="#00A8E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                            </div>
-
                             <!-- Solution Side (Right) -->
                             <?php if (!empty($item['solution_text'])): ?>
                                 <div class="industry-challenges-solutions__solution-item">

@@ -25,7 +25,7 @@ if (is_singular('service')) {
         $light_hero_class = 'service-light-hero';
     }
     
-    if (in_array(strtolower($post_slug), ['paid-ads', 'paidads']) || $post_title === 'Paid Ads') {
+    if (in_array(strtolower($post_slug), ['paid-ads', 'paidads', 'services-paid-ads'], true) || $post_title === 'Paid Ads') {
         $light_hero_class .= ' service-paid-ads';
     }
 

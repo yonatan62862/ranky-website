@@ -64,6 +64,7 @@ if (!$hero_title_prefix && !$hero_title_main && !$hero_subtitle && !$hero_primar
             $is_startup = false;
             $is_tech_industry = false;
             $is_b2b_industry = false;
+            $is_local_business = false;
             if (is_singular('industry')) {
                 $slug = get_post_field('post_name', get_the_ID());
                 $title = get_the_title();
@@ -81,6 +82,10 @@ if (!$hero_title_prefix && !$hero_title_main && !$hero_subtitle && !$hero_primar
                 );
                 $is_tech_industry = ($slug_lower === 'tech-industry-page' || stripos($title, 'Tech') !== false);
                 $is_b2b_industry = ($slug_lower === 'b2b-industry-page' || stripos($title, 'B2B') !== false);
+                $is_local_business = (
+                    $slug_lower === 'local-business-industry-page'
+                    || stripos($title, 'Local Business') !== false
+                );
             }
             if ($is_b2c): ?>
                 <div class="industry-hero__visual">
@@ -108,7 +113,7 @@ if (!$hero_title_prefix && !$hero_title_main && !$hero_subtitle && !$hero_primar
                     ></div>
                 </div>
             <?php elseif ($hero_image): ?>
-                <div class="industry-hero__visual">
+                <div class="industry-hero__visual<?php echo $is_local_business ? ' industry-hero__visual--local-business' : ''; ?>">
                     <?php echo wp_get_attachment_image($hero_image['ID'], 'large', false, ['alt' => esc_attr($hero_image['alt'] ?? '')]); ?>
                 </div>
             <?php endif; ?>

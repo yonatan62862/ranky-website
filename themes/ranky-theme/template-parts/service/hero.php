@@ -101,8 +101,13 @@ if (!$title) {
                     >
                 </div>
             <?php elseif ($is_paid_ads) : ?>
-                <div class="hero__visual">
-                    <div id="hero-lottie" class="hero__lottie" aria-hidden="true"></div>
+                <div class="hero__visual hero__visual--scaled-lottie">
+                    <div
+                        id="hero-lottie"
+                        class="hero__lottie"
+                        data-lottie-scale="1.5"
+                        aria-hidden="true"
+                    ></div>
                 </div>
             <?php elseif ($is_seo_geo || $is_external_cmo || $is_orm || $is_content_marketing) : ?>
                 <div class="hero__visual">

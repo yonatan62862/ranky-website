@@ -158,6 +158,14 @@ body.service-content-marketing.single-service .hero__visual #hero-lottie svg {
     height: 150% !important;
 }
 
+/* Paid Ads — larger Lottie */
+body.service-paid-ads .single-service .hero__visual.hero__visual--scaled-lottie,
+body.service-paid-ads.single-service .hero__visual.hero__visual--scaled-lottie,
+body.service-paid-ads .single-service .hero__visual.hero__visual--scaled-lottie #hero-lottie,
+body.service-paid-ads.single-service .hero__visual.hero__visual--scaled-lottie #hero-lottie {
+    overflow: visible;
+}
+
 /* Hero Responsive */
 @media (max-width: 1024px) {
 

@@ -232,7 +232,7 @@ function ranky_enqueue_lottie_assets() {
         'ranky-hero-lottie',
         get_template_directory_uri() . '/assets/js/hero-lottie.js',
         ['lottie'],
-        '1.1',
+        '1.2',
         true
     );
 

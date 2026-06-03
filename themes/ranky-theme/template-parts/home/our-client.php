@@ -13,6 +13,16 @@ $logos = get_field('our_client_logos');
 if (!$logos || !is_array($logos)) {
     return;
 }
+
+// Default bubble sizes per position (matches design reference for 17 logos)
+$default_logo_sizes = [
+    'medium', 'large', 'medium',
+    'medium', 'medium', 'medium',
+    'large', 'small', 'medium',
+    'small', 'large', 'medium',
+    'small', 'large', 'small',
+    'medium', 'small',
+];
 ?>
 
 <section class="our-client">
@@ -21,9 +31,14 @@ if (!$logos || !is_array($logos)) {
       
       <!-- Left: Client Logos -->
       <div class="our-client__logos">
+        <?php $logo_index = 0; ?>
         <?php foreach ($logos as $logo_item) : ?>
           <?php if (!empty($logo_item['logo'])) : ?>
-            <div class="client-logo client-logo--<?php echo esc_attr($logo_item['size'] ?? 'medium'); ?>">
+            <?php
+              $size = $default_logo_sizes[$logo_index] ?? 'medium';
+              $logo_index++;
+            ?>
+            <div class="client-logo client-logo--<?php echo esc_attr($size); ?>">
               <img 
                 src="<?php echo esc_url($logo_item['logo']['url']); ?>" 
                 alt="<?php echo esc_attr($logo_item['logo']['alt'] ?? ''); ?>"

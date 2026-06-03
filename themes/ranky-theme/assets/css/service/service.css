@@ -93,6 +93,12 @@ body.service-paid-ads.single-service .hero__title {
     color: #00A8E8;
 }
 
+/* Paid Ads — nudge hero content slightly down */
+body.service-paid-ads .single-service .hero__content,
+body.service-paid-ads.single-service .hero__content {
+    padding-top: 32px;
+}
+
 .single-service .hero__description,
 body.single-service .hero__description {
     font-family: 'Rubik', sans-serif;
@@ -141,7 +147,6 @@ body.single-service .hero__visual #hero-lottie {
 /* Content Marketing — larger Lottie */
 body.service-content-marketing .single-service .hero__visual,
 body.service-content-marketing.single-service .hero__visual {
-    height: 780px;
     overflow: visible;
 }
 
@@ -1220,6 +1225,7 @@ body.single-service .what-you-gain__system {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 60px;
+    margin-bottom: 42px;
 }
 
 .single-service .system__content,

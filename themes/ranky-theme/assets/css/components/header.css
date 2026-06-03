@@ -169,8 +169,8 @@
 
 
 .site-header--dark .site-header__dropdown-link:hover {
-  background: rgba(14, 21, 82, 0.1);
-  color: #0E1552;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
 }
 
 /* CTA */

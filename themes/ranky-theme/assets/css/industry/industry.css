@@ -318,7 +318,7 @@
 
 .industry-intro__image {
     position: absolute;
-    top: -569px;
+    top: -480px;
     left: 45%;
     transform: translateX(-110%);
     z-index: 3;
@@ -329,7 +329,7 @@
 }
 
 .industry-intro__image img {
-    max-width: 620px;
+    max-width: 930px;
     width: 100%;
     height: auto;
 }
@@ -375,7 +375,7 @@
     }
 
     .industry-intro__image img {
-        max-width: 360px;
+        max-width: 540px;
     }
 }
 
@@ -1229,7 +1229,7 @@
 .industry-logos img {
     max-width: 100%;
     height: auto;
-    opacity: 0.7;
+    opacity: 1;
     transition: opacity 0.2s ease;
 }
 

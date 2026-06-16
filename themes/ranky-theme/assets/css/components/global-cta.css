@@ -86,6 +86,7 @@
   flex: 1;
   border: none;
   background: transparent;
+  text-align: center;
   padding: 10px 16px;
   font-size: 14px;
   color: #ffffff;
@@ -172,11 +173,11 @@
   }
 
   .global-cta__newsletter-field button {
-    width: 100%;
+    width: 90%;
     margin-top: 10px;
   }
 
   .global-cta__socials {
-    justify-content: flex-start;
+    justify-content: center;
   }
 }

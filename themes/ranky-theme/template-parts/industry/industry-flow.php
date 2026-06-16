@@ -104,48 +104,57 @@ if (!$has_intro && !$has_challenges && !$has_approach && !$has_solutions) {
 
         <?php if ($challenges_solutions && is_array($challenges_solutions) && !empty($challenges_solutions)): ?>
             <div class="industry-challenges-solutions__wrapper">
-                <div class="industry-challenges-solutions__headers">
-                    <?php if ($challenges_column_title): ?>
-                        <h3 class="industry-challenges-solutions__column-title industry-challenges-solutions__column-title--challenges">
-                            <?php echo esc_html($challenges_column_title); ?>
-                        </h3>
-                    <?php endif; ?>
-                    <?php if ($solutions_column_title): ?>
-                        <h3 class="industry-challenges-solutions__column-title industry-challenges-solutions__column-title--solutions">
-                            <?php echo esc_html($solutions_column_title); ?>
-                        </h3>
-                    <?php endif; ?>
-                </div>
+                <?php if ($challenges_column_title): ?>
+                    <h3 class="industry-challenges-solutions__column-title industry-challenges-solutions__column-title--challenges" style="grid-row: 1; grid-column: 1;">
+                        <?php echo esc_html($challenges_column_title); ?>
+                    </h3>
+                <?php endif; ?>
 
-                <div class="industry-challenges-solutions__list">
-                    <?php foreach ($challenges_solutions as $item): ?>
-                        <div class="industry-challenges-solutions__row">
-                            <!-- Challenge Side (Left) -->
-                            <div class="industry-challenges-solutions__challenge-item">
-                                <?php if (!empty($item['challenge_icon'])): ?>
-                                    <div class="industry-challenges-solutions__icon">
-                                        <?php echo wp_get_attachment_image($item['challenge_icon']['ID'], 'thumbnail', false, ['alt' => esc_attr($item['challenge_icon']['alt'] ?? '')]); ?>
-                                    </div>
-                                <?php endif; ?>
-
-                                <?php if (!empty($item['challenge_title'])): ?>
-                                    <h4 class="industry-challenges-solutions__challenge-title">
-                                        <?php echo esc_html($item['challenge_title']); ?>
-                                    </h4>
-                                <?php endif; ?>
+                <?php
+                $grid_row = 2;
+                foreach ($challenges_solutions as $item):
+                ?>
+                    <div class="industry-challenges-solutions__challenge-item" style="grid-row: <?php echo (int) $grid_row; ?>; grid-column: 1;">
+                        <?php if (!empty($item['challenge_icon'])): ?>
+                            <div class="industry-challenges-solutions__icon">
+                                <?php echo wp_get_attachment_image($item['challenge_icon']['ID'], 'thumbnail', false, ['alt' => esc_attr($item['challenge_icon']['alt'] ?? '')]); ?>
                             </div>
+                        <?php endif; ?>
 
-                            <!-- Solution Side (Right) -->
-                            <?php if (!empty($item['solution_text'])): ?>
-                                <div class="industry-challenges-solutions__solution-item">
-                                    <p class="industry-challenges-solutions__solution-text">
-                                        <?php echo esc_html($item['solution_text']); ?>
-                                    </p>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+                        <?php if (!empty($item['challenge_title'])): ?>
+                            <h4 class="industry-challenges-solutions__challenge-title">
+                                <?php echo esc_html($item['challenge_title']); ?>
+                            </h4>
+                        <?php endif; ?>
+                    </div>
+                <?php
+                    $grid_row++;
+                endforeach;
+                ?>
+
+                <?php if ($solutions_column_title): ?>
+                    <h3 class="industry-challenges-solutions__column-title industry-challenges-solutions__column-title--solutions" style="grid-row: 1; grid-column: 2;">
+                        <?php echo esc_html($solutions_column_title); ?>
+                    </h3>
+                <?php endif; ?>
+
+                <?php
+                $grid_row = 2;
+                foreach ($challenges_solutions as $item):
+                    if (empty($item['solution_text'])) {
+                        $grid_row++;
+                        continue;
+                    }
+                ?>
+                    <div class="industry-challenges-solutions__solution-item" style="grid-row: <?php echo (int) $grid_row; ?>; grid-column: 2;">
+                        <p class="industry-challenges-solutions__solution-text">
+                            <?php echo esc_html($item['solution_text']); ?>
+                        </p>
+                    </div>
+                <?php
+                    $grid_row++;
+                endforeach;
+                ?>
             </div>
         <?php endif; ?>
     </div>

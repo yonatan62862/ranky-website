@@ -340,7 +340,7 @@
 
 @media (max-width: 1024px) {
     .industry-intro {
-        padding: 100px 0;
+        padding: 40px 0;
     }
 
     .industry-intro__image {
@@ -363,7 +363,7 @@
 
 @media (max-width: 768px) {
     .industry-intro__title-prefix {
-        font-size: 18px;
+        font-size: 24px;
     }
 
     .industry-intro__title-main {
@@ -460,19 +460,16 @@
     max-width: 1089px;
     margin: 0 auto;
     position: relative;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 0;
+    row-gap: 10px;
+    align-items: stretch;
 }
 
 /* ==============================
    HEADERS
 ============================== */
-
-.industry-challenges-solutions__headers {
-    display: grid;
-    grid-template-columns: 53.46% 50.18% 28.46%;
-    gap: 0;
-    margin-bottom: 20px;
-    position: relative;
-}
 
 .industry-challenges-solutions__column-title {
     font-family: 'Rubik', sans-serif;
@@ -482,46 +479,20 @@
     text-align: center;
     letter-spacing: 0.015em;
     text-transform: capitalize;
-    margin: 0;
+    margin: 0 0 10px;
 }
 
 .industry-challenges-solutions__column-title--challenges {
     color: #0E1552;
-    grid-column: 1;
 }
 
 .industry-challenges-solutions__column-title--solutions {
     color: #0E1552;
-    grid-column: 2;
     margin-right: 70px;
 }
 
 /* ==============================
-   LIST
-============================== */
-
-.industry-challenges-solutions__list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-/* ==============================
-   ROW
-============================== */
-
-.industry-challenges-solutions__row {
-    display: grid;
-    grid-template-columns: 50% 50% 28.46%;
-    gap: 0;
-    align-items: stretch;
-    position: relative;
-    min-height: 100px;
-    margin-bottom: 10px;
-}
-
-/* ==============================
-   CHALLENGE ITEM (LEFT)
+   ITEMS
 ============================== */
 
 .industry-challenges-solutions__challenge-item {
@@ -609,18 +580,30 @@
 ============================== */
 
 @media (max-width: 1024px) {
-    .industry-challenges-solutions {
-        padding: 100px 0;
-    }
+    .industry-challenges-solutions {}
 
     .industry-challenges-solutions__wrapper {
         max-width: 100%;
         padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
     }
 
-    .industry-challenges-solutions__row {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    .industry-challenges-solutions__column-title,
+    .industry-challenges-solutions__challenge-item,
+    .industry-challenges-solutions__solution-item {
+        grid-row: auto !important;
+        grid-column: auto !important;
+    }
+
+    .industry-challenges-solutions__column-title {
+        margin-bottom: 8px;
+    }
+
+    .industry-challenges-solutions__column-title--solutions {
+        margin-top: 20px;
+        margin-right: 0;
     }
 
     .industry-challenges-solutions__challenge-item {
@@ -634,15 +617,6 @@
 
     .industry-challenges-solutions__solution-text {
         transform: none;
-    }
-
-    .industry-challenges-solutions__headers {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .industry-challenges-solutions__column-title--solutions {
-        grid-column: 1;
     }
 }
 

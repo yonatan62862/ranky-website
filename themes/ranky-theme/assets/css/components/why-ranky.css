@@ -148,6 +148,7 @@
   text-transform: capitalize;
   color: #0E1552;
   margin: 0;
+  min-width: 0;
 }
 
 /* ==============================
@@ -177,6 +178,7 @@
   text-transform: none;
   color: #0E1552;
   margin: 0;
+  min-width: 0;
 }
 
 /* ==============================
@@ -184,27 +186,55 @@
 ============================== */
 
 @media (max-width: 900px) {
-  .why-ranky__comparison {
-    flex-direction: column;
-    gap: 28px;
+  .why-ranky {
+    padding: 80px 0;
   }
 
-  .comparison-column--old {
+  .why-ranky__header {
+    margin-bottom: 48px;
+  }
+
+  .why-ranky__comparison {
+    flex-direction: column;
+    gap: 32px;
+    margin: 48px auto 40px;
+  }
+
+  .comparison-column--old,
+  .comparison-column--ranky {
     width: 100%;
   }
 
   .comparison-column--ranky {
     margin-left: 0;
+    margin-top: 0;
+  }
+
+  .comparison-heading--old,
+  .comparison-heading--ranky {
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 16px;
   }
 
   .comparison-column {
     gap: 16px;
   }
 
+  .comparison-col {
+    width: 100%;
+  }
+
   .comparison-col--old,
   .comparison-col--ranky {
-    padding: 20px;
-    min-height: 80px;
+    padding: 18px 16px;
+    min-height: auto;
+  }
+
+  .comparison-col--old .comparison-text,
+  .comparison-col--ranky .comparison-text {
+    font-size: 16px;
+    min-width: 0;
   }
 }
 

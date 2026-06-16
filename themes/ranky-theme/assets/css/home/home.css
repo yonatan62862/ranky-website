@@ -754,22 +754,70 @@ body.home .hero__video {
 }
 
 @media (max-width: 1024px) {
+    .our-client {
+        padding: 60px 24px;
+    }
+
     .our-client__grid {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 48px;
     }
 
     .our-client__logos {
-        width: 640px;
-        min-height: 880px;
-        transform: scale(0.82);
-        transform-origin: top center;
-        margin-bottom: -140px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px 16px;
+        width: 100%;
+        max-width: 420px;
+        min-height: auto;
+        margin-inline: auto;
+        margin-bottom: 0;
+        transform: none;
+    }
+
+    .our-client__logos .client-logo {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-inline: auto;
+    }
+
+    .our-client__logos .client-logo:nth-child(n) {
+        top: auto;
+        left: auto;
+    }
+
+    .our-client__logos .client-logo:nth-child(3n + 2) {
+        margin-top: 24px;
+    }
+
+    .client-logo--large {
+        width: 110px;
+        height: 110px;
+    }
+
+    .client-logo--medium {
+        width: 92px;
+        height: 92px;
+    }
+
+    .client-logo--small {
+        width: 72px;
+        height: 72px;
     }
 
     .our-client__content {
+        max-width: 100%;
         text-align: center;
         margin: 0 auto;
+    }
+
+    .our-client__title {
+        font-size: 36px;
+    }
+
+    .our-client__text {
+        font-size: 20px;
     }
 
     .our-client__actions {
@@ -779,13 +827,59 @@ body.home .hero__video {
 
 @media (max-width: 768px) {
     .our-client {
-        padding: 48px 24px;
+        padding: 48px 20px;
+    }
+
+    .our-client__grid {
+        gap: 36px;
+    }
+
+    .our-client__content {
+        order: 1;
     }
 
     .our-client__logos {
-        transform: scale(0.62);
-        transform-origin: top center;
-        margin-bottom: -300px;
+        order: 2;
+        max-width: 100%;
+        gap: 16px 12px;
+    }
+
+    .our-client__logos .client-logo:nth-child(3n + 2) {
+        margin-top: 16px;
+    }
+
+    .client-logo--large {
+        width: 92px;
+        height: 92px;
+    }
+
+    .client-logo--medium {
+        width: 76px;
+        height: 76px;
+    }
+
+    .client-logo--small {
+        width: 58px;
+        height: 58px;
+    }
+
+    .our-client__title {
+        font-size: 28px;
+        letter-spacing: 0.02em;
+    }
+
+    .our-client__text {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    .our-client__actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .our-client__actions .btn {
+        width: 100%;
     }
 }
 
@@ -1168,8 +1262,79 @@ body.home .hero__video {
   ============================== */
 
 @media (max-width: 768px) {
+    .success {
+        padding: 60px 0 40px;
+        overflow: hidden;
+    }
+
+    .success__title {
+        font-size: 28px;
+        line-height: 1.25;
+        margin-bottom: 32px;
+    }
+
+    .success__carousel {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        padding-bottom: 12px;
+        min-height: 300px;
+    }
+
+    .success__carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .success__track {
+        animation: none;
+        gap: 16px;
+        padding: 0 20px;
+    }
+
     .success-card {
-        flex: 0 0 85%;
+        flex: 0 0 calc(100vw - 40px);
+        width: calc(100vw - 40px);
+        max-width: 340px;
+        min-height: auto;
+        max-height: none;
+        padding: 24px 20px 20px;
+        scroll-snap-align: center;
+    }
+
+    .success-card__avatar {
+        margin-bottom: 0;
+    }
+
+    .success-card__avatar img {
+        width: 56px;
+        height: 56px;
+    }
+
+    .success-card__quote {
+        font-size: 14px;
+    }
+
+    .success-card__author-info strong {
+        font-size: 16px;
+    }
+
+    .success-card__kpi {
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 0;
+    }
+
+    .success-card__kpi-value,
+    .success-card__kpi-label,
+    .success-card__industry {
+        font-size: 15px;
+    }
+
+    .success-card__industry {
+        margin-left: 0;
+        flex-basis: 100%;
     }
 }
 

@@ -101,6 +101,7 @@ body.service-paid-ads.single-service .hero__content {
 
 /* Paid Ads — desktop-only container padding */
 @media (min-width: 1025px) {
+
     body.service-paid-ads .single-service .hero .container,
     body.service-paid-ads.single-service .hero .container {
         padding: 92px;
@@ -214,11 +215,6 @@ body.service-paid-ads.single-service .hero__visual.hero__visual--scaled-lottie #
         overflow: visible;
         justify-content: center;
         align-items: center;
-    }
-
-    body.service-content-marketing .single-service .hero,
-    body.service-content-marketing.single-service .hero {
-        overflow: visible;
     }
 
     body.service-content-marketing .single-service .hero__visual #hero-lottie,

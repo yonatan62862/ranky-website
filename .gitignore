@@ -3,3 +3,4 @@
 /upgrade/
 *.log
 .DS_Store
+/uploads-backup/

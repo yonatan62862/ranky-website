@@ -99,6 +99,14 @@ body.service-paid-ads.single-service .hero__content {
     padding-top: 32px;
 }
 
+/* Paid Ads — desktop-only container padding */
+@media (min-width: 1025px) {
+    body.service-paid-ads .single-service .hero .container,
+    body.service-paid-ads.single-service .hero .container {
+        padding: 92px;
+    }
+}
+
 .single-service .hero__description,
 body.single-service .hero__description {
     font-family: 'Rubik', sans-serif;
@@ -278,9 +286,10 @@ body.service-paid-ads.single-service .hero__visual.hero__visual--scaled-lottie #
 
     body.service-content-marketing .single-service .hero__visual #hero-lottie,
     body.service-content-marketing.single-service .hero__visual #hero-lottie {
-        width: 160%;
-        height: 160%;
-        transform: translate(0%, -2%);
+        width: 100%;
+        height: 100%;
+        transform: scale(1.50);
+        transform-origin: center center;
     }
 }
 
@@ -1138,6 +1147,11 @@ body.single-service .why-different .comparison-card__text {
     body.service-paid-ads .hero-overview-unified .why-different__header,
     body.service-paid-ads .hero-overview-unified .single-service .why-different__header {
         margin-bottom: 0;
+    }
+
+    body.service-paid-ads .hero-overview-unified .why-different__title,
+    body.service-paid-ads .hero-overview-unified .single-service .why-different__title {
+        margin-top: 70px;
     }
 
     .single-service .why-different .comparison-column--old,

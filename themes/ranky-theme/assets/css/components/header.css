@@ -190,6 +190,49 @@
 
 @media (max-width: 1024px) {
 
+  /* Sticky header on mobile */
+  .site-header {
+    position: fixed;
+    transition: background 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
+  }
+
+  /* Scrolled state: solid dark-blue background */
+  .site-header.is-scrolled {
+    background: rgba(6, 28, 61, 0.97);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /*
+   * When the mobile menu is open, remove backdrop-filter from the header.
+   * backdrop-filter creates a new containing block for position:fixed children,
+   * which causes the mobile-menu (position:fixed; inset:0) to be clipped
+   * to the header's dimensions instead of covering the full viewport.
+   */
+  body.menu-open .site-header {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(6, 28, 61, 0.97);
+  }
+
+  /* Dark-variant pages (light hero): restore white text/icons once scrolled */
+  .site-header--dark.is-scrolled .site-header__logo a {
+    color: #ffffff;
+  }
+
+  .site-header--dark.is-scrolled .site-header__logo img {
+    filter: none;
+  }
+
+  .site-header--dark.is-scrolled .site-header__tagline {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .site-header--dark.is-scrolled .hamburger span {
+    background: #ffffff;
+  }
+
   .site-header__nav,
   .site-header__cta {
     display: none;

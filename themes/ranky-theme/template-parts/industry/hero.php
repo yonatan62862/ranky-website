@@ -88,7 +88,7 @@ if (!$hero_title_prefix && !$hero_title_main && !$hero_subtitle && !$hero_primar
                 );
             }
             if ($is_b2c): ?>
-                <div class="industry-hero__visual">
+                <div class="industry-hero__visual industry-hero__visual--b2c">
                     <video class="industry-hero__video" src="<?php echo esc_url(get_template_directory_uri() . '/assets/video/B2C.mp4'); ?>" autoplay muted loop playsinline></video>
                 </div>
             <?php elseif ($is_ecommerce): ?>
@@ -103,8 +103,17 @@ if (!$hero_title_prefix && !$hero_title_main && !$hero_subtitle && !$hero_primar
                 <div class="industry-hero__visual industry-hero__visual--startup">
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/gifs/' . rawurlencode('Startup 1.gif')); ?>" alt="Startup" class="industry-hero__gif">
                 </div>
-            <?php elseif ($is_tech_industry || $is_b2b_industry): ?>
+            <?php elseif ($is_tech_industry): ?>
                 <div class="industry-hero__visual industry-hero__visual--scaled-lottie">
+                    <div
+                        id="hero-lottie"
+                        class="industry-hero__lottie"
+                        data-lottie-scale="1.5"
+                        aria-hidden="true"
+                    ></div>
+                </div>
+            <?php elseif ($is_b2b_industry): ?>
+                <div class="industry-hero__visual industry-hero__visual--scaled-lottie industry-hero__visual--b2b">
                     <div
                         id="hero-lottie"
                         class="industry-hero__lottie"

@@ -36,7 +36,8 @@
 }
 
 .blog-archive__grid-section {
-    padding-block: var(--section-spacing);
+    padding-top: 30px;
+    padding-bottom: var(--section-spacing);
     background-color: #fafbfd;
     background-image:
         radial-gradient(ellipse 80% 70% at top left, #FFCEC9 0%, transparent 60%),

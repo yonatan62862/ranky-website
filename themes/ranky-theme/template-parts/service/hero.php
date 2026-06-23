@@ -87,7 +87,7 @@ if (!$title) {
                     || $slug_lower === 'services-paid-ads'
                     || stripos($post_title, 'Paid Ads') !== false
                 );
-                $is_seo_geo = ($slug_lower === 'seo-geo');
+                $is_seo_geo = ($slug_lower === 'seo-geo' || $slug_lower === 'services-seo-geo' || stripos($post_title, 'SEO') !== false && stripos($post_title, 'GEO') !== false);
                 $is_external_cmo = ($slug_lower === 'external-cmo');
                 $is_orm = ($slug_lower === 'orm' || strtoupper($post_title) === 'ORM' || stripos($slug_lower, 'orm') !== false);
                 $is_content_marketing = ($slug_lower === 'content-marketing' || stripos($post_title, 'Content Marketing') !== false);

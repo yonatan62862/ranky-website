@@ -229,6 +229,11 @@
         padding: 80px 0 60px;
     }
 
+    .industry-hero__title,
+    .industry-hero__subtitle {
+        text-align: left;
+    }
+
     .industry-hero__title-prefix {
         font-size: 18px;
     }
@@ -250,6 +255,10 @@
     .industry-hero__visual #hero-lottie {
         min-height: 260px;
         height: 280px;
+    }
+
+    .industry-hero__visual {
+        padding-top: 24px;
     }
 
     /* Reset local-business scale to prevent overflow */

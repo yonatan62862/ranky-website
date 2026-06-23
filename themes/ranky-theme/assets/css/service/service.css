@@ -287,6 +287,11 @@ body.service-paid-ads.single-service .hero__visual.hero__visual--scaled-lottie #
         transform: scale(1.50);
         transform-origin: center center;
     }
+
+    body.service-paid-ads .single-service .hero__visual--scaled-lottie,
+    body.service-paid-ads.single-service .hero__visual--scaled-lottie {
+        padding-top: 24px;
+    }
 }
 
 /* ===============================

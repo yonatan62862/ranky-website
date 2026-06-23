@@ -188,7 +188,7 @@ function ranky_enqueue_lottie_assets() {
     } elseif (is_singular('service')) {
         $service_slug = strtolower(get_post_field('post_name', get_queried_object_id()));
         $service_title = strtolower(get_the_title(get_queried_object_id()));
-        if ($service_slug === 'seo-geo') {
+        if ($service_slug === 'seo-geo' || $service_slug === 'services-seo-geo' || (strpos($service_title, 'seo') !== false && strpos($service_title, 'geo') !== false)) {
             $lottie_path = get_template_directory_uri() . '/assets/animations/GEO.json';
         } elseif ($service_slug === 'external-cmo' || strpos($service_title, 'external cmo') !== false) {
             $lottie_path = get_template_directory_uri() . '/assets/animations/' . rawurlencode('External CMO.json');

@@ -1366,7 +1366,7 @@
 
 @media (max-width: 768px) {
     .industry-logos {
-        padding: 200px 0 60px;
+        padding: 200px 0 100px;
     }
 
     .industry-logos__title {
@@ -1377,6 +1377,10 @@
     .industry-logos__grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
+    }
+
+    .industry-faq {
+        padding-top: 140px;
     }
 }
 

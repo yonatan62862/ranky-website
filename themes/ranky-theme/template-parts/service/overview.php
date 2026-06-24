@@ -1,7 +1,15 @@
 <?php
 // Skip this section for seo-geo — why-different is merged into the hero instead
-if (is_singular('service') && strtolower(get_post_field('post_name', get_the_ID())) === 'seo-geo') {
-    return;
+if (is_singular('service')) {
+    $overview_slug  = strtolower(get_post_field('post_name', get_the_ID()));
+    $overview_title = strtolower(get_the_title());
+    if (
+        $overview_slug === 'seo-geo' ||
+        $overview_slug === 'services-seo-geo' ||
+        (strpos($overview_title, 'seo') !== false && strpos($overview_title, 'geo') !== false)
+    ) {
+        return;
+    }
 }
 
 $eyebrow = get_field('why_different_eyebrow');

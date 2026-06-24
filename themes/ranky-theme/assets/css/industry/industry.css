@@ -261,6 +261,10 @@
         padding-top: 24px;
     }
 
+    .industry-hero__visual--b2c {
+        padding-top: 48px;
+    }
+
     /* Reset local-business scale to prevent overflow */
     .industry-hero__visual--local-business img {
         transform: none;
@@ -1321,7 +1325,6 @@
 .industry-logos__grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 40px;
     align-items: center;
 }
 
@@ -1332,8 +1335,12 @@
 }
 
 .industry-logos img {
-    max-width: 100%;
+    max-width: 120px;
+    max-height: 100px;
+    width: auto;
     height: auto;
+    display: block;
+    margin: 0 auto;
     opacity: 1;
     transition: opacity 0.2s ease;
 }
@@ -1582,6 +1589,6 @@
 
     .industry-results__grid,
     .industry-logos__grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 }

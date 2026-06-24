@@ -1579,15 +1579,10 @@
         grid-template-columns: 1fr;
         gap: 48px;
     }
-
-    .industry-results__grid {
-        grid-template-columns: 1fr 1fr;
-    }
 }
 
 @media (max-width: 768px) {
 
-    .industry-results__grid,
     .industry-logos__grid {
         grid-template-columns: 1fr 1fr;
     }

@@ -14,7 +14,8 @@ while (have_posts()) : the_post();
 $_service_slug    = is_singular('service') ? strtolower(get_post_field('post_name', get_the_ID())) : '';
 $_is_paid_ads     = in_array($_service_slug, ['paid-ads', 'paidads', 'services-paid-ads'], true)
     || stripos(get_the_title(), 'Paid Ads') !== false;
-$_is_external_cmo = ($_service_slug === 'external-cmo');
+$_is_external_cmo = in_array($_service_slug, ['external-cmo', 'services-external-cmo'], true)
+    || stripos(get_the_title(), 'External CMO') !== false;
 ?>
 
 <main class="service-page">

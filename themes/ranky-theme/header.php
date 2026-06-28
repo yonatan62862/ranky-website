@@ -29,7 +29,7 @@ if (is_singular('service')) {
         $light_hero_class .= ' service-paid-ads';
     }
 
-    if (strtolower($post_slug) === 'external-cmo') {
+    if (in_array(strtolower($post_slug), ['external-cmo', 'services-external-cmo'], true) || stripos($post_title, 'External CMO') !== false) {
         $light_hero_class .= ' service-external-cmo';
     }
 

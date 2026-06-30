@@ -311,10 +311,12 @@
 
 .blog-hero__image-wrap {
     position: absolute;
-    right: 27%;
-    top: 68%;
+    right: 16%;
+    top: 64%;
     z-index: 10;
     padding-right: var(--container-padding);
+    width: 43%;
+    max-width: 560px;
 }
 
 .blog-hero__image {

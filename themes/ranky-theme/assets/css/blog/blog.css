@@ -314,19 +314,20 @@
     right: 16%;
     top: 64%;
     z-index: 10;
-    padding-right: var(--container-padding);
     width: 43%;
     max-width: 560px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .blog-hero__image {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
-    border-radius: var(--radius-md);
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* Single blog main (same gradient background as archive grid section) */

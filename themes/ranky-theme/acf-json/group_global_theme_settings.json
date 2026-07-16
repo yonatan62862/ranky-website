@@ -229,11 +229,20 @@
         },
         {
             "key": "field_global_contact_form_recipient_email",
-            "label": "Contact Form Recipient Email",
+            "label": "Contact Form Primary Recipient",
             "name": "global_contact_form_recipient_email",
             "type": "email",
-            "default_value": "yonatan62862@gmail.com",
-            "instructions": "Email address that will receive contact form submissions",
+            "default_value": "lior.m@ranky.co",
+            "instructions": "Primary email address that will receive contact form submissions",
+            "required": 0
+        },
+        {
+            "key": "field_global_contact_form_recipient_email_secondary",
+            "label": "Contact Form Secondary Recipient",
+            "name": "global_contact_form_recipient_email_secondary",
+            "type": "email",
+            "default_value": "noya@ranky.co",
+            "instructions": "Optional secondary email that will also receive contact form submissions",
             "required": 0
         },
         {

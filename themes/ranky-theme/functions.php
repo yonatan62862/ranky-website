@@ -328,6 +328,9 @@ function ranky_enqueue_header_scripts() {
   
 
   add_filter('wp_mail_from', function ($email) {
+    if (defined('RANKY_MAIL_FROM_EMAIL') && is_email(RANKY_MAIL_FROM_EMAIL)) {
+      return RANKY_MAIL_FROM_EMAIL;
+    }
     if (!is_email($email) || strpos($email, '@localhost') !== false) {
       $admin_email = get_option('admin_email');
       if (is_email($admin_email)) {
@@ -338,12 +341,42 @@ function ranky_enqueue_header_scripts() {
   });
 
   add_filter('wp_mail_from_name', function ($name) {
+    if (defined('RANKY_MAIL_FROM_NAME') && RANKY_MAIL_FROM_NAME !== '') {
+      return RANKY_MAIL_FROM_NAME;
+    }
     $site_name = get_bloginfo('name');
     return $site_name !== '' ? $site_name : $name;
   });
 
   add_action('wp_ajax_submit_contact_card', 'handle_contact_card_submit');
   add_action('wp_ajax_nopriv_submit_contact_card', 'handle_contact_card_submit');
+
+  /**
+   * Resolve contact form recipient list (primary + optional secondary).
+   *
+   * @return string[]
+   */
+  function ranky_get_contact_form_recipients() {
+    $primary = get_field('global_contact_form_recipient_email', 'option');
+    $secondary = get_field('global_contact_form_recipient_email_secondary', 'option');
+
+    if (!is_email($primary) && defined('RANKY_CONTACT_PRIMARY')) {
+      $primary = RANKY_CONTACT_PRIMARY;
+    }
+    if (!is_email($secondary) && defined('RANKY_CONTACT_SECONDARY')) {
+      $secondary = RANKY_CONTACT_SECONDARY;
+    }
+
+    $recipients = [];
+    if (is_email($primary)) {
+      $recipients[] = $primary;
+    }
+    if (is_email($secondary) && !in_array($secondary, $recipients, true)) {
+      $recipients[] = $secondary;
+    }
+
+    return $recipients;
+  }
   
   function handle_contact_card_submit() {
     if (
@@ -366,10 +399,13 @@ function ranky_enqueue_header_scripts() {
       wp_send_json_error('Terms not approved');
     }
 
-    $to = get_field('global_contact_form_recipient_email', 'option') ?: 'yonatan62862@gmail.com';
+    $to = ranky_get_contact_form_recipients();
+    if (empty($to)) {
+      wp_send_json_error('No recipient configured');
+    }
+
     $fields = get_field('global_contact_form_fields', 'option');
-    $reply_to = '';
-    $from_name_parts = [];
+    $submitter_email = '';
     $message = "New contact form submission:\n\n";
 
     if (is_array($fields)) {
@@ -388,12 +424,8 @@ function ranky_enqueue_header_scripts() {
 
         $message .= $label . ": " . $value . "\n";
 
-        if ($type === 'email' && is_email($value) && $reply_to === '') {
-          $reply_to = $value;
-        }
-
-        if ($type === 'text' && count($from_name_parts) < 2) {
-          $from_name_parts[] = $value;
+        if ($type === 'email' && is_email($value) && $submitter_email === '') {
+          $submitter_email = $value;
         }
       }
     } else {
@@ -404,18 +436,16 @@ function ranky_enqueue_header_scripts() {
       }
     }
 
-    // Deliver inquiries TO the configured recipient (not as From=To self-mail).
-    $from_name = !empty($from_name_parts)
-      ? implode(' ', $from_name_parts)
-      : (get_bloginfo('name') ?: 'Ranky Contact Form');
-    $from_email = ($reply_to !== '') ? $reply_to : 'noreply@ranky.website';
+    $from_email = defined('RANKY_MAIL_FROM_EMAIL') ? RANKY_MAIL_FROM_EMAIL : 'helpmegrow@ranky.co';
+    $from_name = defined('RANKY_MAIL_FROM_NAME') ? RANKY_MAIL_FROM_NAME : 'Ranky';
+    $default_reply_to = defined('RANKY_MAIL_REPLY_TO') ? RANKY_MAIL_REPLY_TO : 'lior.m@ranky.co';
+    // Prefer submitter so staff can reply to the lead; fall back to configured Reply-To.
+    $reply_to = $submitter_email !== '' ? $submitter_email : $default_reply_to;
 
     $headers = [
       'From: ' . $from_name . ' <' . $from_email . '>',
+      'Reply-To: ' . $reply_to,
     ];
-    if ($reply_to !== '') {
-      $headers[] = 'Reply-To: ' . $reply_to;
-    }
 
     $mail_error = null;
     $on_mail_failed = function ($error) use (&$mail_error) {

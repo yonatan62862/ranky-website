@@ -327,6 +327,21 @@ function ranky_enqueue_header_scripts() {
   
   
 
+  add_filter('wp_mail_from', function ($email) {
+    if (!is_email($email) || strpos($email, '@localhost') !== false) {
+      $admin_email = get_option('admin_email');
+      if (is_email($admin_email)) {
+        return $admin_email;
+      }
+    }
+    return $email;
+  });
+
+  add_filter('wp_mail_from_name', function ($name) {
+    $site_name = get_bloginfo('name');
+    return $site_name !== '' ? $site_name : $name;
+  });
+
   add_action('wp_ajax_submit_contact_card', 'handle_contact_card_submit');
   add_action('wp_ajax_nopriv_submit_contact_card', 'handle_contact_card_submit');
   
@@ -350,22 +365,80 @@ function ranky_enqueue_header_scripts() {
     if (empty($data['terms_approved'])) {
       wp_send_json_error('Terms not approved');
     }
-  
+
+    $to = get_field('global_contact_form_recipient_email', 'option') ?: 'yonatan62862@gmail.com';
+    $fields = get_field('global_contact_form_fields', 'option');
+    $reply_to = '';
+    $from_name_parts = [];
     $message = "New contact form submission:\n\n";
-  
-    foreach ($data as $key => $value) {
-      if (strpos($key, 'field_') === 0 && $value !== '') {
-        $message .= ucfirst(str_replace('_', ' ', $key)) . ": " . sanitize_text_field($value) . "\n";
+
+    if (is_array($fields)) {
+      foreach ($fields as $index => $field) {
+        $key = 'field_' . $index;
+        if (empty($data[$key])) {
+          continue;
+        }
+
+        $type = $field['type'] ?? 'text';
+        $label = !empty($field['label']) ? $field['label'] : ('Field ' . ($index + 1));
+        $raw = $data[$key];
+        $value = ($type === 'textarea')
+          ? sanitize_textarea_field($raw)
+          : sanitize_text_field($raw);
+
+        $message .= $label . ": " . $value . "\n";
+
+        if ($type === 'email' && is_email($value) && $reply_to === '') {
+          $reply_to = $value;
+        }
+
+        if ($type === 'text' && count($from_name_parts) < 2) {
+          $from_name_parts[] = $value;
+        }
+      }
+    } else {
+      foreach ($data as $key => $value) {
+        if (strpos($key, 'field_') === 0 && $value !== '') {
+          $message .= ucfirst(str_replace('_', ' ', $key)) . ": " . sanitize_text_field($value) . "\n";
+        }
       }
     }
-    error_log('CONTACT FORM SUBMITTED');
 
-    wp_mail(
-      'yonatan62862@gmail.com',
+    // Deliver inquiries TO the configured recipient (not as From=To self-mail).
+    $from_name = !empty($from_name_parts)
+      ? implode(' ', $from_name_parts)
+      : (get_bloginfo('name') ?: 'Ranky Contact Form');
+    $from_email = ($reply_to !== '') ? $reply_to : 'noreply@ranky.website';
+
+    $headers = [
+      'From: ' . $from_name . ' <' . $from_email . '>',
+    ];
+    if ($reply_to !== '') {
+      $headers[] = 'Reply-To: ' . $reply_to;
+    }
+
+    $mail_error = null;
+    $on_mail_failed = function ($error) use (&$mail_error) {
+      $mail_error = $error;
+    };
+    add_action('wp_mail_failed', $on_mail_failed);
+
+    $sent = wp_mail(
+      $to,
       'New Contact Form Message',
-      $message
+      $message,
+      $headers
     );
-  
+
+    remove_action('wp_mail_failed', $on_mail_failed);
+
+    if (!$sent) {
+      if ($mail_error instanceof WP_Error) {
+        error_log('Contact form mail failed: ' . $mail_error->get_error_message());
+      }
+      wp_send_json_error('Failed to send message');
+    }
+
     wp_send_json_success();
   }
   

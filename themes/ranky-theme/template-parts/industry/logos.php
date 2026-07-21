@@ -7,7 +7,7 @@ if (!$logos_title && (!$logos || !is_array($logos) || empty($logos))) {
 }
 ?>
 
-<section class="industry-logos">
+<section id="logos" class="industry-logos">
     <div class="container">
         <?php if ($logos_title): ?>
             <h2 class="industry-logos__title">

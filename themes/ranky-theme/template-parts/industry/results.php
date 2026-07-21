@@ -8,7 +8,7 @@ if (!$results_title && !$results_subtitle && (!$results_items || !is_array($resu
 }
 ?>
 
-<section class="industry-results">
+<section id="results" class="industry-results">
     <div class="container">
         <?php if ($results_title): ?>
             <h2 class="industry-results__title">

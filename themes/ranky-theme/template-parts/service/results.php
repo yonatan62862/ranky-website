@@ -22,7 +22,7 @@ if (!$results_items || !is_array($results_items) || empty($results_items)) {
 }
 ?>
 
-<section class="results">
+<section id="results" class="results">
     <div class="container">
 
         <?php if ($results_eyebrow || $results_title_light || $results_title_bold || $results_subtitle): ?>

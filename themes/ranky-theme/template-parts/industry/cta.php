@@ -7,7 +7,7 @@
 // For now, creating a basic structure that can be extended
 ?>
 
-<section class="industry-cta">
+<section id="cta" class="industry-cta">
     <div class="container">
         <!-- Content will be added based on ACF field requirements -->
     </div>

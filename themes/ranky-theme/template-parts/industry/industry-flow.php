@@ -39,7 +39,7 @@ if (!$has_intro && !$has_challenges && !$has_approach && !$has_solutions) {
 <div class="industry-flow">
 <!-- Intro Section -->
 <?php if ($has_intro): ?>
-<section class="industry-intro">
+<section id="intro" class="industry-intro">
   <div class="container">
 
     <div class="industry-intro__text">
@@ -78,7 +78,7 @@ if (!$has_intro && !$has_challenges && !$has_approach && !$has_solutions) {
 
 <!-- Challenges & Solutions Section -->
 <?php if ($has_challenges): ?>
-<section class="industry-challenges-solutions">
+<section id="challenges-solutions" class="industry-challenges-solutions">
     <div class="container">
         <?php if ($challenges_solutions_title_prefix || $challenges_solutions_title_main): ?>
             <h2 class="industry-challenges-solutions__title">
@@ -163,7 +163,7 @@ if (!$has_intro && !$has_challenges && !$has_approach && !$has_solutions) {
 
 <!-- Approach Section -->
 <?php if ($has_approach): ?>
-<section class="industry-approach">
+<section id="approach" class="industry-approach">
     <div class="container">
         <?php if ($approach_eyebrow): ?>
             <p class="industry-approach__eyebrow"><?php echo esc_html($approach_eyebrow); ?></p>
@@ -199,7 +199,7 @@ if (!$has_intro && !$has_challenges && !$has_approach && !$has_solutions) {
 
 <!-- Solutions Section -->
 <?php if ($has_solutions): ?>
-<section class="industry-solutions">
+<section id="solutions" class="industry-solutions">
     <div class="container">
         <?php if ($solutions_title): ?>
             <h2 class="industry-solutions__title">

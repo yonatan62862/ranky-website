@@ -8,7 +8,7 @@ if (!$faq_items || !is_array($faq_items)) {
 }
 ?>
 
-<section class="industry-faq">
+<section id="faq" class="industry-faq">
     <div class="container">
         <?php if ($faq_title_light || $faq_title_bold): ?>
             <h2 class="industry-faq__title">

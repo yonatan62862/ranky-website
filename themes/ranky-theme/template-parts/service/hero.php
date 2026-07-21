@@ -17,7 +17,7 @@ if (!$title) {
 }
 ?>
 
-<section class="hero">
+<section id="hero" class="hero">
     <div class="container">
         <div class="hero__content">
             <div class="hero__text">

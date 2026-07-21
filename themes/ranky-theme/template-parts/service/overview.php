@@ -21,7 +21,7 @@ $old_way_heading = get_field('old_way_heading') ?: 'Old Way';
 $ranky_way_heading = get_field('ranky_way_heading') ?: 'Ranky Way';
 ?>
 
-<section class="why-different">
+<section id="overview" class="why-different">
   <div class="container">
 
     <header class="why-different__header">

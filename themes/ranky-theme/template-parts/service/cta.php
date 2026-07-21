@@ -12,7 +12,7 @@ if (!$cta_title && !$cta_text && !$cta_button) {
 }
 ?>
 
-<section class="service-cta">
+<section id="cta" class="service-cta">
     <div class="container">
 
         <?php if ($cta_title): ?>

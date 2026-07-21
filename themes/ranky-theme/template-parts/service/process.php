@@ -14,7 +14,7 @@ if (!$process_steps || !is_array($process_steps) || empty($process_steps)) {
 }
 ?>
 
-<section class="process">
+<section id="process" class="process">
     <div class="container">
 
         <?php if ($process_title_light || $process_title_bold): ?>

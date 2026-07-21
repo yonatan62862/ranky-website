@@ -11,7 +11,7 @@ if (!$hero_title_prefix && !$hero_title_main && !$hero_subtitle && !$hero_primar
 }
 ?>
 
-<section class="industry-hero">
+<section id="hero" class="industry-hero">
     <div class="container">
         <div class="industry-hero__content">
             <div class="industry-hero__text">

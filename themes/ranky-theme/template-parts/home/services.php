@@ -10,7 +10,7 @@ $services = get_field('services');
 if (!$services || !is_array($services)) return;
 ?>
 
-<section class="services">
+<section id="services" class="services">
   <div class="container">
 
     <?php if ($title_light || $title_bold): ?>

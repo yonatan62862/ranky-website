@@ -25,7 +25,7 @@ $default_logo_sizes = [
 ];
 ?>
 
-<section class="our-client">
+<section id="clients" class="our-client">
   <div class="container">
     <div class="our-client__grid">
       

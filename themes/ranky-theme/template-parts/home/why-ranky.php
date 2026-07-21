@@ -41,7 +41,7 @@ if (!$header_title_light && !$header_title_bold && !$comparisons && !$statement 
 }
 ?>
 
-<section class="why-ranky">
+<section id="why-ranky" class="why-ranky">
   <div class="container">
 
     <!-- Header -->

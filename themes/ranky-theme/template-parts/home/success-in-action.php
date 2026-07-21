@@ -10,7 +10,7 @@ $items        = get_field('success_items');
 if (!$items || !is_array($items)) return;
 ?>
 
-<section class="success">
+<section id="success" class="success">
 
     <?php if ($title_light || $title_bold): ?>
       <div class="container">

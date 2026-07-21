@@ -22,7 +22,7 @@ if (!$title_line1 && !$title_line2 && !$title_line3 && !$title_line4) {
 }
 ?>
 
-<section class="hero">
+<section id="hero" class="hero">
     <div class="container">
         <div class="hero__content">
             <div class="hero__text">

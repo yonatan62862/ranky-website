@@ -12,7 +12,7 @@ if (!$faq_items || !is_array($faq_items)) {
 }
 ?>
 
-<section class="faq">
+<section id="faq" class="faq">
   <div class="container">
 
     <?php if ($faq_title_light || $faq_title_bold): ?>

@@ -20,7 +20,7 @@ if (!$items || !is_array($items)) {
 }
 ?>
 
-<section class="what-you-gain">
+<section id="what-you-gain" class="what-you-gain">
   <div class="container">
 
     <?php if ($eyebrow) : ?>

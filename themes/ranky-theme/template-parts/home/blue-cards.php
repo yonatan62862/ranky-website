@@ -10,7 +10,7 @@ if (!$cards || !is_array($cards)) {
 }
 ?>
 
-<section class="blue-cards">
+<section id="blue-cards" class="blue-cards">
   <div class="container">
     <div class="blue-cards__grid">
 

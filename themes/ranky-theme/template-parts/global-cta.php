@@ -14,7 +14,7 @@ $newsletter_button = get_field('global_cta_newsletter_button', 'option') ?: 'Sub
 $socials = get_field('global_cta_socials', 'option');
 ?>
 
-<section class="global-cta global-cta--<?php echo esc_attr($variant); ?>">
+<section id="cta" class="global-cta global-cta--<?php echo esc_attr($variant); ?>">
   <div class="container">
 
     <div class="global-cta__grid">

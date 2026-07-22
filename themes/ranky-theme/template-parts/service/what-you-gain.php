@@ -18,8 +18,8 @@ $sys_button = get_field('wyg_system_button');
 $sys_image = get_field('wyg_system_image');
 ?>
 
-<section id="what-you-gain" class="what-you-gain">
-  <div class="container">
+<section class="what-you-gain">
+  <div id="what-you-gain" class="container">
 
     <header class="what-you-gain__header">
       <?php if ($title_light || $title_bold): ?>

@@ -1572,6 +1572,12 @@ body.single-service .hero-overview-unified~.what-you-gain {
     padding-top: 300px;
 }
 
+/* Anchor (#what-you-gain) sits on .container so hash scroll lands on content, not the clearance padding */
+.single-service .what-you-gain #what-you-gain,
+body.single-service .what-you-gain #what-you-gain {
+    scroll-margin-top: 24px;
+}
+
 /* ======================================================
    PAID-ADS: hero + why-different unified background
    A single wrapper div applies the hero gradient across

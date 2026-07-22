@@ -20,8 +20,8 @@ if (!$items || !is_array($items)) {
 }
 ?>
 
-<section id="what-you-gain" class="what-you-gain">
-  <div class="container">
+<section class="what-you-gain">
+  <div id="what-you-gain" class="container">
 
     <?php if ($eyebrow) : ?>
       <p class="what-you-gain__eyebrow">
